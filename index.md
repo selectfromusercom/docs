@@ -1,0 +1,29 @@
+---
+# https://vitepress.dev/reference/default-theme-home-page
+layout: home
+
+hero:
+  name: "selectfromuser.com"
+  text: "셀렉트 어드민"
+  tagline: 운영 툴을 채우는 새로운 방법
+  
+  actions:
+    - theme: brand
+      text: 시작하기
+      link: /start
+    - theme: alt
+      text: 레퍼런스
+      link: /layout
+
+features:
+  - title: 튜토리얼 및 가이드
+    details: docs.selectfromuser.com
+    link: https://docs.selectfromuser.com
+  - title: 샘플 예제 화면
+    details: showroom.selectfromuser.com
+    link: https://showroom.selectfromuser.com
+  - title: Changelog
+    details: docs.selectfromuser.com/changelog
+    link: https://docs.selectfromuser.com/changelog
+---
+
