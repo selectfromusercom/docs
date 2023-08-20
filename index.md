@@ -22,7 +22,7 @@ features:
   - title: 샘플 예제 화면
     details: showroom.selectfromuser.com
     link: https://showroom.selectfromuser.com
-  - title: Changelog
+  - title: 업데이트 내역
     details: docs.selectfromuser.com/changelog
     link: https://docs.selectfromuser.com/changelog
 ---
