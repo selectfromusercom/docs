@@ -54,7 +54,7 @@ B2B, B2C, 모바일앱, 커머스, 블록체인 등
 | MySQL, PostgreSQL(pgsql), Redis, MongoDB, Google Sheet, MS-SQL | DynamoDB, Firebase |
 
 준비중인 DB는 [이메일로 출시 소식](https://bit.ly/3C1Uhls)을 받아볼 수 있어요.  
-지원 DB를 이용중이시라면 [데이터베이스 연결](doc:데이터베이스-연결) 방법을 확인해보세요.
+지원 DB를 이용중이시라면 [데이터베이스 연결](https://docs.selectfromuser.com/docs/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%97%B0%EA%B2%B0) 방법을 확인해보세요.
 
 ### HTTP API 지원
 
