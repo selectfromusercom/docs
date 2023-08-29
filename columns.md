@@ -101,6 +101,49 @@ columns:
   	format: json-inline # 1줄로 표기
 ```
 
+### format: table
+
+columns 안에서 사용 가능하며, JSON 데이터를 필드 안에 테이블 형태로 변환하여 보여줍니다.
+
+```yaml
+sql: >
+  SELECT id, json->'$.data' AS json_to_table FROM users LIMIT 100
+columns:
+  json_to_table:
+    format: table
+```
+
+**Object**
+피봇 테이블 형태로 보여집니다.
+```json
+{
+  "data": {
+    "id": 1234,
+    "amount": 99000
+  }
+}
+```
+
+**Array**
+일반적인 표 형태로 보여집니다. 
+```json
+{
+  "data": [
+    {
+      "id": 1234,
+      "amount": 99000,
+      "status": "DONE"
+    },
+    {
+      "id": 2234,
+      "amount": 179000,
+      "status": "DONE"
+    }
+  ]
+}
+```
+
+
 ## columns.valueAs
 
 각 컬럼의 값들을 고정된 텍스트로 표시할 수 있습니다. 데이터를 '링크'나 '클릭' 같은 이름으로 감쌀 수 있습니다.
