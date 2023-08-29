@@ -331,6 +331,25 @@ pages:
         forEach: true
 ```
 
+### format: address
+주소와 우편번호를 입력해야할 때, 별도의 설치나 개발없이 
+셀렉트에 내장된 Daum Postcode Service로 주소를 검색하고 우편번호까지 한번에 입력할 수 있어요.
+
+- `format: address` 파라미터 영역에 주소 검색 버튼이 생성됩니다.
+- 셀렉트에서 **roadAddress**(도로명주소)와 **zonecode**(우편번호)를 내려줍니다.
+
+```yaml
+params:
+  - key: address
+    label: 주소
+    format: address
+    updateParams:
+      address: roadAddress # address 파라미터에 검색 결과인 roadAddress 값을 넣습니다.
+      postcode: zonecode # postcode 파라미터에 zonecode 값을 넣습니다.
+  - key: postcode
+    label: 우편번호
+```
+
 ## params.formatString
 
 입력 포맷을 특정 방식으로 설정할 수 있습니다. 
