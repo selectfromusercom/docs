@@ -722,6 +722,51 @@ blocks:
         width: 200px
 ```
 
+### display: calendar
+
+조회한 데이터를 달력 형태로 보고, 날짜별 상세 내역을 클릭하여 모달을 띄울 수 있어요.
+- `cache: true`: 캐시를 남겨 불필요한 로딩을 방지해줍니다. 이전달, 다음달을 오고갈때 더 자연스러워요.
+- `color`: tailwindcss color class를 지원합니다. https://tailwindcss.com/docs/customizing-colors
+- `formatFn: numberPart`: 숫자에 구분점(,)을 찍어줍니다.
+- `openModal`: 상세 내역을 클릭하여 모달을 띄울 수 있어요. `modals`와 함께 이용해보세요.
+
+```yaml
+blocks:
+  - type: query
+    resource: mysql.qa
+    sqlType: select    
+    sql: >
+      SELECT 
+        DATE_FORMAT(created_at, '%Y-%m-%d') as 'date',
+        CONCAT(COUNT(id), ' 건') AS count_order,
+        CONCAT(SUM(amount), ' 원') AS sum_order_amount,
+        CONCAT('취소 ', COUNT(IF(status = 'cancel', id, NULL)), ' 건') AS count_order_cancel
+      FROM orders
+      WHERE created_at BETWEEN :calendar1 AND :calendar2
+      GROUP BY 1
+    params:
+      - key: calendar
+        range: true
+        valueFromCalendar: true
+    display: calendar
+    autoload: true    
+    cache: true
+    columns:
+      count_order: 
+        label: 총 주문수
+        color: blue-600
+        formatFn: numberPart
+      sum_order_amount: 
+        label: 주문금액 합계
+        color: green-600        
+        formatFn: numberPart
+        openModal: order-list
+      count_order_cancel: 
+        label: 취소수량
+        color: gray-500
+```
+
+
 # blocks.submitButton
 
 params와 주로 쓰입니다. 값을 입력하고 제출할 때 버튼의 이름이나 색상을 바꿀 수 있어요. 
