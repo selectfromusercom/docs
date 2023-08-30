@@ -647,3 +647,25 @@ pages:
   - type: query
   - type: query
 ```
+
+## params.validateFn
+
+입력한 값을 사전에 검증하는 기능입니다. `validateFn` 안에 Javascript를 사용할 수 있어요.
+
+전체 params에서 params.key가 `amount`인 내역의 값을 찾고 `key: cancel_amount`의 값(param.value)을 비교하는 예제입니다.
+
+```yaml
+params:
+  - key: amount
+    valueFromRow: amount
+  - key: cancel_amount
+    label: 취소 금액
+    validateFn: |
+      const amount = params.find(e => e.key == 'amount')
+
+      if (param.value > amount.value) {
+        return '취소 불가능'
+      } else {
+        return ''
+      }
+```
