@@ -5,6 +5,16 @@ export default defineConfig({
   title: "selectfromuser.com",
   description: "Select Admin",
   cleanUrls: true,
+  head: [
+    [
+      'script',
+      {
+        defer: '',
+        'data-domain': 'dev.selectfromuser.com',
+        src: 'https://plausible.io/js/script.js',
+      }
+    ]
+  ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
