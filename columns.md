@@ -63,7 +63,8 @@ columnOptions와 동일한 기능이고 양식이 다릅니다.
 
 - `thumbnail: true`: 이미지를 썸네일 형태로 설정해줍니다.
 - `flex: true`: 이미지가 여러개일 때 가로로 정렬합니다.
-- `thumbnailWidth: 100px`: 썸네일의 가로 크기를 설정합니다. (기본값은 column 100%)
+- `thumbnailWidth`: 썸네일의 가로 크기를 설정합니다. (기본값은 column 100%)
+- `thumbnailHeight`: 썸네일의 세로 크기를 설정합니다.
 
 ```yaml
 - path: manage-animal
@@ -83,8 +84,8 @@ columnOptions와 동일한 기능이고 양식이 다릅니다.
           width: 400px
           height: 120px
           thumbnail: true
-          flex: true
           thumbnailWidth: 100px
+          flex: true          
           style: > 
             border-radius: 10px
 ```
@@ -92,14 +93,14 @@ columnOptions와 동일한 기능이고 양식이 다릅니다.
 이미지를 세로 정렬하고 스크롤하고 싶을 때는 tdStyle, height, overflow를 이용해주세요.
 
 ```yaml
-      columns:
-        thumbnail:
-          format: image
-          thumbnail: true
-          thumbnailWidth: 100px
-          tdStyle:
-            height: 200px
-            overflow: scroll
+columns:
+  thumbnail:
+    format: image
+    thumbnail: true
+    thumbnailWidth: 100px
+    tdStyle:
+      height: 200px
+      overflow: scroll
 ```
 
 ### format: json, json-inline
