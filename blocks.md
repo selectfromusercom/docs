@@ -290,6 +290,10 @@ pages:
     showDownload: csv
 ```
 
+`showDownload: csv formatted`
+
+데이터 다운로드는 '데이터 원본'을 기본으로 합니다. 셀렉트 어드민에 보여지는대로 다운로드 받고 싶으시다면 `formatted`를 추가해주세요.
+
 ## blocks.log
 
 쿼리 실행을 로깅하여 모니터링하고 싶을 때 이용해요.

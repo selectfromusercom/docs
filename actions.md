@@ -122,6 +122,33 @@ actions:
   single: true
 ```
 
+## actions.openUrl
+
+액션 버튼을 눌러 특정 URL의 페이지로 이동합니다.
+
+```yaml
+actions:
+  - label: 페이지 이동
+    target: _self
+    openUrl: https://dev.selectfromuser.com
+    single: true
+```
+
+## actions.showDownload
+
+데이터 다운로드 기능을 액션 버튼에 추가할 있어요. 
+
+액션 버튼 추가 시, 헷갈리지 않게 기존의 showDownload 옵션은 끄는걸 권장해요. (`showDownload: false`)
+
+```yaml
+actions:
+  - label: csv 다운로드
+    showDownload: csv
+    single: true
+```
+
+### [showDownload](/blocks#blocks-showdowload)
+
 ## actions.params.valueFromSelectedRows
 
 선택한 row의 값을 가져와서, 파라미터에 이용할 수 있습니다. 
