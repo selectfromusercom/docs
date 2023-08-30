@@ -34,6 +34,15 @@ viewModal:
   dismissible: false
 ```
 
+### viewModal.header
+
+모달 header에 있는 전후이동, 링크복사 등 셀렉트 기능을 숨길 수 있습니다.
+
+```yaml
+viewModal:
+  header: false
+```
+
 ### viewModal.[blocks](/blocks)
 
 여러개 블록을 추가 가능합니다.

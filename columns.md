@@ -89,6 +89,19 @@ columnOptions와 동일한 기능이고 양식이 다릅니다.
             border-radius: 10px
 ```
 
+이미지를 세로 정렬하고 스크롤하고 싶을 때는 tdStyle, height, overflow를 이용해주세요.
+
+```yaml
+      columns:
+        thumbnail:
+          format: image
+          thumbnail: true
+          thumbnailWidth: 100px
+          tdStyle:
+            height: 200px
+            overflow: scroll
+```
+
 ### format: json, json-inline
 
 json 값을 1줄 또는 여러줄로 표기할 수 있습니다.
