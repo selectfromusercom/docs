@@ -60,7 +60,7 @@ actions:
     sql: >
       INSERT INTO products
       SET name = :name
-      	, code = :code
+        , code = :code
         , unit = :unit
         , created_at = NOW()
     forEach: true

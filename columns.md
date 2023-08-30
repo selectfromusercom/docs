@@ -109,10 +109,10 @@ json 값을 1줄 또는 여러줄로 표기할 수 있습니다.
 
 ```yaml
 columns:
-	col1:
-  	format: json # 여러줄로 표기
+  col1:
+    format: json # 여러줄로 표기
   col2:
-  	format: json-inline # 1줄로 표기
+    format: json-inline # 1줄로 표기
 ```
 
 ### format: table
@@ -624,5 +624,3 @@ modals:
 - path: column-openmodal
   blocks: ...
 ```
-
-#
