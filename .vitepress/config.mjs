@@ -5,6 +5,9 @@ export default defineConfig({
   title: "selectfromuser.com",
   description: "Select Admin",
   cleanUrls: true,
+  markdown: {
+    lineNumbers: true,
+  },
   head: [
     [
       'script',
