@@ -51,7 +51,7 @@ sqlType: insert
 ```yaml
 - type: query
   resource: sample.db
-  sqlType: select
+  sqlType: update
   sql: UPDATE user SET status = :status WHERE id = :id AND email = :email
   params:
   - key: status
