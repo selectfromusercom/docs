@@ -50,7 +50,8 @@ params:
 
 ## params.valueFromSheet
 
-엑셀 데이터를 업로드하고 params로 매칭한 다음, DB에 데이터를 저장할 수 있습니다.
+CSV 데이터를 업로드하고 params로 매칭한 다음, DB에 데이터를 저장할 수 있습니다.
+- `sheetOptions.append`: 파일 여러개를 한번에 올릴 수 있어요.
 
 ```yaml
 actions:
