@@ -1,7 +1,7 @@
 {
   "redirects": [
-    { "source": "/docs/시작하기", "destination": "/guide/", "statusCode": 301 }
-    , { "source": "/docs/어드민-편집", "destination": "/guide/admin-edit", "statusCode": 301 }
+    { "source": "/docs/시작하기", "destination": "/guide/", "permanent": true }
+    , { "source": "/docs/어드민-편집", "destination": "/guide/admin-edit", "permanent": true }
   ],
   "cleanUrls": true
 }
