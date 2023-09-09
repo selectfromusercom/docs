@@ -254,7 +254,7 @@ export default defineConfig({
           text: '컴포넌트',
           items: [
             { 
-              text: '포넌트 라이브러리', 
+              text: '컴포넌트 라이브러리', 
               link: '/guide/component-library', 
             },
           ]
@@ -315,6 +315,9 @@ export default defineConfig({
         apiKey: process.env.ALGOLIA_API_KEY,
         indexName: process.env.ALGOLIA_INDEX_NAME,
       }
+    },
+    editLink: {
+      pattern: 'https://github.com/selectfromusercom/docs/edit/main/:path'
     },
   }
 })
