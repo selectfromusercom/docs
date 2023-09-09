@@ -2,9 +2,7 @@
   "redirects": [
     { "source": "/docs/시작하기", "destination": "/guide/", "permanent": true }
     , { "source": "/docs/어드민-편집", "destination": "/guide/admin-edit", "permanent": true }
-  ],
-  "rewrites": [
-    { "source": "/docs/로깅", "destination": "/guide/logging" }
+    , { "source": "/docs/%EB%A1%9C%EA%B9%85", "destination": "/guide/logging", "permanent": true }
   ],
   "cleanUrls": true
 }
