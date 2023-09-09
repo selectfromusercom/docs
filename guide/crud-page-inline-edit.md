@@ -1,0 +1,136 @@
+---
+outline: deep
+---
+
+# 클릭해서 수정하기
+
+데이터를 안전하게 수정하기 위해 필드 단위로 클릭해서 수정 모드를 키고 수정한 다음 저장할 수 있습니다.
+
+## 모달 페이지에서 설정
+
+조회용 필드를 클릭해서 수정하는 UI를 만들 수 있습니다.
+
+- 모달에서 사용하기 편리합니다.
+- UPDATE 쿼리를 단순하게 만들 수 있습니다.
+
+![](https://files.readme.io/504ecea-update-options.png "update-options.png")
+
+```yaml
+viewModal:
+  name: 제휴사 상세조회
+  displayParentRow: false
+  minHeight: 800px
+	- type: query
+	  resource: mysql.qa
+	  sqlType: select
+	  sql: >
+	    SELECT id, name, address, memo
+	    FROM properties
+	    WHERE id = :id
+	  params:
+	  - key: id
+	    valueFromRow: id      
+	  display: form
+	  columns:
+	    name:
+	      label: 이름
+	      updateOptions:
+	        type: query
+	        resource: mysql.qa
+	        sql: UPDATE properties SET name = :value WHERE id = :id
+	        log: true
+	        confirm: false
+	    address:
+	      label: 주소
+	      updateOptions:
+	        type: query
+	        resource: mysql.qa
+	        sql: UPDATE properties SET address = :value WHERE id = :id
+	        log: true
+	        confirm: true
+	    memo:
+	      format: textarea    
+	      updateOptions:
+	        type: query
+	        resource: mysql.qa
+	        sql: UPDATE properties SET memo = :value WHERE id = :id
+	        log: true
+	        confirm: false
+```
+
+> 📘 updateOptions.sql 의 SET 에 :value는 꼭 :value 여야하나요?
+> 
+> 네, `:value`로 설정하셔야 해당 기능이 작동합니다.
+
+> 📘 updateOptions 안의 :id 값은 어디서 가져오나요?
+> 
+> SQL 쿼리 결과의 SELECT 필드에서 가져옵니다. 즉, 위 쿼리에서는 `SELECT id`의 값을 가져옵니다. 
+> 
+> \*params.key의 값은 가져오지 않습니다.
+
+### 드롭다운 dropdown 사용
+
+클릭해서 수정할 때 dropdown을 만들 수 있습니다. 
+
+```yaml
+property_status: # column name
+  dropdown:
+    - 'Y'
+    - 'N'
+  updateOptions:
+    type: query
+    resource: mysql
+    sql: UPDATE properties SET status = :value WHERE id = :id
+    log: true
+    confirm: true
+```
+
+## 데이터 조회(테이블) 페이지에서 설정
+
+데이터 조회 테이블의 특정 컬럼의 데이터를 클릭해서 수정할 수 있게 설정하는 방법입니다.  
+테이블을 보면서 빠르고 안전하게 데이터를 수정할 수 있습니다. 
+
+![](https://files.readme.io/8b23dc3-__2022__10__24___12_00.jpg "붙여넣은_이미지_2022__10__24__오후_12_00.jpg")
+
+```yaml
+pages:
+  - path: api/tokens/all
+    blocks:
+      - type: query
+        resource: pgsql.sample
+        name: 전체조회
+        sql: SELECT * FROM public_api_tokens ORDER BY id DESC LIMIT 100
+        sqlType: select
+        paginationOptions:
+          enabled: true
+          perPage: 10
+        columns:
+          memo:
+            updateOptions:
+              resource: pgsql.sample
+              type: query
+              sql: UPDATE public_api_tokens SET memo = :value WHERE id = :id
+```
+
+## 원본 SQL 값으로 업데이트
+
+수정할때 텍스트 문자열이 아닌 SQL 값을 넣으려면 raw를 지정합니다.  
+보안을 위해 값과 1:1 매칭하여 쿼리가 추가됩니다
+
+```yaml
+columns:
+  deleted_at: # column name
+    label: 상태(삭제일시)
+    radio:
+    - Y
+    - N
+    updateOptions:
+      type: query
+      resource: mysql.dev
+      sql: UPDATE wine_stock SET deleted_at = :value WHERE id = :id
+      params:
+      - key: value
+        raw:
+          Y: NULL
+          N: NOW()
+```

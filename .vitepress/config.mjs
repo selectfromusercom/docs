@@ -53,7 +53,7 @@ export default defineConfig({
               items: [
                 { text: '메뉴 권한 설정', link: '/guide/menu-permission'},
                 { text: '메뉴 path 이름 규칙', link: '/guide/menu-naming-path'},
-                { text: '계층 메뉴 만들기', linl: '/guide/menu-submenu-tree'},
+                { text: '계층 메뉴 만들기', link: '/guide/menu-submenu-tree'},
               ],
             },
             { 
