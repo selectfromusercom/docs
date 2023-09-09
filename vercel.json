@@ -3,5 +3,8 @@
     { "source": "/docs/시작하기", "destination": "/guide/", "permanent": true }
     , { "source": "/docs/어드민-편집", "destination": "/guide/admin-edit", "permanent": true }
   ],
+  "rewrites": [
+    { "source": "/docs/로깅", "destination": "/guide/logging" }
+  ],
   "cleanUrls": true
 }
