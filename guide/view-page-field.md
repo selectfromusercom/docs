@@ -17,7 +17,7 @@ SQL 쿼리 결과의 컬럼들이 모두 표시됩니다.
     sql: SELECT * FROM properties ORDER BY id ASC LIMIT 100
 ```
 
-![](https://files.readme.io/1c87474-basic-table.png "basic-table.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/13022d8a-11ff-4b40-651f-dfacc3bad000/docs "basic-table.png")
 
 ## 필드 지정한 경우
 
@@ -37,7 +37,7 @@ SQL 쿼리 결과의 컬럼들이 모두 표시됩니다.
     - field: address
 ```
 
-![](https://files.readme.io/077df78-columnoptions.png "columnoptions.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/ac700337-5c0d-479d-7378-df8146309700/docs "columnoptions.png")
 
 ## 필드를 지정하고 레이블 입력
 
@@ -57,7 +57,7 @@ SQL 쿼리 결과의 컬럼들이 모두 표시됩니다.
       label: 주소
 ```
 
-![](https://files.readme.io/a09972f-columnoptions-label.png "columnoptions-label.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/b8a0cc69-4edb-46e4-4f33-aff202ee0f00/docs "columnoptions-label.png")
 
 ## 전체 필드에서 일부만 바꾸고싶은 경우
 
@@ -79,7 +79,7 @@ SQL 쿼리 결과의 컬럼들이 모두 표시됩니다.
     - field: address
 ```
 
-![](https://files.readme.io/d707a5b-columnoptions-append.png "columnoptions-append.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/a03c27b5-b48f-45b7-5731-b6704c8a4400/docs "columnoptions-append.png")
 
 ## 숫자로 정렬이 안되요.
 

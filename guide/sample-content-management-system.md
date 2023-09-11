@@ -8,7 +8,7 @@ outline: deep
 
 ### 결과 페이지
 
-![](https://files.readme.io/18f1fbd-_2022-11-01__2.21.52.png "스크린샷 2022-11-01 오후 2.21.52.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/47ee8459-c8d1-40d2-bd47-00659f965100/docs "스크린샷 2022-11-01 오후 2.21.52.png")
 
 ### 설정 파일 YAML 내용
 

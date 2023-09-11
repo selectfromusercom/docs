@@ -38,7 +38,7 @@ showButtonWithResult: true # 조회 버튼 활성화 여부
 
 ### 바 차트 bar
 
-![](https://files.readme.io/cce60ae-bar-chart.png "bar-chart.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/44195f21-5b1b-435a-ccc7-a150237d0f00/docs "bar-chart.png")
 
 ```yaml
 chartOptions:
@@ -50,7 +50,7 @@ showButtonWithResult: true
 
 ### 선 차트 line
 
-![](https://files.readme.io/afeae76-line-chart.png "line-chart.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/bc078bb8-dfa2-4694-9d03-f3256cd1e600/docs "line-chart.png")
 
 ```yaml
 chartOptions:
@@ -62,7 +62,7 @@ showButtonWithResult: true
 
 ### 원형, 도넛 차트 doughnut
 
-![](https://files.readme.io/6562ace-doughnut-chart.png "doughnut-chart.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/8a006783-00e6-4c68-1cd4-6b36851f7800/docs "doughnut-chart.png")
 
 ```yaml
 chartOptions:
@@ -74,7 +74,7 @@ showButtonWithResult: true
 
 ### 폴라에어리어 차트 polarArea
 
-![](https://files.readme.io/cc83b96-polar-chart.png "polar-chart.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/0de116ef-3644-40ca-115a-5f60b2b74200/docs "polar-chart.png")
 
 ```yaml
 chartOptions:

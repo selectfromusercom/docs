@@ -15,14 +15,14 @@ outline: deep
 1. 관리자 > 리소스 > 추가 버튼을 눌러주세요. 리소스 추가 화면을 확인하실 수 있습니다. 
 2. MongoDB를 선택하세요. 
 
-![](https://files.readme.io/e67d1fc-1.--.png "1.셀렉트-몽고디비-리소스추가.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/042e84a6-d8b4-4f68-4f4c-c4a8bd45b000/docs "1.셀렉트-몽고디비-리소스추가.png")
 
 ### 연결 정보 입력
 
 1. Name 필드는 셀렉트 안에서 리소스를 불러올 때 사용하는 이름입니다. 
 2. 몽고 DB의 URL을 입력하거나 Host, Username, Password, Database 필드를 입력하여 연결할 수 있습니다. 
 
-![](https://files.readme.io/6b17316-2.---.png "2.셀렉트-몽고디비-연결시-세부정보.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/819fe75c-1dbd-40d0-dace-0189d6a7c300/docs "2.셀렉트-몽고디비-연결시-세부정보.png")
 
 ## MongoDB 쿼리
 
@@ -68,7 +68,7 @@ query:
 
 ### `find` 예시
 
-![](https://files.readme.io/f2137b9-_2023-02-07__12_13_57.jpg "스크린샷_2023-02-07_오전_12_13_57.jpg")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/2d7ef95f-252f-42c2-49a7-e836dcfd7700/docs "스크린샷_2023-02-07_오전_12_13_57.jpg")
 
 ```yaml
 - path: mongodb/find
@@ -153,7 +153,7 @@ blocks:
 
 ### `insertOne` 예시
 
-![](https://files.readme.io/a6a3cc5-_2023-02-07__12.25.28.png "스크린샷 2023-02-07 오후 12.25.28.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/4da81534-45bc-4518-fd6c-d42c42c56f00/docs "스크린샷 2023-02-07 오후 12.25.28.png")
 
 ```yaml
 - path: mongodb/insertone
@@ -178,7 +178,7 @@ blocks:
 
 ### `updateOne` 예시
 
-![](https://files.readme.io/876cd0b-__2023__2__7___12_27.jpg "붙여넣은_이미지_2023__2__7__오후_12_27.jpg")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/1c242cd1-fbe9-449f-53ef-feef535ba700/docs "붙여넣은_이미지_2023__2__7__오후_12_27.jpg")
 
 ```yaml
 - path: mongodb/updateone
@@ -212,7 +212,7 @@ blocks:
 
 ### `updateMany` 예시
 
-![](https://files.readme.io/3538d72-_2023-02-07__12.30.15.png "스크린샷 2023-02-07 오후 12.30.15.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/3314e2a7-9c7f-4c74-92a3-5ac3216f5b00/docs "스크린샷 2023-02-07 오후 12.30.15.png")
 
 ```yaml
 - path: mongodb/updatemany

@@ -131,7 +131,7 @@ pages:
         }
 ```
 
-![](https://files.readme.io/6e65d13-_2023-03-02__6.44.36.png "스크린샷 2023-03-02 오후 6.44.36.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/c132535e-cf23-4d87-047d-8e1e4362ab00/docs "스크린샷 2023-03-02 오후 6.44.36.png")
 
 ### resource: json+sql
 

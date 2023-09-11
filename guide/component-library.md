@@ -10,7 +10,7 @@ outline: deep
 
 ### Text input
 
-![](https://files.readme.io/32dc7b6-image.png)
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/5ef76a7e-0401-4f38-d7d1-68411a2d7400/docs)
 
 ```yaml
 params:
@@ -20,7 +20,7 @@ params:
 
 ### Text area
 
-![](https://files.readme.io/cfdafb6-image.png)
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/75c07dcb-068a-451d-8609-16badffcf800/docs)
 
 ```yaml
 params:
@@ -31,7 +31,7 @@ params:
 
 ### Number input
 
-![](https://files.readme.io/e16f539-image.png)
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/1afa9e05-531e-4713-dee6-67a7a7426400/docs)
 
 ```yaml
 params:
@@ -42,9 +42,9 @@ params:
 
 ### Date
 
-![](https://files.readme.io/f19ef74-image.png)
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/f420202c-d7a1-4ed6-c373-e920e7582a00/docs)
 
-![](https://files.readme.io/974d82a-image.png)
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/8490d7f7-c344-49f2-4274-b5a9da101f00/docs)
 
 ```yaml
 params:
@@ -55,9 +55,9 @@ params:
 
 ### Time
 
-![](https://files.readme.io/266a1fc-image.png)
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/2ec89cc9-d01a-4d02-9ff1-0b04faed0f00/docs)
 
-![](https://files.readme.io/6ab79cc-image.png)
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/7bcb14b1-3967-43d7-05e2-b6e10119de00/docs)
 
 ```yaml
 params:
@@ -68,7 +68,7 @@ params:
 
 ### Date time
 
-![](https://files.readme.io/67f247d-image.png)
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/45f414d2-b893-4011-5441-f4670f131300/docs)
 
 ```yaml
 params:
@@ -79,9 +79,9 @@ params:
 
 ### Date range
 
-![](https://files.readme.io/4b4d2f2-image.png)
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/8c17e5e4-d60e-4591-a10e-c69758f56d00/docs)
 
-![](https://files.readme.io/6220560-image.png)
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/e5855f07-5e8f-4206-704c-2313c8786600/docs)
 
 ```yaml
 params:
@@ -93,9 +93,9 @@ params:
 
 ### Color input
 
-![](https://files.readme.io/6f2ca44-image.png)
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/779bf942-a36c-416b-6019-d85257eaf700/docs)
 
-![](https://files.readme.io/5eabd75-image.png)
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/76ea4085-a4a2-4415-5e72-8a50ef87f900/docs)
 
 ```yaml
 params:
@@ -106,7 +106,7 @@ params:
 
 ### File input
 
-![](https://files.readme.io/32c065d-image.png)
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/2a56a54b-7d54-40a9-6d6b-c184211b6000/docs)
 
 ```yaml
 params:
@@ -117,7 +117,7 @@ params:
 
 ### Radio group
 
-![](https://files.readme.io/1ecd09e-image.png)
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/bfb3b017-e01b-45d9-e6e6-b6fe98842f00/docs)
 
 ```yaml
 params:
@@ -130,7 +130,7 @@ params:
 
 ### Radio button group
 
-![](https://files.readme.io/b528f0f-image.png)
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/d1c2efe7-3f52-4f93-0174-0bfb9cd03800/docs)
 
 ```yaml
 params:
@@ -144,9 +144,9 @@ params:
 
 ### Select
 
-![](https://files.readme.io/ef9b68d-image.png)
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/5eb66286-edd3-48ad-281f-76234b617200/docs)
 
-![](https://files.readme.io/a32905d-image.png)
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/0038a9b7-8f22-488d-9bae-862c66f25e00/docs)
 
 ```yaml
 params:
@@ -160,7 +160,7 @@ params:
 
 ### Multi select
 
-![](https://files.readme.io/dcaf7aa-image.png)
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/4b79f0f0-d8d5-4400-4af8-daf7b7e29500/docs)
 
 ```yaml
 params:
@@ -176,7 +176,7 @@ params:
 
 ### Table
 
-![](https://files.readme.io/0e0ce9b-image.png)
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/ab87d607-6de3-4256-1924-415c319bbb00/docs)
 
 ```yaml
 blocks:
@@ -188,7 +188,7 @@ blocks:
 
 #### tableOptions
 
-![](https://files.readme.io/4520990-image.png)
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/fa6c031d-d7e7-4bb4-dd2d-da5d8d5ceb00/docs)
 
 ```yaml
 sql: ...
@@ -203,7 +203,7 @@ tableOptions:
 
 #### columns
 
-![](https://files.readme.io/a70a27e-image.png)
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/a3262d0a-bbcd-4bf5-3a51-3c149a863000/docs)
 
 ```yaml
 sql: ...
@@ -231,7 +231,7 @@ columns:
 
 ### Chart
 
-![](https://files.readme.io/37e511b-image.png)
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/46e9278f-26d9-4aa2-8e73-316e407f2000/docs)
 
 ```yaml
 blocks:
@@ -253,7 +253,7 @@ blocks:
 
 ### Actions
 
-![](https://files.readme.io/35659ad-image.png)
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/ad2e0771-7312-4c30-0a9d-f46966aac100/docs)
 
 ```yaml
 blocks:
@@ -276,7 +276,7 @@ blocks:
 
 ### Buttons
 
-![](https://files.readme.io/fba15a7-image.png)
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/02ef949a-8da8-4000-8f3d-f85e4bc96200/docs)
 
 ```yaml
 blocks:
@@ -301,7 +301,7 @@ blocks:
 
 #### Button color
 
-![](https://files.readme.io/7fa4ffe-image.png)
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/6e35b681-bd3b-4f51-3229-e7db48ba4100/docs)
 
 ```yaml
 type: default
@@ -319,11 +319,11 @@ type: default
 
 ### Modal
 
-![](https://files.readme.io/769b489-image.png "center modal (basic)")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/7cb6ce8f-1e31-41f7-a688-bfa929998a00/docs "center modal (basic)")
 
-![](https://files.readme.io/1bbd90d-image.png "side modal")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/e1167a85-7ae2-4674-1da9-ee6c2d5c3100/docs "side modal")
 
-![](https://files.readme.io/8fc001e-image.png "full modal")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/ba832c5c-9bc1-4b01-71e0-7040665c5400/docs "full modal")
 
 ```yaml
 blocks:

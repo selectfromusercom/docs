@@ -76,15 +76,15 @@ pages:
 
 포스트 목록 화면
 
-![](https://files.readme.io/2d79497-_2022-12-23__5.23.27.png "스크린샷 2022-12-23 오후 5.23.27.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/8dff0ccb-8ef1-4216-a628-89b30b149c00/docs "스크린샷 2022-12-23 오후 5.23.27.png")
 
 개별 내역을 수정하는 모달 화면
 
-![](https://files.readme.io/4ac5e54-_2022-12-23__5.23.48.png "스크린샷 2022-12-23 오후 5.23.48.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/eef0163b-49b3-46c4-1119-d8c8386c3200/docs "스크린샷 2022-12-23 오후 5.23.48.png")
 
 새 포스트를 추가하는 화면
 
-![](https://files.readme.io/82621af-_2022-12-23__5.23.55.png "스크린샷 2022-12-23 오후 5.23.55.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/2b2f3e0c-6c3e-4af5-b999-614ddb1d3800/docs "스크린샷 2022-12-23 오후 5.23.55.png")
 
 ## YAML 세부 내용
 

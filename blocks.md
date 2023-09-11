@@ -785,7 +785,7 @@ submitButton:
 
 버튼 색상은 아래와 같이 바꿀 수 있습니다. 
 
-![](https://files.readme.io/f9762dc-a7cec87-Screen_Shot_2022-11-04_at_6.03.19_PM.png "a7cec87-Screen_Shot_2022-11-04_at_6.03.19_PM.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/5486ec98-e82e-48a8-8d8a-22947e328800/docs "a7cec87-Screen_Shot_2022-11-04_at_6.03.19_PM.png")
 
 ```yaml
 type: default

@@ -12,7 +12,7 @@ outline: deep
 
 ## 대메뉴 만들기
 
-![](https://files.readme.io/9d7c135-top-menus.png "top-menus.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/83fbfe98-a193-43eb-da35-49134a741d00/docs "top-menus.png")
 
 아래의 값 입력으로 어드민에 메뉴가 표시됩니다.
 
@@ -26,7 +26,7 @@ menus:
 
 ## 하위메뉴 탭메뉴 만들기
 
-![](https://files.readme.io/52189a2-sub-menus.png "sub-menus.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/66cbffdc-95cf-4fd2-0aac-1aebe3dc0600/docs "sub-menus.png")
 
 ```yaml
 menus:
@@ -52,7 +52,7 @@ menus:
 
 ## 대메뉴와 탭 이름을 나누기
 
-![](https://files.readme.io/8b6fd98-main-sub-menus.png "main-sub-menus.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/4972638b-1527-42ba-ed62-e89b22c6c700/docs "main-sub-menus.png")
 
 `/coupon` 하위 메뉴로 path을 통일 지정합니다.
 
@@ -145,7 +145,7 @@ menus:
 
 자주 사용하는 구글 시트 또는 외부 서비스로 빠르게 넘어갈 수 있게 링크를 걸어보세요. 퀵 메뉴 개념으로 사용하실 수 있습니다.
 
-![](https://files.readme.io/a7cd6f4-menu-lilnk.png "menu-lilnk.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/9f0e3b2c-2bf4-4005-cfea-727f0f176900/docs "menu-lilnk.png")
 
 `target: _blank`
 

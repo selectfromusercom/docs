@@ -13,7 +13,7 @@ outline: deep
 - 작성한 쿼리가 잘 작동하는지 확인하고 싶을 때 (쿼리 오류, 에러를 발견)
 - 쿼리 실행 시간을 확인하고 느린 쿼리를 찾고 싶을 때
 
-![](https://files.readme.io/f425ab6-logging.png "logging.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/8bd78683-517a-4570-f27e-e53108db7d00/docs "logging.png")
 
 ## (준비중) 슬랙으로 로그 남기기
 

@@ -13,7 +13,7 @@ outline: deep
 - 모달에서 사용하기 편리합니다.
 - UPDATE 쿼리를 단순하게 만들 수 있습니다.
 
-![](https://files.readme.io/504ecea-update-options.png "update-options.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/7a5b1b1b-f870-488e-3545-a54a9c946a00/docs "update-options.png")
 
 ```yaml
 viewModal:
@@ -90,7 +90,7 @@ property_status: # column name
 데이터 조회 테이블의 특정 컬럼의 데이터를 클릭해서 수정할 수 있게 설정하는 방법입니다.  
 테이블을 보면서 빠르고 안전하게 데이터를 수정할 수 있습니다. 
 
-![](https://files.readme.io/8b23dc3-__2022__10__24___12_00.jpg "붙여넣은_이미지_2022__10__24__오후_12_00.jpg")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/5dda1cf6-79c1-4ca1-7c74-50bc6179c900/docs "붙여넣은_이미지_2022__10__24__오후_12_00.jpg")
 
 ```yaml
 pages:

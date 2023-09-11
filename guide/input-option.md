@@ -11,7 +11,7 @@ outline: deep
 - params 공통: placeholder(기본값) 포맷팅 안된 원본값으로 보냄 (3.3% → 3.3)
 - (formatStringAsValue) 포맷팅 된 값으로 보냄
 
-![](https://files.readme.io/cf76a6f-format-string.png "format-string.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/8c59f91a-a368-41c0-0d55-be4beab0c800/docs "format-string.png")
 
 ```yaml
 params:
@@ -25,7 +25,7 @@ params:
 
 입력 필드에 대한 설명이 필요할 때 help 키를 사용해서 안내 문구를 추가할 수 있습니다.
 
-![](https://files.readme.io/559c45d-help-text-input-field.png "help-text-input-field.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/59d2c58f-7d63-4767-60db-c8df93301800/docs "help-text-input-field.png")
 
 ```yaml
 params:

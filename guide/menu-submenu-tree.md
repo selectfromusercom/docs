@@ -6,7 +6,7 @@ outline: deep
 
 메뉴 아래에 부메뉴를 추가합니다. 접기 펴기를 지원하며 새로고침해도 유지됩니다. (브라우저 저장)
 
-![](https://files.readme.io/76df240-folding-menus.png "folding-menus.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/fdaa8199-863e-4e3e-46cf-f85c9d848800/docs "folding-menus.png")
 
 ```yaml
 menus:

@@ -68,12 +68,12 @@ menus:
 
 조회 권한이 없으면 메뉴가 비활성화 됩니다. 
 
-![](https://files.readme.io/c47814f-deactivate-menu.png "deactivate-menu.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/f755299b-a9c3-4ffd-570b-9cb9aee29200/docs "deactivate-menu.png")
 
 조회 권한이 없을 때, 경로(path)로 직접 접속해도 내용을 볼 수 없습니다. 
 
-![](https://files.readme.io/141fbc9-access-403.png "access-403.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/a43a27d2-25e5-4427-9d7d-889cbe1a1f00/docs "access-403.png")
 
 권한 그룹 관리 하단에 메뉴별 적용된 권한을 볼 수 있습니다. 
 
-![](https://files.readme.io/1400b23-access-control.png "access-control.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/e7827830-9d8b-480e-e3bf-81bed5a30a00/docs "access-control.png")

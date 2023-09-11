@@ -124,7 +124,7 @@ pages:
 
 쿼리(query) 블록을 이용해 재고 조회 페이지를 만듭니다. 
 
-![](https://files.readme.io/3f0e308-inventory-manage.png "inventory-manage.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/d9092142-b721-43e2-e7ea-e7b008676900/docs "inventory-manage.png")
 
 ```yaml
 menus:
@@ -149,7 +149,7 @@ pages:
 
 와인 등 상품을 추가할 수 있는 버튼과 모달을 만듭니다.
 
-![](https://files.readme.io/0370216-inventory-actions.png "inventory-actions.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/5222dbec-2ab4-4adb-00bb-240a6226ae00/docs "inventory-actions.png")
 
 ```yaml
 actions:
@@ -169,7 +169,7 @@ actions:
 
 viewModal을 통해 상품의 상세 조회와 수정 페이지를 만들 수 있습니다. 
 
-![](https://files.readme.io/a572ae7-inventory-detail.png "inventory-detail.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/89482677-f47f-43d5-9c71-7cc905f57400/docs "inventory-detail.png")
 
 ```yaml
 viewModal:

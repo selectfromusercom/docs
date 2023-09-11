@@ -13,7 +13,7 @@ outline: deep
 카드안에는 내용을 (기본값) 테이블로 표시하거나 metric 으로 표시 가능합니다.  
 차트로 표시하는 방법은 아래 문서를 참고해주세요.
 
-![](https://files.readme.io/4a7d944-dashboard.png "dashboard.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/ac7e9e1b-07ef-401f-3940-f807ab2d4d00/docs "dashboard.png")
 
 대시보드 레이아웃(layout: dashboard)은 일반 메뉴/페이지에서도 이용 가능합니다.
 
@@ -47,7 +47,7 @@ pages:
 
 메인 화면에 공지와 안내사항을 적어놓습니다.
 
-![](https://files.readme.io/b3a8f6b-markdown.png "markdown.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/86859b85-b931-4893-f71e-9533c67f1e00/docs "markdown.png")
 
 ```yaml
 pages:
@@ -79,6 +79,6 @@ width: calc(50% - 1rem)
 width: 50%
 ```
 
-![](https://files.readme.io/63f6a39-width-ex1.png "width-ex1.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/62da4691-cadf-454c-503d-dab6f4de0600/docs "width-ex1.png")
 
-![](https://files.readme.io/19db668-width-ex2.png "width-ex2.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/819add84-c22a-4012-4395-38302e1b0900/docs "width-ex2.png")

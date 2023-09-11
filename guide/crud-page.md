@@ -10,7 +10,7 @@ outline: deep
 
 insert 쿼리를 활용해서 아래와 같은 데이터 추가 페이지를 빠르게 만들 수 있습니다. 
 
-![](https://files.readme.io/0a039a6-insert-ui-basic.png "insert-ui-basic.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/3d4aa152-7f56-485f-3a43-f48cc1db1b00/docs "insert-ui-basic.png")
 
 ```yaml
 pages:
@@ -35,7 +35,7 @@ pages:
 
 update 쿼리를 사용해 아래와 같은 수정 페이지를 만들어보세요.
 
-![](https://files.readme.io/bcef46f-update-ui-basic.png "update-ui-basic.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/e7d167bc-f41e-4bfd-d66f-e2967f409200/docs "update-ui-basic.png")
 
 ```yaml
 - type: query
@@ -93,7 +93,7 @@ update 쿼리를 사용해 아래와 같은 수정 페이지를 만들어보세�
 
 지원되는 버튼 색상 타입은 아래와 같습니다.
 
-![](https://files.readme.io/f45f76a-Screen_Shot_2022-11-04_at_6.03.19_PM.png "Screen Shot 2022-11-04 at 6.03.19 PM.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/ba1e68b0-2399-4433-d12a-98bb6b322800/docs "Screen Shot 2022-11-04 at 6.03.19 PM.png")
 
 ```yaml
 type: default

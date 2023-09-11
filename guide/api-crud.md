@@ -40,13 +40,13 @@ pages:
 
 axios 하위의 모든 부분에 원하는 파라메터를 넣을 수 있습니다.
 
-![](https://files.readme.io/197b1e8-parameter-axios.png "parameter-axios.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/174d65d3-32c0-43de-623d-ccb303b2a500/docs "parameter-axios.png")
 
 ## 키 관리
 
 일부 파라메터는 설정 > 키 관리에서 추가 후 이용 가능합니다.
 
-![](https://files.readme.io/4aa097e-key-management.png "key-management.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/439875f0-bdd9-469f-77ff-f2323ab12200/docs "key-management.png")
 
 중첩된 키에 대해서도 파라메터가 입력됩니다.
 
@@ -71,4 +71,4 @@ axios 하위의 모든 부분에 원하는 파라메터를 넣을 수 있습니�
       format: 'number'
 ```
 
-![](https://files.readme.io/40025ca-duplicated-parameter.png "duplicated-parameter.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/40870afc-942f-46f3-60b2-3790b71d8f00/docs "duplicated-parameter.png")

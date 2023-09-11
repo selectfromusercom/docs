@@ -8,7 +8,7 @@ outline: deep
 
 버튼 위치를 왼쪽/오른쪽과 위/아래의 조합으로 설정하실 수 있습니다.
 
-![](https://files.readme.io/40ee563-action-placement.png "action-placement.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/414382dc-1acc-42c0-d68c-16b79af9dd00/docs "action-placement.png")
 
 ```yaml
 actions:
@@ -21,7 +21,7 @@ actions:
 
 ## confirmText로 안전하게 액션
 
-![](https://files.readme.io/9e01511-action-confirmtext.png "action-confirmtext.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/d6426aa6-84a9-4950-de39-97e7fad2a700/docs "action-confirmtext.png")
 
 ```yaml
 - label: 삭제
@@ -39,7 +39,7 @@ actions:
 
 ## promptText로 데이터 받아서 처리
 
-![](https://files.readme.io/e16f9b9-action-prompttext.png "action-prompttext.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/cee3106e-091e-4be0-328f-ac46f9bf7400/docs "action-prompttext.png")
 
 ```yaml
 actions:

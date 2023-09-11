@@ -10,9 +10,9 @@ outline: deep
 
 actions 아래에 modal 키를 사용해서 버튼 클릭 시 모달을 띄울 수 있습니다. 
 
-![](https://files.readme.io/8aee9e3-action-button-for-modal.png "action-button-for-modal.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/c9b31f24-6782-4b19-92b8-7385ec34dd00/docs "action-button-for-modal.png")
 
-![](https://files.readme.io/f276aff-_2022-11-09__4.26.52.png "스크린샷 2022-11-09 오후 4.26.52.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/3a147759-1d53-429b-7941-be675c020500/docs "스크린샷 2022-11-09 오후 4.26.52.png")
 
 ```yaml
 actions:

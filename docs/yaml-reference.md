@@ -893,7 +893,7 @@ columnOptions:
 
 valueAs 아래에 `값: 라벨` 형태로 여러개를 설정할 수 있습니다. 실제 값이 바뀌는 것이 아닌, 표기가 바뀝니다. 표기된 데이터 필드에 마우스를 올리고 2~3초 기다리면 본래 값이 보여집니다. 
 
-![](https://files.readme.io/f6d2ef6-_2023-03-09__3.54.28.png "스크린샷 2023-03-09 오후 3.54.28.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/e792fc44-f4e5-46b1-8681-1575700e9600/docs "스크린샷 2023-03-09 오후 3.54.28.png")
 
 ```yaml
 - type: query
@@ -938,7 +938,7 @@ formatFn을 통해 JavaScript 코드를 이용할 수 있어요. (column 단위�
 - `lodash` 함수를 사용할 수 있습니다. 
 - formatFn과 valueAs를 함께 쓰면 formatFn이 먼저 적용되어요.
 
-![](https://files.readme.io/1a0cb00-_2023-03-09__4.11.27.png "스크린샷 2023-03-09 오후 4.11.27.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/78df28ae-3c76-4f63-7d62-a021dbcaff00/docs "스크린샷 2023-03-09 오후 4.11.27.png")
 
 ```yaml
 - type: query
@@ -1052,7 +1052,7 @@ columns:
 > - 지원하는 색상들은 아래와 같습니다.
 >   > `green`, `yellow`, `blue`, `red`, `gray`, `pink`, `orange`, `purple`, `brown`, `light-gray`
 
-![](https://files.readme.io/05e0267-_2023-02-20__7.53.21.png "스크린샷 2023-02-20 오후 7.53.21.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/674fc453-7036-4390-b801-7e4c763e4e00/docs "스크린샷 2023-02-20 오후 7.53.21.png")
 
 ```yaml
 columns:
@@ -2189,7 +2189,7 @@ submitButton:
 
 버튼 색상은 아래와 같이 바꿀 수 있습니다. 
 
-![](https://files.readme.io/f9762dc-a7cec87-Screen_Shot_2022-11-04_at_6.03.19_PM.png "a7cec87-Screen_Shot_2022-11-04_at_6.03.19_PM.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/5486ec98-e82e-48a8-8d8a-22947e328800/docs "a7cec87-Screen_Shot_2022-11-04_at_6.03.19_PM.png")
 
 ```yaml
 type: default
@@ -2538,7 +2538,7 @@ actions:
       type: danger-light
 ```
 
-![](https://files.readme.io/f9762dc-a7cec87-Screen_Shot_2022-11-04_at_6.03.19_PM.png "a7cec87-Screen_Shot_2022-11-04_at_6.03.19_PM.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/5486ec98-e82e-48a8-8d8a-22947e328800/docs "a7cec87-Screen_Shot_2022-11-04_at_6.03.19_PM.png")
 
 ### actions.button.icon
 

@@ -10,7 +10,7 @@ modals 키를 통해 더 다양한 모달 디자인과 띄우는 방법을 지�
 
 어떤 컬럼에 링크로 모달을 띄울지 설정할 수 있습니다. 
 
-![](https://files.readme.io/f5eb786-_2022-11-14__5.28.04.png "스크린샷 2022-11-14 오후 5.28.04.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/35ea96dd-914d-40b9-ff8f-faff81172c00/docs "스크린샷 2022-11-14 오후 5.28.04.png")
 
 ```yaml
 menus:
@@ -76,7 +76,7 @@ modals:
 
 아래는 '조회' 라는 컬럼을 추가하고 그 안에 버튼을 추가한 예시입니다. 
 
-![](https://files.readme.io/0def646-_2022-11-14__5.31.15.png "스크린샷 2022-11-14 오후 5.31.15.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/0a77c687-0a33-4aaf-59a7-92541d2e1d00/docs "스크린샷 2022-11-14 오후 5.31.15.png")
 
 ```yaml
 menus:
@@ -116,7 +116,7 @@ pages:
 
 버튼 스타일은 아래와 같습니다. type 키와 함께 편리하게 버튼 디자인을 설정해보세요. 
 
-![](https://files.readme.io/a7cec87-Screen_Shot_2022-11-04_at_6.03.19_PM.png "Screen Shot 2022-11-04 at 6.03.19 PM.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/5486ec98-e82e-48a8-8d8a-22947e328800/docs)
 
 ```yaml
 buttons:
@@ -137,7 +137,7 @@ buttons:
 
 기본적으로 모달은 가운데(center)에 띄우지만 오른쪽 측면(side)이나 전체 너비(full)로 확장해서 사용하실 수도 있습니다. 
 
-![](https://files.readme.io/1bca717-_2022-11-14__5.37.24.png "스크린샷 2022-11-14 오후 5.37.24.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/7c785f88-69dc-4112-d7ea-cb7e7f8e1100/docs "스크린샷 2022-11-14 오후 5.37.24.png")
 
 ```yaml
 modals:

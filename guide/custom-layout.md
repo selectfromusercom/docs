@@ -10,7 +10,7 @@ outline: deep
 
 주문 그룹을 조회하고 특정 행(row)의 데이터들로, 다른 테이블의 사용자ID(user_id)와 주문그룹ID(order_group_id)로 상세 정보를 조회하는 페이지 예시를 보여드립니다. 
 
-![](https://files.readme.io/65f7a86-_2023-02-07__7.08.19.png "스크린샷 2023-02-07 오후 7.08.19.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/be872cf6-898b-4481-392c-fbaace293800/docs "스크린샷 2023-02-07 오후 7.08.19.png")
 
 ```yaml
 menus:

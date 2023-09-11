@@ -14,17 +14,17 @@ outline: deep
 
 로그인 후 첫 화면 오른쪽에 버튼이 있습니다.
 
-![](https://files.readme.io/6f495a6-add-new-team.png "add-new-team.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/2f27bd56-dfe6-457d-6afb-1b979933fd00/docs "add-new-team.png")
 
 ## 2. 이름입력
 
 나중에 바꿀수 있어요.
 
-![](https://files.readme.io/390d8e1-set-name-of-team.png "set-name-of-team.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/f06eb06e-ed9d-45fc-967e-d121c8484100/docs "set-name-of-team.png")
 
 ## 3. 완료
 
-![](https://files.readme.io/edf87e0-make-team-done.png "make-team-done.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/9d4e80e3-7958-4358-2c92-27c931d22000/docs "make-team-done.png")
 
 # 팀 접속과 어드민 편집
 
@@ -34,10 +34,10 @@ outline: deep
 
 로그인 후 팀 목록이 보입니다. 왼쪽에 어드민 이름을 누르면 어드민 페이지로 접속하게 됩니다. (일반 사용자용)
 
-![](https://files.readme.io/4cdf8c2-access-to-team.png "access-to-team.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/718b4218-6217-45ac-ae1c-67c743780200/docs "access-to-team.png")
 
 ## 편집 페이지 접속 방법
 
 마우스를 올렸을 때 나타나는, 오른쪽 편집을 누르면 어드민을 수정하는 페이지가 보입니다. (편집자나 관리자만 보고 접속할 수 있습니다.)
 
-![](https://files.readme.io/287f644-access-to-edit-mode.png "access-to-edit-mode.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/ea9db8a8-5948-4d68-4d8e-8de4c0fa2800/docs "access-to-edit-mode.png")

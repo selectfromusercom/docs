@@ -15,7 +15,7 @@ outline: deep
 
 데이터를 조회할 때, 입력 필드를 꼭 채워야하는 방법입니다.
 
-![](https://files.readme.io/642cd30-necessary-filter.png "necessary-filter.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/bd3ba0ab-a288-4618-c722-2e2bb4574800/docs "necessary-filter.png")
 
 아래 쿼리에서 `:name` 값에 아무것도 들어가지 않으면 `''` 빈값으로 쿼리가 실행됩니다. 
 
@@ -40,7 +40,7 @@ outline: deep
 
 여러개의 필드를 조건으로 검색하고 싶을 때 
 
-![](https://files.readme.io/a2bc96c-multi-filters.png "multi-filters.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/3275fc12-5ab6-4e61-cc82-b47ed41e1600/docs "multi-filters.png")
 
 입력 필드가 1개 있을 때와 마찬가지로 아래와 같이 작성 시, 파라미터의 값이 없을 때는 빈값 `''`으로 들어가 쿼리가 실행됩니다.  
 쿼리의 OR절과 함께 사용하는 경우, 둘중 하나만 값이 맞아도 조회할 수 있게 됩니다.
@@ -117,7 +117,7 @@ outline: deep
 
 ## 드롭다운 dropdown으로 조건 검색
 
-![](https://files.readme.io/84278c8-dropdown-search.png "dropdown-search.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/347d27bf-48e0-4f44-b9aa-b0db761b0000/docs "dropdown-search.png")
 
 ```yaml
 - type: query
@@ -145,7 +145,7 @@ outline: deep
 
 코드와 레이블 모두를 검색합니다.
 
-![](https://files.readme.io/db90d84-autocomplete-search.png "autocomplete-search.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/c09b6142-a4f0-49fd-9086-bfca015bfe00/docs "autocomplete-search.png")
 
 ```yaml
 - path: properties/active
@@ -172,7 +172,7 @@ outline: deep
 
 ### 데이터를 쿼리로 가져오기
 
-![](https://files.readme.io/1d8a347-datalist-from-query.png "datalist-from-query.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/4d6c65d6-52ee-4389-d27d-023e0bf6e300/docs "datalist-from-query.png")
 
 ```yaml
 - path: properties/active
@@ -199,7 +199,7 @@ outline: deep
 
 ### 라디오 박스 radio box로 조건 검색
 
-![](https://files.readme.io/2e532bb-radiobox-search.png "radiobox-search.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/43968a47-cf3c-4c02-7d35-9b85b1ce1e00/docs "radiobox-search.png")
 
 ```yaml
 - path: orders-status
@@ -246,7 +246,7 @@ params:
 
 **예제1**
 
-![](https://files.readme.io/5b20d77-_2023-01-06__10.18.20.png "스크린샷 2023-01-06 오후 10.18.20.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/acd9bfe3-7f94-449d-2e7c-ccdfa38de400/docs "스크린샷 2023-01-06 오후 10.18.20.png")
 
 ```yaml
 pages:
@@ -276,7 +276,7 @@ pages:
 
 checkbox와 {{query}}를 같이 사용할 때
 
-![](https://files.readme.io/616fcff-checkbox-search.png "checkbox-search.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/9dd5f012-3333-416e-3daa-48bb48032300/docs "checkbox-search.png")
 
 true는 체크박스가 체크되었을 때의 값이고, false는 체크 해제되었을 때의 값입니다.
 

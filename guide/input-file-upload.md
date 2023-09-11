@@ -13,19 +13,19 @@ HTTP API (multipart/form-data)를 통해 업로드 한 결과값을 입력 폼�
 
 1. 편집할 해당 컬럼을 클릭합니다.
 
-![](https://files.readme.io/bd6cdb1-edit-column.png "edit-column.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/de0cb341-8ce2-4657-6fab-6a3997289000/docs "edit-column.png")
 
 2. 편집 모드로 바뀌면 직접 URL을 입력하거나 아래의 파일 선택 버튼이 표시됩니다.
 
-![](https://files.readme.io/a72a65b-change-file.png "change-file.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/741cbb97-d2a5-4821-6003-c282f611ef00/docs "change-file.png")
 
 3. 원하는 파일을 선택하면 즉시 API 호출되어 업로드 완료 후 URL 값이 채워집니다.
 
-![](https://files.readme.io/4679f7b-file-upload.png "file-upload.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/de882cc9-da54-4f7a-9235-c99ad2057100/docs "file-upload.png")
 
 4. 저장(초록색 체크박스) 버튼을 누르면 반영된 모습을 볼 수 있습니다.
 
-![](https://files.readme.io/08d879a-updated-img.png "updated-img.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/1acbdcb6-dc8d-484d-8bb1-e189fa9d6900/docs "updated-img.png")
 
 ### 설정하기
 

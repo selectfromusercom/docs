@@ -62,7 +62,7 @@ JOIN 조인 쿼리는 두개 이상의 테이블 조회를 할때 이용합니�
 - name 에 해당하는 테이블로 쿼리 결과가 저장됩니다.
 - 최종적으로 sql 에 캐시 테이블 p1, p2 를 원하는 방법으로 쿼리합니다.
 
-![](https://files.readme.io/8c512fc-inter-db.png "inter-db.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/dc9512fc-5ed7-42b0-3c97-80da048b4100/docs "inter-db.png")
 
 #### 사용 방법 2: INNER JOIN (ID 매칭)
 
@@ -116,7 +116,7 @@ JOIN 조인 쿼리는 두개 이상의 테이블 조회를 할때 이용합니�
 - p2 에 해당하는 쿼리 결과가 캐시 테이블에 저장됩니다.
 - 최종적으로 sql 에 캐시 테이블 p1, p2 를 원하는 방법으로 쿼리합니다.
 
-![](https://files.readme.io/17fceb5-inter-db2.png "inter-db2.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/4ccb8921-97d1-4a42-f619-f6f9b2398000/docs "inter-db2.png")
 
 ### 제약 조건
 
@@ -177,13 +177,13 @@ Google Spreadsheet(구글시트)를 데이터베이스 테이블과 조인하려
 - 셀렉트 어드민에 데이터베이스를 연결합니다. 
 - 셀렉트 어드민에 연결할 구글 시트 아이디를 입력합니다. 
 
-![](https://files.readme.io/d3552d7-sheet-url.png "sheet-url.png")    
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/68617e37-ce90-48d0-5609-7010e7ab2300/docs "sheet-url.png")    
 
 - 데이터베이스 결과는 p1 임시 테이블에 저장됩니다.
 - 구글시트 내용은 p2 임시 테이블에 자동 불러오기 됩니다.
 - sql 에서 원하는 쿼리를 입력하면 결과가 표시됩니다.
 
-![](https://files.readme.io/acd45e1-sheet-join.png "sheet-join.png")        
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/149c9731-7f5f-48d8-e97e-14ecf0559900/docs "sheet-join.png")        
 
 ### 제약조건
 

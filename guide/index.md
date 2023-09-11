@@ -35,7 +35,7 @@ B2B, B2C, 모바일앱, 커머스, 블록체인 등
 
 홈페이지를 방문해 '[무료로 시작하기](https://app.selectfromuser.com/signup?solution_id=1)' 버튼을 눌러서 가입해주세요.
 
-![](https://files.readme.io/750ff39-signup-image.jpeg "signup-image.jpeg")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/6d359848-47dc-42f6-53d1-87e87f923d00/docs "signup-image.jpeg")
 
 ## 팀 만들기
 
@@ -45,7 +45,7 @@ B2B, B2C, 모바일앱, 커머스, 블록체인 등
 
 셀렉트 서비스는 다양한 리소스 연결을 지원합니다. mysql, postgresql 등 데이터베이스와 HTTP API 기반의 REST API와 GraphQL 그리고 구글시트를 연결할 수 있습니다. 
 
-![](https://files.readme.io/d61b4c5-_2022-10-15__9.36.11.png "스크린샷 2022-10-15 오후 9.36.11.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/9930c8f3-919b-444b-8cfe-d1b71c973500/docs "스크린샷 2022-10-15 오후 9.36.11.png")
 
 ### 데이터베이스 지원
 
@@ -74,13 +74,13 @@ REST API, GraphQL, axios
 
 리소스를 연결했다면 간단한 조회 페이지를 먼저 만들어보세요. 조회 페이지 자동 제작 기능을 통해 만들어보실 수도 있습니다. 페이지를 만드는 자세한 방법은 [여기서부터 확인](https://docs.selectfromuser.com/docs/%EC%96%B4%EB%93%9C%EB%AF%BC-%ED%8E%B8%EC%A7%91)하시면 됩니다. 
 
-![](https://files.readme.io/74ac177-sample-adm.jpeg "sample-adm.jpeg")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/1b7363e2-8fcb-422b-4532-716494f36000/docs "sample-adm.jpeg")
 
 ## 사용자 초대와 권한 설정
 
 페이지를 같이 편집할 사용자를 초대하거나, 사내 일반 사용자를 초대할 수 있습니다. 자세한 사항은 [여기서 확인](https://docs.selectfromuser.com/docs/%ED%8C%80%EC%97%90-%EB%A9%A4%EB%B2%84-%EC%B4%88%EB%8C%80%ED%95%98%EA%B8%B0)하실 수 있어요.
 
-![](https://files.readme.io/0a302dc-member-manage.jpeg "member-manage.jpeg")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/9c855bb7-d680-407c-0660-241a369d0500/docs "member-manage.jpeg")
 
 ## 고객 지원
 

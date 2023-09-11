@@ -45,7 +45,7 @@ pages:
 
 기본적인 고객 정보 조회 페이지는 아래와 같이 만들 수 있습니다. 
 
-![](https://files.readme.io/dd6dbfc-read-customers.png "read-customers.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/1a3234a3-1141-45d9-771f-b16775137300/docs "read-customers.png")
 
 ```yaml
 menus:
@@ -65,7 +65,7 @@ pages:
 
 email 로 고객 정보를 찾고 싶은 경우 어떻게 해야할까요?
 
-![](https://files.readme.io/5f71339-find-customer-by-email.png "find-customer-by-email.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/854b27fe-39e8-496c-5da4-c1b5a2f66300/docs "find-customer-by-email.png")
 
 params 를 이용해 sql 쿼리 안에 매개변수(parameter)로 사용하시면 됩니다. 
 
@@ -84,7 +84,7 @@ FROM users
 WHERE (LENGTH(:email) = 0 OR email LIKE CONTACT('%', :email, '%'))
 ```
 
-![](https://files.readme.io/3e43bfb-find-customer-by-email-result.png "find-customer-by-email-result.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/e7748f40-d634-40b3-f2b3-52349f71fd00/docs "find-customer-by-email-result.png")
 
 ## 고객 관련 정보 조회
 
@@ -114,4 +114,4 @@ viewModal:
 
 셀렉트의 링크 기능이 이런 문제를 쉽게 해결할 수 있게 도와드립니다. 브라우저의 링크를 복사해서 팀원들에게 공유하고 쉽게 해당 정보를 조회할 수 있게 해보세요.
 
-![](https://files.readme.io/7ee1e69-__2022__11__1___2_48.jpg "붙여넣은_이미지_2022__11__1__오후_2_48.jpg")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/18f7a84d-ce3f-4699-f623-429421901200/docs "붙여넣은_이미지_2022__11__1__오후_2_48.jpg")

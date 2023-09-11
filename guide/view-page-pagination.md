@@ -35,7 +35,7 @@ outline: deep
 
 ## 결과 페이지
 
-![](https://files.readme.io/33255ae-pagination-img.png "pagination-img.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/17e42df8-2810-4b03-8f7f-c420daf6e800/docs "pagination-img.png")
 
 ## 기본 페이지 수 조절하기
 
@@ -61,11 +61,11 @@ paginationOptions:
 
 페이지당 행(row) 개수 기본값
 
-![](https://files.readme.io/2c0d8d2-per-page-img.png "per-page-img.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/7072b8d3-9329-483a-0c7c-3815712bb700/docs "per-page-img.png")
 
 ### perPageDropdown 적용 결과
 
-![](https://files.readme.io/703f11c-pagination-dropdown.png "pagination-dropdown.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/1af06482-904b-4aa5-8e80-b9348d844600/docs "pagination-dropdown.png")
 
 ## 서버 사이드 페이지네이션(server-side pagination)도 가능한가요?
 

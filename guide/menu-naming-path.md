@@ -8,13 +8,13 @@ outline: deep
 
 메뉴의 이름이 타이틀에 표시됩니다. 메뉴 path가 URL이 되어 공유할때 알아보기 쉬워야합니다.
 
-![](https://files.readme.io/1819591-menu-title.png "menu-title.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/7b5328bf-92a8-439c-822d-656bc60a8900/docs "menu-title.png")
 > 상단과 탭, 주소창에 표시
 
-![](https://files.readme.io/f4a87de-browser-multi-tabs.png "browser-multi-tabs.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/158008bc-b698-4004-64c5-5eb23d394200/docs "browser-multi-tabs.png")
 > 여러 탭이 있어도 문제 없어요!
 
-![](https://files.readme.io/738005e-share-to-messenger.png "share-to-messenger.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/9b7188dc-43c5-4461-0787-cad231c74000/docs "share-to-messenger.png")
 > 공유해도 한눈에 어떤 내용인지 파악합니다.
 
 
@@ -51,7 +51,7 @@ hyphen `-` 으로 구분합니다.
 
 작동은 하지만 슬랙 등으로 공유할때 URL이 길어집니다.
 
-![](https://files.readme.io/a99c2fa-korean-url.png "korean-url.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/ae3acd68-4096-4b5b-5ebd-9a6d7b997600/docs "korean-url.png")
 
 ## 더 다양한 메뉴 구성이 필요하신가요?
 

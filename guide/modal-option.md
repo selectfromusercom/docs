@@ -8,7 +8,7 @@ outline: deep
 
 기본 가로크기는 600px 이며 추가로 지정 가능합니다.
 
-![](https://files.readme.io/754d203-modal-width.png "modal-width.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/ee5acf1d-cf34-40e1-464a-59bfc44a7800/docs "modal-width.png")
 
 ```yaml
 viewModal:
@@ -34,7 +34,7 @@ viewModal:
 
 기본값 비어있음
 
-![](https://files.readme.io/7302dcf-modal-title.png "modal-title.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/51edd20c-8acb-41bd-369d-e698ca918f00/docs "modal-title.png")
 
 ```yaml
 viewModal:

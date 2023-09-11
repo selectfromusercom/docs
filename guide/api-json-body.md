@@ -36,10 +36,10 @@ YAML 포맷이 아닌 JSON을 입력해도 파라메터가 입력됩니다.
 
 구문에러 Syntax Error는 아래와 같이 표시됩니다.
 
-![](https://files.readme.io/6e95c64-json-error.png "json-error.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/781e1c2a-2b9c-4576-52cb-fe7362871e00/docs "json-error.png")
 
 입력값이 숫자가 아닌 경우 아래와 같이 표시됩니다. 
 
 - param.format = number
 
-![](https://files.readme.io/3336358-json-error2.png "json-error2.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/32bf9c2e-4306-4963-e77d-1c6b06e53200/docs "json-error2.png")

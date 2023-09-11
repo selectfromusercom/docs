@@ -8,17 +8,17 @@ outline: deep
 
 테이블의 머리말을 눌러 컬럼별로 정렬을 할 수 있습니다.
 
-![](https://files.readme.io/23aceda-table-column-ordering.png "table-column-ordering.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/ea577a54-92cd-42a3-d2d3-40adada40d00/docs "table-column-ordering.png")
 
 ## 여러개 컬럼으로 정렬하기
 
 예시 테이블과 함께 보여드리겠습니다. 먼저 name 오름차순으로 정렬을 합니다.
 
-![](https://files.readme.io/46ffaef-multi-column-ordering1.png "multi-column-ordering1.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/a6c29737-e779-4977-c848-d38fecd0d400/docs "multi-column-ordering1.png")
 
 name 오름차순에 이어 id 내림차순으로도 정렬하면 아래와 같은 결과가 됩니다. 
 
-![](https://files.readme.io/b55230e-multi-column-ordering2.jpeg "multi-column-ordering2.jpeg")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/ad182c03-c5bf-4302-bbaf-e50e96602800/docs "multi-column-ordering2.jpeg")
 
 ## 테이블 정렬을 서버에서 하고 싶어요.
 

@@ -16,7 +16,7 @@ outline: deep
 UI로 사용자에게 속성(property)을 추가하고, SQL 쿼리 블록이나 API 블록 등에 변수로 사용할 수 있습니다.  
 설정 > 계정 > 계정 목록에서 설정하려는 사용자의 이메일 주소 클릭
 
-![](https://files.readme.io/eadbb36-image.png)
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/602136e8-680c-4cba-48f2-d843ed609b00/docs)
 
 사용자 속성(프로퍼티, property)에서 키(key)와 값(value)를 지정할 수 있습니다.
 

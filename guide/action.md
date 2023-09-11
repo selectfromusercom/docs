@@ -10,7 +10,7 @@ outline: deep
 
 블록 안에 selectOptions를 추가하여 개별 행(row)을 선택할 수 있는 기능을 추가할 수 있습니다.
 
-![](https://files.readme.io/53d7523-check-rows.png "check-rows.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/9b93be3e-69d0-49f6-5e0a-667224340f00/docs "check-rows.png")
 
 ```yaml
 pages:
@@ -29,7 +29,7 @@ pages:
 
 ## 체크하여 선택한 데이터로 액션
 
-![](https://files.readme.io/54f4cef-check-actions.png "check-actions.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/8b18817e-c4f1-41aa-6aea-efe1dd037600/docs "check-actions.png")
 
 ```yaml
 - type: query

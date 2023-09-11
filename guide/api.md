@@ -103,8 +103,8 @@ pages:
 
 1. 키를 지정하지 않은 경우 - message, rows가 컬럼으로 표시
 
-![](https://files.readme.io/cff164e-api-no-key.png "api-no-key.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/47bd18e9-43b8-4134-5e67-67a89cd1a400/docs "api-no-key.png")
 
 2. 키를 지정한 경우 - rows 아래의 내용이 컬럼으로 표시
 
-![](https://files.readme.io/09d3963-api-yes-key.png "api-yes-key.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/a5a0cf06-a530-436f-2995-9e6345167900/docs "api-yes-key.png")

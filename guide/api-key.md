@@ -8,11 +8,11 @@ outline: deep
 
 설정 > API 키 관리에서 추가 후 이용 가능합니다.
 
-![](https://files.readme.io/78fea8a-api-key-manage.png "api-key-manage.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/245b0a6f-2d62-4d06-05e3-c50ec9d4e000/docs "api-key-manage.png")
 
 감추어진 값은 자릿수만 표시합니다.
 
-![](https://files.readme.io/5a97102-api-key-manage-hidden.png "api-key-manage-hidden.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/060ac99c-2f4e-49aa-82ad-241424874200/docs "api-key-manage-hidden.png")
 
 ## 환경 변수(valueFromEnv) 설정
 

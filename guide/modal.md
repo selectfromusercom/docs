@@ -14,9 +14,9 @@ outline: deep
 > 
 > 모달은 최대 3단계까지 띄울 수 있습니다.
 
-![](https://files.readme.io/2507221-table-modal.png "table-modal.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/2bd564ba-18db-4af9-9f62-3926c6b3bc00/docs "table-modal.png")
 
-![](https://files.readme.io/fd53474-view-modal.png "view-modal.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/510ac314-6519-4c7b-9d11-ebd52ab92000/docs "view-modal.png")
 
 모달을 추가하고 싶은 블록을 확인합니다.
 
@@ -63,7 +63,7 @@ outline: deep
 
 id나 name 등 다른 컬럼에 모달 링크를 걸 수도 있습니다.
 
-![](https://files.readme.io/85a6717-modal-column-link.png "modal-column-link.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/956f4f62-4086-4df5-2450-46f8694bd900/docs "modal-column-link.png")
 
 ```yaml
 viewModal:
@@ -72,7 +72,7 @@ viewModal:
 
 ## 테이블 피봇해서 보기
 
-![](https://files.readme.io/a9efdfb-pivot-table-modal.png "pivot-table-modal.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/84b6ab49-b45b-4b64-b74f-bd7b3a343200/docs "pivot-table-modal.png")
 
 `display: col-2` 를 추가해서 테이블을 피봇하고 2열로 편하게 조회할 수 있게 됩니다. 
 
@@ -109,7 +109,7 @@ viewModal:
 모달 아래에 blocks가 있기 때문에 blocks 하위의 설정들은 모두 동일하게 적용 가능합니다.  
 하위 탭을 추가한 샘플을 살펴보세요. 
 
-![](https://files.readme.io/970623e-tabs-in-modal.png "tabs-in-modal.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/8a7b82e2-5cf2-4799-7387-1fd34b1fb200/docs "tabs-in-modal.png")
 
 ```yaml
 - path: users/all

@@ -20,15 +20,15 @@ outline: deep
 
 **방법1.** 편집 영역에서 마우스 오른쪽 클릭 > Toggle Preview
 
-![](https://files.readme.io/4dcae42-_2022-12-22__4.39.04.png "스크린샷 2022-12-22 오후 4.39.04.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/bb5c5683-6e7e-43cb-94c5-8af495d5d900/docs "스크린샷 2022-12-22 오후 4.39.04.png")
 
 **방법2.** 편집 영역 가장 오른쪽 위의 '미리보기 꺼짐' 버튼을 클릭
 
-![](https://files.readme.io/393aa15-_2022-12-23__3.27.15.png "스크린샷 2022-12-23 오후 3.27.15.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/44ac987a-9ae0-4a36-6a92-ecc492a74700/docs "스크린샷 2022-12-23 오후 3.27.15.png")
 
 ### 미리보기 패널이 열린 모습
 
-![](https://files.readme.io/fe36818-_2022-12-23__3.26.48.png "스크린샷 2022-12-23 오후 3.26.48.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/ca4d756c-0790-46ad-2ea5-2e9864bd5b00/docs "스크린샷 2022-12-23 오후 3.26.48.png")
 
 ### 패널을 닫고 싶을 때
 
@@ -37,4 +37,4 @@ outline: deep
 - 마우스 오른쪽 클릭 > Toggle Preview를 다시 누르기
 - 편집 화면 오른쪽 위에 '미리보기 켜짐' 버튼 누르기 (\*아래 이미지 참고)
 
-![](https://files.readme.io/ac2c4bc-_2022-12-23__3.28.14.png "스크린샷 2022-12-23 오후 3.28.14.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/9e053bd5-d651-4cc5-dd14-c0b4253d2f00/docs "스크린샷 2022-12-23 오후 3.28.14.png")

@@ -12,11 +12,11 @@ outline: deep
 
 SQL select 쿼리로 데이터를 조회하고 칸반 보드 형태로 바꿀 수 있습니다.
 
-![](https://files.readme.io/f22fb49-_2022-10-14__6.50.46.png "스크린샷 2022-10-14 오후 6.50.46.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/0c346392-4cc4-4e96-128a-4d2f58530500/docs "스크린샷 2022-10-14 오후 6.50.46.png")
 
 카드 클릭 시 모달을 띄우고 상세 정보를 조회하거나 데이터를 수정하는 페이지를 만들 수 있어요.
 
-![](https://files.readme.io/3ee1780-_2022-10-14__6.51.04.png "스크린샷 2022-10-14 오후 6.51.04.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/1e16dab8-a4ac-418a-11b0-893d54a94300/docs "스크린샷 2022-10-14 오후 6.51.04.png")
 
 ## 칸반 YAML 설정 방법
 

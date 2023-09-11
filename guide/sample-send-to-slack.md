@@ -10,9 +10,9 @@ outline: deep
 
 셀렉트 어드민에서 http api 블록을 통해, 슬랙으로 데이터를 보낼 수 있습니다. 별도의 복사/붙여넣기 작업을 할 필요없이 특정 주문이나 고객에 대한 정보를 슬랙으로 편리하게 보내보세요. 
 
-![](https://files.readme.io/1ba4539-send-to-slack.png "send-to-slack.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/fc8d6fd6-a289-4987-f8ab-bd446daaa300/docs "send-to-slack.png")
 
-![](https://files.readme.io/25acaf7-send-to-slack-result.png "send-to-slack-result.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/6787853b-35c0-49e9-b298-3a31105df500/docs "send-to-slack-result.png")
 
 ### 일반적인 방법
 

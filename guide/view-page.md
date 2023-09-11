@@ -59,20 +59,20 @@ pages:
 
 저장 버튼을 누릅니다.
 
-![](https://files.readme.io/b088388-save-yaml.png "save-yaml.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/1cbcc1a7-dfdd-488e-80b6-735d46d68b00/docs "save-yaml.png")
 
 ## 완성
 
 화면 열기를 클릭하거나 어드민을 열어서 내용이 맞는지 확인합니다.
 
-![](https://files.readme.io/9433cc8-result-page.png "result-page.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/f7998e89-b1f6-4182-6c73-65b2c42ab700/docs "result-page.png")
 
 ## Tip!
 
 1. 에디터에서 `Cmd + S` 또는 `Control + S` 로 저장가능해요.
 2. (베타) 에디터에서 `control + space` 로 자동완성 표시가 가능해요.
 
-![](https://files.readme.io/4c082f5-autocomplete-feature.png "autocomplete-feature.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/d13772ef-3d00-4b88-509d-7db0cf7dc600/docs "autocomplete-feature.png")
 
 3. `>` 표시와 들여쓰기로 여러줄을 입력할수있어요!
 
@@ -86,10 +86,10 @@ sql: >
 
 4. Cmd+F (Mac OS), Control+F (윈도우)로 검색가능해요.
 
-![](https://files.readme.io/66c09f3-search-in-yaml.png "search-in-yaml.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/73d9e694-4653-465d-18d1-7befbf522100/docs "search-in-yaml.png")
 
 5. 저장전에 Cmd+Enter로 맞는지 테스트해봅니다. (저장할 때도 테스트하고 저장)
 
-![](https://files.readme.io/88daccb-test-and-save-yaml.png "test-and-save-yaml.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/1d3d28ed-db54-45c0-1240-8f834d7f4e00/docs "test-and-save-yaml.png")
 
 에러 메시지를 이해하기 어렵다면, [support@selectfromuser.com](mailto:support@selectfromuser.com) 또는 서비스 내 우측 하단의 채팅으로 문의해주세요.

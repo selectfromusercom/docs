@@ -8,7 +8,7 @@ outline: deep
 
 마크다운을 활용해 내부 사용자에게 안내할 내용을 작성할 수 있습니다.
 
-![](https://files.readme.io/36cb3aa-markdown-block.png "markdown-block.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/1072bb31-cb7d-4dcb-b928-23a6a8881b00/docs "markdown-block.png")
 
 ```yaml
 - path: guide
@@ -44,7 +44,7 @@ outline: deep
 
 A. 네. 블록을 두개 추가하면 됩니다.
 
-![](https://files.readme.io/8439ae9-markdown-query-block.png "markdown-query-block.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/47f0e6b9-8bd8-4c4f-d26b-9813c2414c00/docs "markdown-query-block.png")
 
 ```yaml
 pages:

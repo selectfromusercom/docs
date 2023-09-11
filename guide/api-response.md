@@ -34,7 +34,7 @@ pages:
 
 name_initial 필드를 코드를 통해 새로 만들었습니다. (이름의 이니셜을 생성)
 
-![](https://files.readme.io/3e0bf69-api-res-transf.png "api-res-transf.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/3f2f3e03-26d4-41f2-3dd5-1164a45a8f00/docs "api-res-transf.png")
 
 ## responseRowFn
 
@@ -65,4 +65,4 @@ responseFn, responseRowFn 분류가 표시됩니다.
 에러메시지와 동시에 에러를 재현 가능한 코드가 출력됩니다.  
 코드를 그대로 붙여넣으면 실행됩니다. (동일한 에러)
 
-![](https://files.readme.io/480c098-api-res-error.png "api-res-error.png")
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/2005897f-1b6f-46ff-f0c1-e29e83194b00/docs "api-res-error.png")
