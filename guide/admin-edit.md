@@ -93,21 +93,7 @@ yaml 파일 탭을 이동하여도 수정중인 내용이 유지됩니다. 단, 
 
 ![](https://files.readme.io/03f8a7b-loading-tables.png "loading-tables.png")
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/017ba3f-select-tables.png",
-        "select-tables.png",
-        1300
-      ],
-      "align": "center",
-      "caption": "원본 테이블에는 아무런 영향이 없습니다."
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/017ba3f-select-tables.png)
 
 ![](https://files.readme.io/38aab1f-create-admin-by-tables.png "create-admin-by-tables.png")
 

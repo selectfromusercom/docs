@@ -81,20 +81,7 @@ params:
 
 ![](https://files.readme.io/4b4d2f2-image.png)
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/6220560-image.png",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/6220560-image.png)
 
 ```yaml
 params:
@@ -108,20 +95,7 @@ params:
 
 ![](https://files.readme.io/6f2ca44-image.png)
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/5eabd75-image.png",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/5eabd75-image.png)
 
 ```yaml
 params:

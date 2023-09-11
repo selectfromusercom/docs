@@ -56,21 +56,7 @@ pages:
 
 sqlWith 키 안의 id는 구글 시트의 URL에 있는 고유 ID를 가져와서 입력해주세요. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/1173b77-__2022__12__6___12_22.jpg",
-        "붙여넣은_이미지_2022__12__6__오후_12_22.jpg",
-        1674
-      ],
-      "align": "center",
-      "caption": "구글 시트 고유 아이디(ID)"
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/1173b77-__2022__12__6___12_22.jpg)
 
 ### 구글 시트 데이터 공유 설정
 
