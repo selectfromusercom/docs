@@ -306,6 +306,7 @@ export default defineConfig({
           items: [
             { text: '샘플 예제', link: 'https://showroom.selectfromuser.com' },
             { text: '로그인', link: 'https://app.selectfromuser.com' },
+            { text: '(과거) YAML reference', link: '/docs/yaml-reference' },
           ]
         },
       ]
