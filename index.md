@@ -18,12 +18,12 @@ hero:
 features:
   - title: 튜토리얼 및 가이드
     details: docs.selectfromuser.com
-    link: https://docs.selectfromuser.com
+    link: https://docs.selectfromuser.com/guide/
   - title: 샘플 예제 화면
     details: showroom.selectfromuser.com
     link: https://showroom.selectfromuser.com
   - title: 업데이트 내역
     details: docs.selectfromuser.com/changelog
-    link: https://docs.selectfromuser.com/changelog
+    link: https://docs.selectfromuser.com/changelog/
 ---
 
