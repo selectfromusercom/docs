@@ -62,7 +62,8 @@
     { "source": "/docs/%EB%A1%9C%EA%B9%85", "destination": "/guide/logging", "permanent": true },  
     { "source": "/docs/sql-%EC%BF%BC%EB%A6%AC-%EB%B3%B4%EC%95%88", "destination": "/guide/secure-sql-query", "permanent": true },  
     { "source": "/docs/api-%EB%B3%B4%EC%95%88", "destination": "/guide/secure-api", "permanent": true },  
-    { "source": "/docs/components-library", "destination": "/guide/component-library", "permanent": true }
+    { "source": "/docs/components-library", "destination": "/guide/component-library", "permanent": true },
+    { "source": "/docs", "destination": "/guide", "permanent": true }
   ],
   "cleanUrls": true
 }
