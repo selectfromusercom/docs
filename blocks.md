@@ -333,6 +333,69 @@ blocks:
     perPage: 10
 ```
 
+### total
+
+별도의 쿼리없이 [서버사이드 페이지네이션](/guide/view-page-pagination#서버-사이드-페이지네이션-server-side-pagination-도-가능한가요){target="_blank"}을 적용할 수 있습니다. 
+
+테이블 내역의 전체개수를 total로 설정합니다. 
+
+반드시 `page_offset`, `page_limit`, `mode: remote`과 함께 써야합니다.
+
+::: code-group
+
+```yaml [MySQL]
+- type: query
+  resource: mysql.qa
+  sqlType: select
+  sql: >
+    SELECT * 
+    FROM properties
+    LIMIT :page_offset, :page_limit
+  paginationOptions:
+    enabled: true
+    perPage: 10
+    total: 5000
+  mode: remote
+```
+
+```yaml [MongoDB]
+- type: query
+  resource: mongodb
+  sqlType: select
+  query:
+    collection: properties
+    find: {}
+    limit: ${{page_limit}}
+    skip: ${{page_offset}}
+  paginationOptions:
+    enabled: true
+    perPage: 10
+    total: 5000
+  mode: remote
+```
+
+:::
+
+### jumpPage
+
+숫자를 입력해 특정 페이지로 바로 이동할 수 있어요.
+
+```yaml
+paginationOptions:
+  enabled: true
+  jumpPage: true
+```
+
+### position: top
+
+페이지네이션 UI를 테이블 위쪽으로 옮길 수 있습니다. 
+
+```yaml
+paginationOptions:
+  enabled: true
+  position: top
+```
+
 ## blocks.searchOptions
 
 조회한 내역들을 검색할 수 있게 지원합니다. 프론트 레벨에서 검색하기 때문에 서버 부하를 줄일 수 있는 장점이 있습니다. 
@@ -391,6 +454,24 @@ searchOptions:
     # hidden: true
     thClass: text-center
     tdClass: text-center
+```
+
+### tableOptions.cell
+
+`cell: true`를 추가하면 특정셀을 마우스/엔터로 선택하거나 키보드 화살표로 이동할 수 있어요. 
+
+columns, updateOptions와 함께 사용하면 특정셀을 수정하고 저장할 수도 있습니다.
+
+```yaml
+tableOptions:
+  cell: true
+columns:
+  inflow:
+    updateOptions:
+      type: query
+      resource: mysql.qa
+      sql: UPDATE wine_stock SET inflow = :value WHERE id = :id
+      toast: 저장
 ```
 
 ## blocks.sortOptions
@@ -842,7 +923,6 @@ selectOptions는 테이블의 row를 선택할 때 쓰입니다. [actions](/acti
 
 테이블의 row를 선택할 때, 체크박스 영역을 눌러야만 선택할 수 있게 설정하게 됩니다. 
 
-
 ```yaml
 blocks:
 - type: query
@@ -854,3 +934,52 @@ blocks:
 ## [blocks.actions](/actions)
 
 선택한 1개 또는 여러 항목으로 다음 화면을 진행합니다.
+
+## blocks.onRowClick
+
+특정 행을 클릭하여 모달을 열거나 액션을 실행할 수 있습니다.
+
+**<주의>** 
+
+- 행row 클릭시 1개의 openModal이나 openAction만 실행할 수 있어요. 
+- actions로 생기는 버튼은 헷갈리지 않게 hidden으로 숨겨주세요.
+
+**viewModal 모달 열기**
+
+```yaml
+onRowClick:
+  openModal: true
+viewModal:
+  blocks:
+    - type: query
+```
+
+**modals 모달 열기**
+
+```yaml
+onRowClick:
+  openModal: modal-path
+modals:
+  - path: modal-path
+```
+
+**actions 실행**
+
+```yaml
+onRowClick:
+  openAction: action1
+actions:
+  - name: action1
+    hidden: true
+```
+
+**actions로 URL 열기**
+
+```yaml
+onRowClick:
+  openAction: action2
+actions:
+  - name: action2
+    openUrl: https://www.selectfromuser.com
+    hidden: true
+```

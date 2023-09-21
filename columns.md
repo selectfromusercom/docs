@@ -350,6 +350,17 @@ columns:
       canceled: red
 ```
 
+## columns.copy
+
+특정 컬럼에 복사 아이콘을 추가합니다. 아이콘 클릭 한번으로 데이터를 클립보드에 복사할 수 있어요. 다른곳에 붙여넣기(ctrl+v) 해보세요.
+
+```yaml
+columns:
+  email:
+    label: 이메일
+    copy: true
+```
+
 ## columns.buttons
 
 컬럼 안에 버튼을 추가할 수 있습니다. 
