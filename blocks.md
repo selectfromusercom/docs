@@ -610,14 +610,96 @@ blocks:
 
 ### display: form
 
-조회한 데이터를 form 양식으로 보여줍니다.
+조회한 데이터를 form 양식으로 보여주거나, 데이터를 입력하는데 사용할 수 있어요.
+
+주로 viewModal, modals나 tabOptions, type: left/right 등을 사용해 부모블록의 하위에 쓰입니다.
+
+**조회 예제**
+
+```yaml
+viewModal:
+  blocks:
+  - type: query
+    resource: mysql.qa
+    sqlType: select
+    sql: SELECT id, name, email, created_at FROM users WHERE id = :id
+    params:
+      - key: id
+        valueFromRow: id      
+    display: form
+```
+
+**수정 예제**
+
+```yaml
+viewModal:
+  blocks:
+  - type: query
+    resource: mysql.qa
+    sqlType: update
+    sql: >
+      UPDATE users
+      SET updated_at = NOW()
+        , name = :name
+        , email = :email
+      WHERE id = :id
+    params:
+      - key: id
+        valueFromRow: id
+      - key: name
+      - key: email       
+    display: form
+```
+
+#### display: form + INSERT
+
+데이터를 추가하는 사용자에게 더 알맞는 입력폼을 만들어보세요.
+
+**formOptions**로 양식 너비를 조절할 수 있어요.
+
+- `firstLabelWidth`: 줄 가장 왼쪽 최소 너비
+- `labelWidth`: 레이블 최소 너비
+- `width`: 입력 폼 너비
+
+**추가 예제**
 
 ```yaml
 blocks:
-- type: query
-  sqlType: select
-  ...
-  display: form
+  - type: query
+    resource: mysql.qa
+    sqlType: insert
+    sql: >
+      INSERT INTO products
+      SET created_at = NOW()
+        , main_image = :main_image
+        , name = :name
+        , code = :code
+        , price = :price
+        , sell_status = :sell_status
+    display: form
+    formOptions:
+      firstLabelWidth: 200px
+      labelWidht: 100px
+      width: 400px
+    params:
+      - key: main_image
+        label: 대표이미지
+        title: 상품 추가
+        required: true
+      - key: name
+        label: 상품명
+        group: prod
+      - key: code
+        label: 상품코드
+        group: prod        
+      - key: price
+        label: 판매가
+        format: number
+        group: sell        
+      - key: sell_status
+        label: 판매여부
+        group: sell  
+        width: 200px
 ```
 
 ### display: col-1
@@ -648,7 +730,7 @@ blocks:
 
 ### display: col-1/2 + updateOptions
 
-`beta` updateOptions, columns.editable 과 함께 사용 시 display: col-1/2 뷰를 유지하면서 데이터를 수정할 수 있게 됩니다.
+updateOptions, columns.editable 과 함께 사용 시 display: col-1/2 뷰를 유지하면서 데이터를 수정할 수 있게 됩니다.
 
 ```yaml
 blocks:
@@ -709,7 +791,24 @@ blocks:
 
 ### display: card
 
+데이터를 카드형태로 보여줍니다.
+
+```yaml
+blocks:
+- type: query
+  resource: mysql.qa
+  sqlType: select
+  sql: >
+    SELECT id, name, memo
+    FROM properties
+    ORDER BY id ASC 
+    LIMIT 100
+  display: card
+```
+
 ### display: metric
+
+지표 데이터를 보여줄 때 유용합니다.
 
 #### metricOptions.type: bar
 
@@ -753,58 +852,6 @@ blocks:
         - Inactive users
       value: c
       total: 전체 사용자 # value 값들의 전체 합과 라벨
-```
-
-### display: form
-
-#### display: form + INSERT
-
-> Beta 베타 오픈 기능
-
-데이터를 추가하는 사용자에게 더 알맞는 입력폼을 만들 수 있어요. 
-
-- `formOptions`
-  - `firstLabelWidth`: 줄 가장 왼쪽 최소 너비
-  - `labelWidth`: 레이블 최소 너비
-  - `width`: 입력 폼 너비
-
-```yaml
-blocks:
-  - type: query
-    resource: mysql.qa
-    sqlType: insert
-    sql: >
-      INSERT INTO products
-      SET created_at = NOW()
-        , main_image = :main_image
-        , name = :name
-        , code = :code
-        , price = :price
-        , sell_status = :sell_status
-    display: form
-    formOptions:
-      firstLabelWidth: 200px
-      labelWidht: 100px
-      width: 400px
-    params:
-      - key: main_image
-        label: 대표이미지
-        title: 상품 추가
-        required: true
-      - key: name
-        label: 상품명
-        group: prod
-      - key: code
-        label: 상품코드
-        group: prod        
-      - key: price
-        label: 판매가
-        format: number
-        group: sell        
-      - key: sell_status
-        label: 판매여부
-        group: sell  
-        width: 200px
 ```
 
 ### display: calendar

@@ -17,12 +17,11 @@ outline: deep
 
 `center`, `full`, `side`
 
-### viewModal.displayParentRow
+### viewModal.displayParentRow <Badge type="warning" text="Deprecated" />
 
 ```yaml
 viewModal:
-  displayParentRow: true
-  
+  displayParentRow: true  
 ```
 
 ### viewModal.dismissible

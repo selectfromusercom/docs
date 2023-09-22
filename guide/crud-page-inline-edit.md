@@ -18,7 +18,6 @@ outline: deep
 ```yaml
 viewModal:
   name: 제휴사 상세조회
-  displayParentRow: false
   minHeight: 800px
 	- type: query
 	  resource: mysql.qa

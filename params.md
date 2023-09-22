@@ -51,7 +51,10 @@ params:
 ## params.valueFromSheet
 
 CSV 데이터를 업로드하고 params로 매칭한 다음, DB에 데이터를 저장할 수 있습니다.
-- `sheetOptions.append`: 파일 여러개를 한번에 올릴 수 있어요.
+
+- `sheetOptions.append: false`: 처음에 추가한 파일만 적용됩니다.
+- `multiple: true`: 여러개의 파일을 한번에 선택하고 올릴 수 있습니다.
+- `accept`: 선택 가능한 파일 유형을 제한할 수 있어요.
 
 ```yaml
 actions:
@@ -71,7 +74,9 @@ actions:
     - key: sheet
       format: sheet
       # sheetOptions:
-      #   append: true
+      #   append: false
+      # multiple: true
+      # accept: .csv,.xls,.xlsx
     - key: name
       valueFromSheet: 상품명    
     - key: code

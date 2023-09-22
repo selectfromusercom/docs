@@ -12,7 +12,6 @@ outline: deep
 
 ```yaml
 viewModal:
-  displayParentRow: false
   # 너비 설정
   width: 90%
   
@@ -38,7 +37,6 @@ viewModal:
 
 ```yaml
 viewModal:
-  displayParentRow: false
   # 모달 제목
   name: 제휴사 상세조회
   
@@ -63,8 +61,7 @@ viewModal:
 
 ```yaml
 viewModal:
-  displayParentRow: false
-  # 안전하게 창닫
+  # 안전하게 창닫기
   dismissible: false
   
   blocks:

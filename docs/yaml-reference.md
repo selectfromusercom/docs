@@ -1,3 +1,9 @@
+::: warning
+`Deprecated` (과거) YAML reference는 더이상 업데이트되지 않습니다. 
+
+[신규 Reference 페이지](/layout)를 확인해주세요.
+:::
+
 # YAML reference
 
 셀렉트에서 지원하는 YAML 기본 정보들을 한 곳에 모아, 쉽게 이해하고 참고할 수 있게 하였습니다.

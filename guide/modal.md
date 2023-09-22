@@ -123,7 +123,6 @@ viewModal:
       ORDER BY id ASC 
       LIMIT 100
     viewModal:
-      displayParentRow: false
       blocks:
       - type: query
         resource: mysql.qa
