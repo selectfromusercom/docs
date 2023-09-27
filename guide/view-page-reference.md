@@ -22,7 +22,7 @@ outline: deep
 
 ### refs 여러개 param 이용 시
 
-param 키 없이 `{{parameter1}}`, `{{parameter2}}` 해당 양식으로 사용하시면 됩니다.
+param 키 없이 <span v-pre>`{{parameter}}`</span> 해당 양식으로 사용하시면 됩니다.
 
 ```yaml
 refs:
