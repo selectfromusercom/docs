@@ -59,21 +59,46 @@ menus:
     - email::test@selectfromuser.com
 ```
 
-> 📘 
-> 
-> Tip! 알아두기
-> 
-> - 권한그룹과 이메일을 함께 쓸 수 있습니다. (ex: 팀원, 팀장, email::)
-> - roles가 있지만 list 또는 view 가 비어있다면 모두에게 권한없음 처리됩니다.
+## 사용 팁
 
-조회 권한이 없으면 메뉴가 비활성화 됩니다. 
+권한그룹과 이메일을 함께 쓸 수 있습니다. (ex: 팀원, 팀장, `email::example@domain.com`)
+
+roles가 있지만 list 또는 view 가 비어있다면 모두에게 권한없음 처리됩니다.
+
+- 조회 권한이 없으면 메뉴가 비활성화 됩니다. 
 
 ![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/f755299b-a9c3-4ffd-570b-9cb9aee29200/docs "deactivate-menu.png")
 
-조회 권한이 없을 때, 경로(path)로 직접 접속해도 내용을 볼 수 없습니다. 
+- 조회 권한이 없을 때, 경로(path)로 직접 접속해도 내용을 볼 수 없습니다. 
 
 ![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/a43a27d2-25e5-4427-9d7d-889cbe1a1f00/docs "access-403.png")
 
-권한 그룹 관리 하단에 메뉴별 적용된 권한을 볼 수 있습니다. 
+- 권한 그룹 관리 하단에 메뉴별 적용된 권한을 볼 수 있습니다. 
 
 ![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/e7827830-9d8b-480e-e3bf-81bed5a30a00/docs "access-control.png")
+
+roles는 menus.path의 상하위/리다이렉트 개념에 영향받지 않습니다. 반드시 path별로 각각 관리해주세요.
+
+**예제**
+
+menus.redirect 이용 예제
+- path: customers로 접속시 바로 customers/list로 바로 이동(리다이렉트)
+- path: customers에 roles를 적용해도 customers/list에 적용되지 않음
+- 원하는 경우 customer/list에 roles를 적용해야함
+
+```yaml
+menus:
+  - path: customers
+    name: 고객 관리
+    placement: menu-only
+    redirect: customers/list
+    group: cust
+
+  - path: customers/list
+    name: 고객목록 조회
+    placement: tab-only
+    group: cust
+    roles: 
+      list:
+        - email::example@domain.com
+```
