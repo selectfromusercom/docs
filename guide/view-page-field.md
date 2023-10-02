@@ -23,7 +23,7 @@ SQL 쿼리 결과의 컬럼들이 모두 표시됩니다.
 
 쿼리 결과에서 지정한 필드만 표시됩니다.
 
-```text
+```yaml
 - path: properties/active
   blocks:
   - type: query
