@@ -31,10 +31,20 @@ pages:
         valueFromEnv: true
 ```
 
-> 🚧 
-> 
-> YAML 표기법에 따라 v: {{API_VERSION}} 으로 입력하는 경우 의도와 다르게 작동합니다.  
-> v: "{{API_VERSION}}" 으로 입력 필요합니다.
+::: tip
+
+YAML 표기법에 따라 
+
+<span v-pre>`'고객아이디': customer-{{id}}`</span>와 같이 value부분이 string 타입으로 시작하는 경우에는 `""`로 감싸지 않습니다.
+
+<span v-pre>`v: "{{API_VERSION}}"`</span> 같은 형태는 `""`로 감싸서 입력해주세요.
+
+<span v-pre>`v: {{API_VERSION}}`</span> 으로 입력하는 경우 의도와 다르게 작동합니다.
+
+:::
+
+key: API_VERSION 값이 `api_sample_key`라면 <span v-pre>`v: "{{API_VERSION}}"`</span>이 <span v-pre>`v: "api_sample_key"`</span>와 같이 처리됩니다.
+
 
 ## 파라메터 처리
 
