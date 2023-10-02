@@ -31,7 +31,7 @@ pages:
       method: POST
       url: https://httpbin.org/anything?query=1
       headers:
-        Authorization: Bearer "{{ API_TOKEN_DEV }}"
+        Authorization: Bearer {{ API_TOKEN_DEV }}
     params:
       - key: API_TOKEN_DEV
         valueFromEnv: true
