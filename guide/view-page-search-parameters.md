@@ -9,7 +9,7 @@ outline: deep
 > 📘 
 > 
 > 본 문서는 mysql 을 기준으로 작성되었습니다.  
-> postgresql을 이용하시는 경우 "검색 조건 PostgreSQL 유의사항"을 참고해주시기 바랍니다.
+> postgresql을 이용하시는 경우 ["검색 조건 PostgreSQL 유의사항"](/guide/tip-postgresql)을 참고해주시기 바랍니다.
 
 ## 필수 검색 조건
 
