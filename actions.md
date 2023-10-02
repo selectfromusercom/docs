@@ -153,24 +153,39 @@ actions:
 
 선택한 row의 값을 가져와서, 파라미터에 이용할 수 있습니다. 
 
-```yaml
+::: code-group
+
+```yaml [MySQL]
 selectOptions:
   enabled: true
 actions:
 - label: 버튼  
   type: query
-  ...
-  params:
-  - key: id
-    valueFromSelectedRows: true
-    valueFromSelectedRowsAs: id
-```
-
-```yaml
+  resource: mysql.qa
+  sqlType: update
+  sql: UPDATE products SET sell_status = 'true' WHERE id = :id
   params:
   - key: id
     valueFromSelectedRows: id
 ```
+
+```yaml [HTTP]
+selectOptions:
+  enabled: true
+actions:
+- label: 버튼  
+  type: http
+  axios:
+    method: POST
+    url: https://httpbin.selectfromuser.com/anything
+    data:
+      id: "{{id}}"
+  params:
+  - key: id
+    valueFromSelectedRows: id
+```
+
+:::
 
 ## actions.confirmText
 
