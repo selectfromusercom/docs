@@ -35,9 +35,15 @@ export default defineConfig({
         //   ]
         // },
         {
+          text: '시작하기',
+          items: [
+            { text: '셀렉트란', link: '/guide/'},
+            { text: 'Quickstart', link: '/guide/quickstart'},            
+          ]
+        },
+        {
           text: '어드민 만들기',
           items: [
-            { text: '시작하기', link: '/guide/'},
             { 
               text: '어드민 편집', 
               link: '/guide/admin-edit', 
