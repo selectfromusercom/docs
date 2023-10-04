@@ -64,7 +64,8 @@
     { "source": "/docs/api-%EB%B3%B4%EC%95%88", "destination": "/guide/secure-api", "permanent": true },  
     { "source": "/docs/components-library", "destination": "/guide/component-library", "permanent": true },
     { "source": "/docs/", "destination": "/guide/", "permanent": true },
-    { "source": "/docs", "destination": "/guide/", "permanent": true }
+    { "source": "/docs", "destination": "/guide/", "permanent": true },
+    { "source": "/start", "destination": "/guide/", "permanent": true }
   ],
   "cleanUrls": true
 }

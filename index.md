@@ -10,7 +10,7 @@ hero:
   actions:
     - theme: brand
       text: 시작하기
-      link: /start
+      link: /guide/
     - theme: alt
       text: 레퍼런스
       link: /layout
