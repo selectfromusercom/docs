@@ -10,7 +10,18 @@ outline: deep
 
 ## pages.path
 
-개별 페이지를 메뉴와 연결할 수 있습니다.
+개별 페이지와 메뉴를 path 정보로 연결합니다.
+
+```yaml
+menus:
+- path: user
+- path: payment
+
+pages:
+- path: user
+- path: payment
+```
+
 
 ## [pages.blocks](/blocks)
 
@@ -19,6 +30,7 @@ outline: deep
 ```yaml
 menus:
 - path: user
+
 pages:
 - path: user
   blocks:
