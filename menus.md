@@ -216,6 +216,43 @@ menus:
 
 ## menus.icon
 
+메뉴 이름(name) 앞에 U, NEW, TIP 같은 내용이나 약어를 텍스트로 추가하거나 mdi 아이콘을 추가할 수 있어요.
+
+- 지원하는 아이콘: https://pictogrammers.github.io/@mdi/font/7.2.96/
+- 필요한 아이콘을 찾기 쉬운 사이트: https://pictogrammers.com/library/mdi/
+
+```yaml
+menus:
+- path: user
+  icon: U
+  name: 사용자  
+- path: payment
+  icon: mdi-cash
+  name: 결제관리
+```
+
 ## menus.iconEnd
 
+메뉴 이름(name) 뒤쪽에 텍스트를 추가하거나 mdi 아이콘을 추가할 수 있어요. icon과 함께 사용할 수도 있습니다.
+
+```yaml
+menus:
+- path: payment
+  iconEnd: mdi-cash
+  name: 결제관리
+```
+
 ## menus.menus
+
+메뉴 아래에 메뉴를 추가하고 접고 펼 수 있습니다.
+
+```yaml
+menus:
+- path: user
+  name: 사용자 관리
+  placement: expand-only
+
+  menus:
+  - path: active-user
+    name: 활성 사용자
+```
