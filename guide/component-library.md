@@ -295,8 +295,10 @@ blocks:
       buttons:
       - label: 삭제 
         type: danger-light
+        openAction: delete
       - label: 수정 
         type: primary
+        openAction: edit
 ```
 
 #### Button color

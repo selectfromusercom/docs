@@ -402,7 +402,7 @@ modals:
 
 ### buttons.openAction
 
-버튼을 눌렀을 때 액션을 실행합니다. 
+버튼buttons을 눌렀을 때 액션actions을 실행합니다.
 
 - `buttons.openAction`과 `actions.name`으로 연결됩니다. 
 
