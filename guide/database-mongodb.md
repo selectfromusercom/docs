@@ -234,3 +234,67 @@ blocks:
           - close
     reloadAfterSubmit: true
 ```
+
+## JavaScript 코드 활용
+
+query 키와 함께 queryFn을 이용하면 MongoDB JavaScript 코드를 그대로 사용할 수 있어요.
+
+- `query:` 키에 collection 정보를 넣어주세요. 
+- params 값들을 감싸지 않고 queryFn 안에 그대로 변수로 쓸 수 있습니다.
+
+**insertOne 예제**
+
+```yaml
+pages:
+- path: create-new-property
+  blocks:
+  - type: query
+    resource: mongodb
+    name: 신규자산 추가
+    sqlType: insert
+    query:
+      collection: properties
+    queryFn: |
+      properties.insertOne({
+        name: name,
+        created_at: new Date()
+      });
+    params:
+      - key: name    
+    reloadAfterSubmit: true  
+```
+
+**find 예제**
+
+```yaml
+pages:
+- path: find-list-by-date
+  blocks:
+  - type: query
+    resource: mongodb
+    sqlType: select
+    name: 자산 필터조회
+    query:
+      collection: properties
+    queryFn: |
+      const where = {}
+
+      if (_id) where._id = ObjectId(_id)
+      if (name) where.name = { $regex: name }
+
+      if (created_at1 && created_at2) {
+        where.created_at = {
+          $gte: new Date(created_at1).toISOString(),
+          $lte: new Date(created_at2).toISOString(),          
+        }
+      }
+
+      properties.find(where).toArray()
+    
+    params:
+    - key: _id
+    - key: name
+    - key: created_at
+      format: date
+      range: true
+```
