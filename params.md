@@ -492,7 +492,9 @@ params:
   - published: 배포완료
 ```
 
-dropdownMultiple 여러개 선택 방식
+### dropdownMultiple
+
+여러개 선택 방식
 
 ```yaml
 params:
@@ -504,6 +506,24 @@ params:
   - ad: 광고
   dropdownMultiple: true
   dropdownSize: 3 # 보여지는 선택 내역 개수
+```
+
+### dropdown selectOptions
+
+Dropdown 기능의 자동완성, 복수 선택, 키보드 사용을 지원하는 등 개선된 경험을 제공합니다. (`datalist`도 같은 방식으로 지원합니다.)
+
+```yaml
+params:
+  - key: item
+    label: 신규 카테고리 추가
+    selectOptions:
+      enabled: true
+    dropdown:
+      - 호텔
+      - 리조트
+      - 캠핑
+      - 독채
+      - 수영장
 ```
 
 ## params.datalist
