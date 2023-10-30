@@ -237,6 +237,33 @@ pages:
       height: 80vh
 ```
 
+### type: comment
+
+사용자, 담당자 로그가 필요한 화면에 댓글, 노트, 메모를 남겨보세요.
+
+- `path`: 코멘트의 저장위치를 설정합니다.
+- 계정정보의 이름, 이메일 등이 기록됩니다.
+- 코멘트 추가, 수정, 삭제 지원
+- "나에게만 표시" 기능 지원
+
+```yaml
+- type: query
+  resource: mysql.qa
+  sql: SELECT id, name, created_at FROM customers LIMIT 5
+  columns:
+    id:
+      hidden: false
+  viewModal: 
+    mode: side
+    useColumn: name
+    blocks:
+      - type: comment
+        path: customers/{{id}}
+        params:
+          - key: id
+            valueFromRow: true
+```
+
 ## blocks.containerClass
 
 블록 영역의 container 스타일을 바꿀 수 있습니다. (예시: `containerClass: container mx-auto`)
