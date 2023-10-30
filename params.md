@@ -337,6 +337,42 @@ pages:
         forEach: true
 ```
 
+### format: storage
+
+별도의 저장소 설정(S3, API)없이도 파일 업로드를 지원합니다. 
+- format: storage를 적용할 params.key는 중복되지 않는 이름으로 자유롭게 설정해주세요.
+- `path`: 파일 저장위치를 지정합니다.
+
+현재 지원 스펙
+- 이미지 업로드 지원 (추후 다양한 파일 지원예정)
+- 어드민 사용자 대상 프라이빗 URL만 지원
+- (외부공유는 차단) 추후 public 용도(공유용, 공지, 게시글)로 활용할수있게 오픈예정
+
+세부옵션
+- `multiple`: 여러개 업로드
+- `max`: 최대 개수 제한
+- `accept`: 파일 타입 제한
+
+```yaml
+- type: query
+  resource: mysql
+  sqlType: update
+  sql: UPDATE wines SET name = :name WHERE id = :id
+  params:
+    - key: id
+      valueFromRow: true
+    - key: name
+      label: 상품명
+    - key: data
+      label: 상품 이미지
+      format: storage
+      path: /wine/{{id}}/images
+      multiple: true
+      # max: 2    
+      accept: image/*
+      # accept: .jpg, .png
+```
+
 ### format: address
 주소와 우편번호를 입력해야할 때, 별도의 설치나 개발없이 
 셀렉트에 내장된 Daum Postcode Service로 주소를 검색하고 우편번호까지 한번에 입력할 수 있어요.
