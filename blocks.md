@@ -200,7 +200,7 @@ blocks:
 
 blocks 아래에 탭을 자유롭게 추가할 수 있어요. 탭 스타일도 지정할 수 있습니다. 
 
-- tabOptions.type: button, button full, full
+- tabOptions.type: button, button full, full, plain
   - 탭 타입(스타일)을 지정합니다.
 - tabOptions.keep: true
   - 선택했던 탭을 유지합니다.
@@ -212,6 +212,7 @@ blocks:
     type: button # 버튼형 탭
     # type: button full # 전체폭 버튼형 탭
     # type: full # 전체폭 탭
+    # type: plain
     # keep: true
     autoload: 1
     tabs:
