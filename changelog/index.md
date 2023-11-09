@@ -4,6 +4,23 @@
 
 # 변경내역
 
+## 2023-10-30
+
+### Add
+
+- comment block
+- format: storage
+- tab type: plain
+- 감사로그 개선
+- 사용자활동로그 개선
+- 로컬 CLI 지원
+
+### Fix
+
+- 대시보드 화면에서 지표 csv 다운로드시 문제 해결
+- 소속 팀이 여러개인 경우 로딩이 느려지는 문제 해결
+- datalistFromQuery 문제 해결
+- defaultValueFromRow
 
 ## 2023-09-01
 
