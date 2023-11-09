@@ -22,6 +22,29 @@
 - datalistFromQuery 문제 해결
 - defaultValueFromRow
 
+https://blog.selectfromuser.com/newsletter-2023-10/
+
+## 2023-09-25
+
+### Add
+
+- inline cell edit
+- text copy
+- onRowClick
+- paginationOptions jumpPage, position: top
+
+### Fix & Improvement
+
+- API키 수정시 파일 편집하지 않아도 바로 반영되게 개선
+- requestFn에서 다른블록 사용가능
+- block.visible 개선
+- csv 다운로드/일괄입력시 엑셀 xls, xlsx 지원
+- server side pagination시 total 쿼리 없이 임의로 지정 가능
+- 테이블 헤더고정(fixed) 버그 수정 (prepend, append, sticky)
+- selectOptions로 행 선택시 카운트 표시 개선
+
+https://blog.selectfromuser.com/newsletter-2023-09/
+
 ## 2023-09-01
 
 주소 검색, 달력 뷰와 다양한 개발 옵션
@@ -46,6 +69,5 @@
 - display col-1, col-2, col-3, col-4 개선
 - tdClass, tdClass 개선
 - 어드민 첫 접속시 커넥션 풀 안정성 개선
-
 
 https://blog.selectfromuser.com/newsletter-2023-08/
