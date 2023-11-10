@@ -131,7 +131,7 @@ input 안에 값을 입력할 때 format을 지정합니다.
 format: number
 format: date 
 format: time
-format: datetime-local
+format: datetime
 format: text 
 format: editor
 format: color
