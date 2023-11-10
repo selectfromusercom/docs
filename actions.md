@@ -134,6 +134,22 @@ actions:
     single: true
 ```
 
+## actions.openModal
+
+액션 버튼을 눌러 모달을 열 수 있습니다.
+
+```yaml
+actions:
+  - label: 모달 열기
+    single: true
+    openModal: modal1
+
+modals:
+  - path: modal1
+    type: query
+    resource: mysql
+```
+
 ## actions.showDownload
 
 데이터 다운로드 기능을 액션 버튼에 추가할 있어요. 
