@@ -135,6 +135,7 @@ export default defineConfig({
                 { text: 'API KEY 안전하게 이용', link: '/guide/api-key' },
                 { text: 'GraphQL 사용', link: '/guide/api-graphql' },
                 { text: 'API 응답을 코드로 처리', link: '/guide/api-response' },
+                { text: 'API 예제', link: '/guide/api-example' },
               ],
             },
             { 
