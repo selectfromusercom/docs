@@ -258,6 +258,21 @@ formatFn을 통해 JavaScript 코드를 이용할 수 있어요. (column 단위�
         }[value] || value
 ```
 
+### formatFn: datetime, datetime-local, datetimeA, datetimeA-local
+
+datetime을 통해 날짜/시간 데이터를 원본 그대로 표기하거나, datetime-local로 로컬 타임존에 맞춰서 표기할 수 있어요.
+
+datetimeA로 AM, PM으로 표기도 가능합니다. 
+
+```yaml
+columns:
+  created_at:
+    formatFn: datetime
+    # formatFn: datetime-local
+    # formatFn: datetimeA
+    # formatFn: datetimeA-local
+```
+
 ### formatFn: splitComma
 
 필드 안의 데이터를 `Comma (,)`로 구분하고 보기 쉽게 표기해줍니다. 
