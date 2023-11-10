@@ -2,9 +2,11 @@
 # outline: deep
 ---
 
-# 변경내역
+# Updates
 
 ## 2023-10-30
+
+![](https://blog.selectfromuser.com/content/images/size/w1000/2023/10/newletter-2023-11-thumbnail.png)
 
 ### Add
 
@@ -25,6 +27,8 @@
 https://blog.selectfromuser.com/newsletter-2023-10/
 
 ## 2023-09-25
+
+![](https://blog.selectfromuser.com/content/images/size/w1600/2023/09/onRowClick-formoptions3.png)
 
 ### Add
 

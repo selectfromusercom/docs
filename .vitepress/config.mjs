@@ -270,7 +270,7 @@ export default defineConfig({
       '/changelog': [
         {
           items: [
-            { text: 'CHANGELOG.md', link: '/changelog/'},
+            { text: '✨ 최근 업데이트 내역', link: '/changelog/'},
             { text: '2023-08-03', link: '/changelog/2023-08-03' },
             { text: '2023-07-07', link: '/changelog/2023-07-07' },
             { text: '2023-06-08', link: '/changelog/2023-06-08' },
