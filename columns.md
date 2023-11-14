@@ -273,9 +273,25 @@ columns:
     # formatFn: datetimeA-local
 ```
 
+### formatFn: number, number0, numberPart
+
+숫자에 천단위로 콤마(comma) 표시를 할 수 있습니다. 금액 정보 등을 표기할때 유용해요. 
+
+- `number` : 콤마 표시 (빈값이면 빈칸)
+- `number0` : 콤마 표시 (빈값이면 0)
+- `numberPart` : 콤마 표시 (앞뒤 문자열은 유지. 예를 들면 KRW 1500 -> KRW 1,500)
+
+```yaml
+columns:
+  paid_amount:
+    formatFn: number
+    # formatFn: number0
+    # formatFn: numberPart  
+```
+
 ### formatFn: splitComma
 
-필드 안의 데이터를 `Comma (,)`로 구분하고 보기 쉽게 표기해줍니다. 
+필드 안의 데이터가 `comma (,)`로 구분된 경우 보기 좋게 뱃지로 표기해줍니다. 태그나 카테고리 정보를 보여줄 때 유용해요. 
 
 ```yaml
 columns:
