@@ -134,8 +134,38 @@ viewModal:
 
 - [buttons.openModal](/columns#buttons-openmodal)
 
+**modals와 viewModal 비교**
 
+::: code-group
 
+```yaml [modals]
+- type: query
+  resource: mysql
+  sqlType: select
+  sql: SELECT id, name, email, created_at FROM users LIMIT 10
+  columns:
+    id:
+      openModal: user
+  modals:
+    - path: user
+      useColumn: id
+      blocks:
+        - type: query
+```
+
+```yaml [viewModal]
+- type: query
+  resource: mysql
+  sqlType: select
+  sql: SELECT id, name, email, created_at FROM users LIMIT 10
+  columns:
+  viewModal:
+    useColumn: id
+    blocks:
+      - type: query
+```
+
+:::
 
 
 ### modals.path
