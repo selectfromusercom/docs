@@ -105,6 +105,17 @@ pages:
         WHERE id = :id 
 ```
 
+### viewModal.width, height
+
+모달의 너비(width), 높이(height)를 설정할 수 있습니다. 숫자(px)와 퍼센트(%)를 지원합니다.
+
+```yaml
+viewModal:
+  width: 1000px
+  # width: 70%
+  height: 800px
+```
+
 -------
 
 ## [`blocks.modals`](/blocks#blocks-modals)
