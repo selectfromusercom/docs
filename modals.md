@@ -132,6 +132,7 @@ viewModal:
 
 불러온 데이터를 클릭하거나 버튼을 통해 모달을 열게됩니다. 
 
+- [columns.openModal](/columns#columns-openmodal)
 - [buttons.openModal](/columns#buttons-openmodal)
 
 **modals와 viewModal 비교**

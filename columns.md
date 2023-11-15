@@ -392,6 +392,20 @@ columns:
     copy: true
 ```
 
+## columns.openModal
+
+특정 컬럼의 값들을 링크로 만들고, 링크를 클릭하여 모달을 열 수 있습니다.
+
+```yaml
+columns:
+  id:
+  name:
+    openModal: orders-:id
+modals:
+  - path: orders-:id
+    blocks:
+```
+
 ## columns.buttons
 
 컬럼 안에 버튼을 추가할 수 있습니다. 
