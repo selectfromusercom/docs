@@ -1006,6 +1006,20 @@ blocks:
     selectOnCheckboxOnly: true
 ```
 
+## blocks.refs
+
+특정 컬럼의 값을 링크로 만들고 클릭하여 새창을 열 수 있습니다. 
+
+조회 결과 row의 다른 컬럼 값을 가져와서 변수에 넣을 수 있어요.
+
+```yaml
+sql: SELECT id, name, code FROM coupons LIMIT 10
+columns:
+refs:
+  - column: name
+    href: https://search.naver.com/search.naver?query={{code}}
+```
+
 ## [blocks.actions](/actions)
 
 선택한 1개 또는 여러 항목으로 다음 화면을 진행합니다.
@@ -1058,3 +1072,4 @@ actions:
     openUrl: https://www.selectfromuser.com
     hidden: true
 ```
+
