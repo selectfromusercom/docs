@@ -406,6 +406,20 @@ modals:
     blocks:
 ```
 
+## columns.openUrl
+
+특정 컬럼의 값을 링크로 만들고, 링크를 클릭하여 새창으로 특정 URL 주소를 열 수 있습니다.
+
+클릭한 필드 row의 다른 값을 가져와서 변수에 사용 가능합니다.
+
+```yaml
+columns:
+  id:
+    openUrl: https://search.naver.com/search.naver?query={{name}}
+    # target: _self
+  name:
+```
+
 ## columns.buttons
 
 컬럼 안에 버튼을 추가할 수 있습니다. 
