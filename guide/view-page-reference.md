@@ -43,5 +43,4 @@ refs:
   - column: id
     param: tx_id
     href: https://btc.com/ko/btc/transaction/{{tx_id}}
-    target: _blank
 ```
