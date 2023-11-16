@@ -34,13 +34,14 @@ refs:
 
 테이블 조회결과 id 를 클릭하면 <https://btc.com/ko/btc/transaction/{{tx_id}}> 새창으로 여는 샘플입니다. 
 
+id 컬럼 클릭시 sql 쿼리의 tx_id의 값이 {{tx_id}}로 들어갑니다.
+
 ```yaml
 - type: query
   resource: mysql.qa
-  sql: SELECT id, name FROM test_10k LIMIT 3
+  sql: SELECT id, name, tx_id FROM test_10k LIMIT 3
   sqlType: select
   refs:
   - column: id
-    param: tx_id
     href: https://btc.com/ko/btc/transaction/{{tx_id}}
 ```
