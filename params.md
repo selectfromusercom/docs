@@ -692,6 +692,37 @@ pages:
           `type` IN ('GUESTHOUSE', 'BNB') OR `type` IS NULL
 ```
 
+## params.orderBy
+
+테이블 정렬을 서버에서 할 수 있어요. 여러개의 정렬 옵션을 추가할 수 있습니다. 
+
+- SQL 예시: ORDER BY created_at ASC
+- params에서 선택한 값에 따라 orderBy 키와 매칭합니다. 
+- 매칭된 orderBy의 값을 <span v-pre>`{{ orderBy }}`</span>에 넣습니다. 
+
+```yaml
+- type: query
+  resource: mysql
+  name: 회원목록
+  sqlType: select
+  sql: >
+    SELECT *
+    FROM user_profiles
+    {{ orderBy }}
+    LIMIT 100
+  autoload: false
+  params:
+    - key: order
+      label: 정렬
+      defaultValue: 최근가입순
+      dropdown:
+        - 최근가입순
+        - 오래된가입순
+      orderBy:
+        '최근가입순': ORDER BY created_at DESC
+        '오래된가입순': ORDER BY created_at ASC
+```
+
 ## [pages.params](/pages#pages-params)
 
 페이지 단위로 파라미터(parameter)를 지정하여, 여러 블록의 데이터를 필터 조회할 수 있습니다. 
