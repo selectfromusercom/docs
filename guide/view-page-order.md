@@ -24,6 +24,11 @@ name 오름차순에 이어 id 내림차순으로도 정렬하면 아래와 같�
 
 입력 파라메터가 orderBy와 일치하는 경우 안전하게 쿼리에 추가됩니다.
 
+**예제** 
+
+- params dropdown에서 선택한 값(예: 최근가입순)에 맞춰 orderBy의 키가 매칭됩니다. 
+- 매칭된 키의 값을 <span v-pre>`{{ orderBy }}`</span>로 넘겨줍니다. 
+
 ```yaml
 - type: query
   resource: mysql
