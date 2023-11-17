@@ -265,6 +265,44 @@ pages:
             valueFromRow: true
 ```
 
+## blocks.reloadAfterSubmit
+
+데이터 추가, 수정 후에 관련 페이지를 새로고침 하고 싶을 때 이용해요.
+
+insert, update 쿼리 블록이나 post api 블록으로 반영된 데이터를 바로 조회하고 싶을 때 적합해요.
+
+```yaml
+- type: query
+  resource: mysql
+  sqlType: insert
+  sql: >
+    INSERT INTO products
+    SET created_at = NOW()
+      , name = :name
+  params:
+    - key: name
+      label: 상품명
+  reloadAfterSubmit: true
+```
+
+## blocks.resetAfterSubmit
+
+insert 쿼리 블록이나 post api 블록 등을 실행한 다음에 입력 값을 초기화하여 빈칸으로 만들고 싶을 때 사용해요.
+
+```yaml
+- type: query
+  resource: mysql
+  sqlType: insert
+  sql: >
+    INSERT INTO properties
+    SET created_at = NOW()
+      , name = :name
+  params:
+    - key: name
+      label: 자산명
+  resetAfterSubmit: true
+```
+
 ## blocks.containerClass
 
 블록 영역의 container 스타일을 바꿀 수 있습니다. (예시: `containerClass: container mx-auto`)
