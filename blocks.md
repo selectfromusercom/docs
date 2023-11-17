@@ -671,6 +671,35 @@ blocks:
   showButtonWithResult: true
 ```
 
+### chartOptions.y
+
+차트의 y축에 해당하는 항목을 복수로 선택할 수 있어요.
+
+```yaml
+chartOptions:
+  type: bar
+  x: date
+  y: 
+    - company
+    - user
+```
+
+### chartOptions.backgroundColor
+
+차트의 배경색을 바꿀 수 있어요.
+
+```yaml
+chartOptions:
+  type: bar
+  x: date
+  y: 
+    - company
+    - user
+  backgroundColor:
+    company: "RoyalBlue"
+    user: "#0D6EFD"
+```
+
 ## blocks.display
 
 
