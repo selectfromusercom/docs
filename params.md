@@ -450,14 +450,23 @@ radio:
 
 ## params.checkbox
 
-체크박스로 값을 선택하여 입력합니다. 
+체크박스로 값을 선택하여 입력합니다.
 
 ```yaml
 params:
-- key: active
+- key: is_guest
+  defaultValue: Y
   checkbox:
-    true: active
-    false: inactive
+    true: Y
+    false: N
+```
+
+```yaml
+params:
+- key: is_guest
+  checkbox:
+    true: ACTIVE
+    false: ''
 ```
 
 ## params.dropdown
