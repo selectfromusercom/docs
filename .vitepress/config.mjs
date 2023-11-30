@@ -208,6 +208,10 @@ export default defineConfig({
               text: 'MongoDB', 
               link: '/guide/database-mongodb', 
             },
+            {
+              text: 'BigQuery', 
+              link: '/guide/database-bigquery',
+            },            
             { 
               text: 'JSON 데이터 사용', 
               link: '/guide/database-json', 
