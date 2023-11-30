@@ -493,6 +493,26 @@ searchOptions:
   placeholder: '입력한 검색어로 찾습니다.'
 ```
 
+### ignoreCase
+
+검색시 알파벳 대소문자 무시 설정을 합니다. (기본값은 `ignoreCase: true`)
+
+```yaml
+searchOptions:
+  enabled: true
+  ignoreCase: false
+```
+
+### ignoreWhitespace
+
+검색시 공백 무시 설정을 합니다. (기본값은 `ignoreWhitespace: true`)
+
+```yaml
+searchOptions:
+  enabled: true
+  ignoreWhitespace: false
+```
+
 ## blocks.tableOptions
 
 - `fixed`: 테이블의 머리행(header)을 고정할 수 있습니다. 
