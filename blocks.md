@@ -817,6 +817,38 @@ blocks:
         width: 200px
 ```
 
+#### divider, title, subtitle
+
+필드와 속성이 여러개면 구분이 필요합니다. 구분선이나 묶음 이름을 넣을 수 있어요.
+
+```yaml
+viewModal:
+  useColumns: id
+  blocks:
+    - type: query
+      resource: mysql.qa
+      sqlType: select
+      sql: >
+        select *
+        from properties
+        where id = :id
+      params:
+        - key: id
+          valueFromRow: id
+      display: form
+      columns:
+        id:
+          title: 기본정보
+          subtitle: 상품에 대한 기본정보
+        name:                
+        address:
+          divider: true
+          title: 상세정보
+        type:          
+        hero_image_url:
+        memo:
+```
+
 ### display: col-1
 
 조회한 데이터를 피봇 테이블로 보여줍니다.
