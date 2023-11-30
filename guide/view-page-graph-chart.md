@@ -103,3 +103,6 @@ chartOptions:
 - [파이/도넛 차트에 퍼센트 비율 표시하기](https://ask.selectfromuser.com/t/topic/44)
 - [일자별 쿼리로 지표 그래프 그리기 (증감률, 퍼센트 표시) ](https://ask.selectfromuser.com/t/topic/41)
 - [여러개 바 리스트 그리기 BarList](https://ask.selectfromuser.com/t/barlist/42)
+- [서로 다른 막대 그래프 하나로 쌓기](https://ask.selectfromuser.com/t/stacked/84)
+- [차트 x,y 축 바꾸기](https://ask.selectfromuser.com/t/x-y/85)
+- [선형 차트 포인트 제거, 부드럽게 처리](https://ask.selectfromuser.com/t/topic/86)
