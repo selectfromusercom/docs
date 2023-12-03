@@ -67,21 +67,42 @@ layout:
 
 ### layout.head
 
-`Beta` 셀렉트 어드민 `<head>` 태그에 필요한 스크립트(script)를 임베드할 수 있습니다.
+`Beta` 셀렉트 어드민 `<head>` 태그에 필요한 스크립트(script)를 임베드할 수 있습니다. 구글 애널리틱스(Google Analytics)나 앰플리튜드(Amplitude) 등 분석 서비스의 스크립트를 활용해보세요.
 
 ::: info
 베타(Beta) 기간 후에 이용 요금제에 따라 관련 기능 지원 정책이 달라집니다. 궁금하신 사항은 [이메일](mailto:support@selectfromuser.com) 등으로 문의해주세요. 
 :::
 
+**구글 애널리틱스(Google Analytics, GA) 예제**
+
+GA 태그
+```html
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+```
+
+셀렉트 임베드 방법
 ```yaml
 layout:
   head:
     - tag: script
-      defer: true
-      data-domain: noitaler.selectfromuser.com
-      src: https://plausible.io/js/script.js
+      async: true
+      src: https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX
+    
+    - tag: script
       innerHTML: |
-        console.log('session:', window.selectAdminSession)
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-XXXXXXXXXX');
 ```
 
 ## [`menus`](/menus)
