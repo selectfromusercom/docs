@@ -421,16 +421,18 @@ params:
 ```yaml
 params:
 - key: status
+  defaultValue: draft
   radio:
   - value: draft
     label: 초안
   - value: published
-    label: 배포 완료ㄷ
+    label: 배포 완료
 ```
 
 ```yaml
 params:
 - key: status
+  defaultValue: draft
   radio:
   - draft: 초안
   - published: 배포 완료
