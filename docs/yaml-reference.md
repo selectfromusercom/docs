@@ -1456,7 +1456,7 @@ blocks:
     display: form
     formOptions:
       firstLabelWidth: 200px
-      labelWidht: 100px
+      labelWidth: 100px
       width: 400px
     params:
       - key: main_image
