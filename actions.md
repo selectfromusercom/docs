@@ -146,8 +146,9 @@ actions:
 
 modals:
   - path: modal1
-    type: query
-    resource: mysql
+    blocks:
+      - type: query
+        resource: mysql
 ```
 
 ## actions.showDownload
