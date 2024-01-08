@@ -136,16 +136,18 @@ actions:
 
 ## actions.openModal
 
-액션 버튼을 눌러 모달을 열 수 있습니다.
+액션 버튼을 눌러 모달을 열 수 있습니다. 
+
+modal의 path에 parameter(e.g. `:id`)를 넣어 부모 데이터나 URL에서 가져와서 사용할 수 있습니다.
 
 ```yaml
 actions:
   - label: 모달 열기
     single: true
-    openModal: modal1
+    openModal: modal1-:id
 
 modals:
-  - path: modal1
+  - path: modal1-:id
     blocks:
       - type: query
         resource: mysql
