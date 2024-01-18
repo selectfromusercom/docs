@@ -694,3 +694,14 @@ modals:
 - path: column-openmodal
   blocks: ...
 ```
+
+## columns.style
+
+특정 컬럼에 CSS Style을 입힐 수 있어요. 원하는 스타일을 적용해보세요.
+
+```yaml
+columns:
+  user_name:
+    style: |
+      text-align: center;
+```
