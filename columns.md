@@ -615,7 +615,7 @@ actions:
 
 ## columns.updateOptions + display: form
 
-Update 쿼리 블록을 조회/수정 모드를 껐다 켜는 방식으로 사용할 수 있습니다. 
+Update 쿼리 블록을 조회/수정 모드를 껐다 켜는 방식으로 사용할 수 있습니다. 적용시 수정버튼이 추가됩니다.
 
 ```yaml
 blocks:
