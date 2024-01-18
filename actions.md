@@ -70,6 +70,8 @@ actions:
 
 ## actions.placement
 
+액션 버튼의 위치를 위(상단), 아래(하단), 왼쪽(좌), 오른쪽(우) 변경하고 싶을 때
+
 ```yaml
 placement: right top
 placement: right bottom  
