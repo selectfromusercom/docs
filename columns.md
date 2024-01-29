@@ -289,6 +289,20 @@ columns:
     # formatFn: numberPart  
 ```
 
+### formatFn: number + prefix, suffix
+
+formatFn number류 뒤에 prefix(접두어)와 suffix(접미어) 내용을 순서대로 붙일 수 있어요.
+
+```yaml
+columns:
+  won_price:
+    type: number
+    formatFn: 
+      - number0
+      - "12개월 " # prefix
+      - " 만" # suffix
+```
+
 ### formatFn: splitComma
 
 필드 안의 데이터가 `comma (,)`로 구분된 경우 보기 좋게 뱃지로 표기해줍니다. 태그나 카테고리 정보를 보여줄 때 유용해요. 
