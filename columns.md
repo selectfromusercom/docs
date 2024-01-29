@@ -157,6 +157,21 @@ columns:
 }
 ```
 
+### format: viewer
+
+에디터로 입력한 데이터를 viewer 기능으로 보여줍니다. display: col-1, 2, post와 함께 적용할 수도 있어요.
+
+```yaml
+- type: query
+  resource: mysql.qa
+  sqlType: select
+  sql: >
+    SELECT id, wine_id, amount, memo FROM wine_stock LIMIT 5
+  columns:
+    memo:
+      format: viewer
+      width: 50vw
+```
 
 ## columns.valueAs
 
