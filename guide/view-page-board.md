@@ -80,3 +80,73 @@ kanbanOptions:
             - reviewed
             defaultValueFromRow: review_status
 ```
+
+## 칸반 세부옵션
+
+### 드래그 & 드롭
+
+- 카드 이동시 useColumn에 해당하는 컬럼의 updateOptions를 그대로 실행
+- `confirm: true` 추가시 확정전에 변경 전/후 표기
+
+```yaml
+kabanOptions:
+  enabled: true
+  useColumn: review_status
+  drag: true
+columns:
+  id:
+  review_status:
+    updateOptions:
+      type: query
+      resource: mysql
+      sqlType: update
+      sql: >
+        UPDATE product_reviews
+        SET status = :value
+        WHERE id = :id
+      confirm: true
+```
+
+### 리스트 직접 정의하고 정렬하기
+
+```yaml
+kabanOptions:
+  enabled: true
+  useColumn: review_status
+  useList: 
+    - peding
+    - in_review
+    - done 
+    - null # 값이 null일 때
+```
+
+### 리스트 라벨 색깔 부여
+
+```yaml
+kabanOptions:
+  enabled: true
+  useColumn: review_status
+  color:
+    pending: red
+    in_review: yellow
+    done: green
+```
+
+### columns buttons 지원
+
+- buttons를 통해 openAction, openModal을 지원합니다.
+
+```yaml
+kabanOptions:
+  enabled: true
+  useColumn: review_status
+columns:
+  review_status:
+    buttons:
+      - label: 삭제
+        openAction: delete-card
+        class: w-50 text-red-700
+      - label: 메모 수정
+        openModal: edit-memo
+        class: w-50 text-green-700
+```
