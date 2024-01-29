@@ -722,7 +722,6 @@ chartOptions:
 
 ## blocks.display
 
-
 ### display: form
 
 조회한 데이터를 form 양식으로 보여주거나, 데이터를 입력하는데 사용할 수 있어요.
@@ -1045,6 +1044,39 @@ blocks:
         color: gray-500
 ```
 
+### display: timeline
+
+조회한 데이터를 날짜로 정렬해서 타임라인 뷰로 볼 수 있습니다. 변경내역 조회 등에 활용할 수 있어요.
+- `timelineOptions`로 정렬 기준 컬럼을 선택하고 template을 지정할 수 있습니다. 
+- template은 HTML 적용 가능합니다.
+- 조회한 값을 template 안에서 `{{value}}` 방식으로 사용해요.
+
+```yaml
+- type: query
+  resource: mysql.qa
+  sqlType: select
+  sql: >    
+    SELECT payments.created_at, users.name AS user_name, 
+      payments.plan_name,
+      payments.json->"$.before" as `before`,
+      payments.json->"$.after" as `after`
+    FROM payments, users
+    where payments.team_id = :team_id 
+      and users.id = payments.user_id
+    ORDER BY payments.id DESC LIMIT 10
+  display: timeline
+  timelineOptions:
+    useColumn: created_at    
+    template: |
+      <b>{{user_name}}</b>
+      {{plan_name}}: <b>{{after}}</b>로 변경했습니다.
+
+    # template: <b>{{user_name}}</b>님이 플랜을 변경했습니다. <b>{{plan_name}}</b> {{before}} → {{after}}
+    # template:
+    #   Payment create: <b>{{user_name}}</b>님이 새로운 플랜을 결제하였습니다.
+  params:
+    - key: team_id
+```
 
 # blocks.submitButton
 
