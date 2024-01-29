@@ -765,6 +765,21 @@ viewModal:
     display: form
 ```
 
+### display: form inline
+
+form 양식 데이터를 inline 형태로 나열해줍니다.
+
+```yaml
+- type: query
+  resource: mysql.qa
+  sqlType: select
+  sql: SELECT id, name, email, created_at FROM users WHERE id = :id
+  params:
+    - key: id
+      valueFromRow: id      
+  display: form inline
+```
+
 #### display: form + INSERT
 
 데이터를 추가하는 사용자에게 더 알맞는 입력폼을 만들어보세요.
