@@ -392,6 +392,24 @@ params:
     label: 우편번호
 ```
 
+### format: tiptap
+
+상용 에디터 tiptap 옵션을 추가하였습니다. 
+- 외부이미지, 상품상세를 디비에 바로 넣을 수 있어요.
+
+```yaml
+- type: query
+  resource: mysql.qa
+  sqlType: insert
+  sql: >
+    INSERT wine_notes SET created_at = NOW(), memo = :memo WHERE wine_id = :wine_id
+  params:
+    - key: wine_id      
+    - key: memo
+      format: tiptap
+      width: 800px
+```
+
 ## params.formatString
 
 입력 포맷을 특정 방식으로 설정할 수 있습니다. 
