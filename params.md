@@ -829,3 +829,14 @@ params:
     # validateButtonLabel: 사업자조회    
     # validText: 새로운 사업자번호 사용가능      
 ```
+
+## params.minlength, maxlength
+
+입력값의 최소, 최대 글자수를 제한할 수 있습니다.
+
+```yaml
+params:
+  - key: phone
+    minlength: 1
+    maxlength: 12
+```
