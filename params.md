@@ -791,3 +791,41 @@ params:
         return ''
       }
 ```
+
+## params.validateFromQuery
+
+쿼리를 validateFn과 함께 사용할 수 있습니다.
+- showValidateButton: 버튼 노출시 엔터 또는 클릭해야 검증 
+- validateButtonLabel: 버튼 라벨
+- validText: 서버단 체크했을때 메시지
+
+```yaml
+params:
+  - key: business_number
+    label: 사업자번호 
+    required: true
+    validateFromQuery:
+      type: query
+      resource: mysql.qa
+      sql: >
+        SELECT COUNT(id) AS count
+        FROM properties
+        WHERE business_number = :value
+      validateFn: |
+        if (+validateFromQuery.count > 0) {
+          return '중복된 사업자번호 입니다.'
+        }
+        return true
+    validateFn: |
+      if (param.value.length != 10) {
+        return '사업자번호(10자리)를 입력해주세요.'
+      }
+      if (!isFinite(+param.value)) {
+        return '사업자 번호만 입력해주세요.'
+      }
+      return true      
+
+    # showValidateButton: true
+    # validateButtonLabel: 사업자조회    
+    # validText: 새로운 사업자번호 사용가능      
+```
