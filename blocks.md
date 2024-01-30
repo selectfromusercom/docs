@@ -287,7 +287,7 @@ insert, update 쿼리 블록이나 post api 블록으로 반영된 데이터를 
 
 ## blocks.resetAfterSubmit
 
-insert 쿼리 블록이나 post api 블록 등을 실행한 다음에 입력 값을 초기화하여 빈칸으로 만들고 싶을 때 사용해요.
+INSERT 쿼리 블록이나 POST API 블록 등을 실행한 다음에 입력 값을 초기화하여 빈칸으로 만들고 싶을 때 사용해요.
 
 ```yaml
 - type: query
