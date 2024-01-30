@@ -4,6 +4,33 @@
 
 # Updates
 
+## 2024-01-30
+
+### Add
+- formatFn prefix, postfix 지원
+- kanbanOptions 드래그&드롭 지원
+- timeline view
+- format: tiptap 상용 에디터 지원
+- form 수정모드 추가
+- validateFromQuery
+- autosubmit
+- params.options
+
+### Improvement & Fix
+- 서비스 속도 개선
+- 서버사이드 페이지네이션 검색 지원
+- fix formatFn: number issue
+- fix selectOptions issue
+
+## 2023-12-04
+
+### Add
+- Bigquery 지원
+- 로그인 화면 커스텀
+- 스크립트 임베드
+- 테이블 검색 옵션 추가
+- 차트 세부옵션 추가
+
 ## 2023-10-30
 
 ![](https://blog.selectfromuser.com/content/images/size/w1000/2023/10/newletter-2023-11-thumbnail.png)
