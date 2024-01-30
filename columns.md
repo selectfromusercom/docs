@@ -304,9 +304,9 @@ columns:
     # formatFn: numberPart  
 ```
 
-### formatFn: number + prefix, suffix
+### formatFn: number + prefix, postfix
 
-formatFn number류 뒤에 prefix(접두어)와 suffix(접미어) 내용을 순서대로 붙일 수 있어요.
+formatFn number류 뒤에 prefix(접두어)와 postfix(접미어) 내용을 순서대로 붙일 수 있어요.
 
 ```yaml
 columns:
@@ -315,7 +315,7 @@ columns:
     formatFn: 
       - number0
       - "12개월 " # prefix
-      - " 만" # suffix
+      - " 만" # postfix
 ```
 
 ### formatFn: splitComma
