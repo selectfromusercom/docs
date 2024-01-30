@@ -611,6 +611,33 @@ params:
   datalistFromQuery: ...
 ```
 
+## params.options
+
+- `multiple`: 여러개 선택
+- `taggable`: 태그 형태로 관리
+- `pushTags`: 입력한 값을 옵션에 계속 남겨둘지 여부
+- prefix, postfix: 입력한 값에 붙는 접두어, 접미어
+- display: document, display: table를 option와 함께 사용하면 표현 스타일을 바꿀 수 있습니다.
+
+```yaml
+params:
+  - key: vintage
+    datalist: []
+    selectOptions:
+      enabled: true
+    multiple: true
+    taggable: true
+    group: vintage
+    # display: document
+    options: 
+      price:
+        label: 가격
+        placeholder: 00,000
+        prefix: 정가
+        postfix: 원
+        class: text-right
+```
+
 ## params.disabled
 
 입력 필드를 비활성화 시킵니다. 마우스 커서도 올릴 수 없게 됩니다. 
