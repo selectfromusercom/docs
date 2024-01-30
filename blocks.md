@@ -303,6 +303,27 @@ insert 쿼리 블록이나 post api 블록 등을 실행한 다음에 입력 값
   resetAfterSubmit: true
 ```
 
+## blocks.autosubmit
+
+SELECT 쿼리 블록이나 GET API 등 데이터 조회 블록에서 params와 함께 필터 검색을 할 때 사용됩니다. 
+
+조회버튼을 누르지않고 값을 입력하면 바로 제출하게 되는 옵션입니다.
+
+```yaml
+- type: query
+  resource: mysql.qa
+  sqlType: select
+  sql: >
+    SELECT id, name FROM wine_stock
+    WHERE name LIKE CONCAT('%', :category ,'%')
+  autosubmit: true
+  params:
+    - key: category
+      dropdown:
+        - 블랑
+        - 트라피체
+```
+
 ## blocks.containerClass
 
 블록 영역의 container 스타일을 바꿀 수 있습니다. (예시: `containerClass: container mx-auto`)
