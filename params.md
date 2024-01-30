@@ -555,6 +555,20 @@ params:
       - 수영장
 ```
 
+## params.selectOptions
+
+- `multiple`: 여러개 선택
+- `taggable`: 태그 형태로 관리
+- `pushTags`: 입력한 값을 옵션에 계속 남겨둘지 여부
+
+```yaml
+selectOptions:
+  enabled: true
+  multiple: true
+  taggable: true
+  pushTags: true
+```
+
 ## params.datalist
 
 값 선택 시, 보여지는 내용과 실제 저장되는 데이터를 구분해서 처리할 수 있습니다. 
@@ -613,29 +627,68 @@ params:
 
 ## params.options
 
-- `multiple`: 여러개 선택
-- `taggable`: 태그 형태로 관리
-- `pushTags`: 입력한 값을 옵션에 계속 남겨둘지 여부
+여러 단계로 값을 입력하는등 복잡한 데이터 처리가 필요할 때
+
+- requestSubmitFn과 함께 사용해보세요.
 - prefix, postfix: 입력한 값에 붙는 접두어, 접미어
-- display: document, display: table를 option와 함께 사용하면 표현 스타일을 바꿀 수 있습니다.
+- display 추가 옵션: document, table
+- display가 없으면 기본값(plain) 적용
+
+**예제**
+`id: form`으로 입력받아서 JS코드로 처리하고 `id: query_add_wine`의 쿼리를 실행
 
 ```yaml
-params:
-  - key: vintage
-    datalist: []
-    selectOptions:
-      enabled: true
-    multiple: true
-    taggable: true
-    group: vintage
-    # display: document
-    options: 
-      price:
-        label: 가격
-        placeholder: 00,000
-        prefix: 정가
-        postfix: 원
-        class: text-right
+- type: query
+  resource: mysql.qa
+  sqlType: insert
+  sql: >
+    INSERT INTO wine_stock
+    SET name = :name,
+        vintage = :vintage,
+        price = :price
+  params:
+    - key: name
+    - key: vintage
+    - key: price
+  id: query_add_wine
+  hidden: true
+  toast: 추가했습니다.
+
+- type: query
+  resource: mysql.qa
+  sqlType: insert
+  sql: >
+    SELECT 1
+  requestSubmitFn: |
+    for (const i in form.params.vintage.value) {
+      const vintage_value = form.params.vintage.value[i]
+
+      query_add_wine.params.name.value = form.params.name.value
+      query_add_wine.params.vintage.value = vintage_value
+
+      query_add_wine.params.price.value = form.params.vintage.options.price.value[i] || null
+
+      console.log(form.params.vintage)
+
+      await query_add_wine.trigger()
+    }
+  id: form
+  params:
+    - key: vintage
+      datalist: []
+      selectOptions:
+        enabled: true
+      multiple: true
+      taggable: true
+      group: vintage
+      # display: document
+      options: 
+        price:
+          label: 가격
+          placeholder: 00,000
+          prefix: 정가
+          postfix: 원
+          class: text-right
 ```
 
 ## params.disabled
