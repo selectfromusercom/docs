@@ -304,11 +304,53 @@ export default defineConfig({
             { text: 'Layout', link: '/layout' },
             { text: 'Menus', link: '/menus' },
             { text: 'Pages', link: '/pages' },
-            { text: 'Blocks', link: '/blocks' },
-            { text: 'Columns', link: '/columns' },
-            { text: 'Params', link: '/params' },
-            { text: 'Modals', link: '/modals' },
-            { text: 'Actions', link: '/actions' },
+            { 
+              text: 'Blocks', 
+              link: '/blocks',
+              items: [
+                { text: 'query', link: '/blocks#type-query' },
+                { text: 'http', link: '/blocks#type-http' },
+                { text: 'pagination', link: '/blocks#blocks-paginationoptions' },
+                { text: 'chart', link: '/blocks#blocks-chartoptions' },
+              ]
+            },
+            { 
+              text: 'Columns', 
+              link: '/columns',
+              items: [
+                { text: 'format', link: '/columns#columns-format' },
+                { text: 'formatFn', link: '/columns#columns-formatfn' },
+                { text: 'buttons', link: '/columns#buttons' },
+                { text: 'updateOptions', link: '/columns#columns-updateoptions' },
+              ]              
+            },
+            { 
+              text: 'Params', 
+              link: '/params', 
+              items: [
+                { text: 'format', link: '/params#params-format' },
+                { text: 'formatString', link: '/params#params-formatstring' },
+                { text: 'datalist', link: '/params#params.datalist' },
+                { text: 'validate', link: '/params#params-validatefn' },
+              ]                     
+            },
+            { 
+              text: 'Modals', 
+              link: '/modals',
+              items: [
+                { text: 'valueFromRow', link: '/modals#viewmodal-params-valuefromrow' },
+                { text: 'usePage', link: '/modals#viewmodal-usepage' },
+              ]
+            },
+            { 
+              text: 'Actions', 
+              link: '/actions',
+              items: [
+                { text: 'query', link: '/actions#type-query' },
+                { text: 'http', link: '/actions#type-http' },
+                { text: 'valueFromSelectedRows', link: '/actions#actions-params-valuefromselectedrows' },
+              ]              
+            },
           ]
         },
         {
