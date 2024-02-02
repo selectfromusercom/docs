@@ -205,12 +205,17 @@ export default defineConfig({
               link: '/guide/database-modify', 
             },
             { 
-              text: 'MongoDB', 
-              link: '/guide/database-mongodb', 
-            },
-            {
-              text: 'BigQuery', 
-              link: '/guide/database-bigquery',
+              text: '데이터베이스별 가이드', 
+              items: [
+                { 
+                  text: 'MongoDB', 
+                  link: '/guide/database-mongodb', 
+                },
+                {
+                  text: 'BigQuery', 
+                  link: '/guide/database-bigquery',
+                },
+              ] 
             },            
             { 
               text: 'JSON 데이터 사용', 
