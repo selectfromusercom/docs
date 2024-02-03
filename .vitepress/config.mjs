@@ -37,7 +37,8 @@ export default defineConfig({
           text: '시작하기',
           items: [
             { text: '셀렉트란', link: '/guide/'},
-            { text: 'Quickstart', link: '/guide/quickstart'},            
+            { text: 'Quickstart', link: '/guide/quickstart'},
+            { text: '핵심 스키마', link: '/guide/core-schema'},
           ]
         },
         {
