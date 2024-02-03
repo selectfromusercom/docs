@@ -377,13 +377,13 @@ export default defineConfig({
     ], 
 
     search: {
-      // provider: 'local',
-      provider: 'algolia',
-      options: {
-        appId: process.env.ALGOLIA_APP_ID,
-        apiKey: process.env.ALGOLIA_API_KEY,
-        indexName: process.env.ALGOLIA_INDEX_NAME,
-      }
+      provider: 'local',
+      // provider: 'algolia',
+      // options: {
+      //   appId: process.env.ALGOLIA_APP_ID,
+      //   apiKey: process.env.ALGOLIA_API_KEY,
+      //   indexName: process.env.ALGOLIA_INDEX_NAME,
+      // }
     },
     editLink: {
       pattern: 'https://github.com/selectfromusercom/docs/edit/main/:path'
