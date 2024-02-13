@@ -390,12 +390,12 @@ params:
       address: roadAddress # address 파라미터에 검색 결과인 roadAddress 값을 넣습니다.
       postcode: zonecode # postcode 파라미터에 zonecode 값을 넣습니다.
       latitude: x # latitude 파라미터에 x 값을 넣습니다. 
-      longtitude: y # longtitude 파라미터에 y 값을 넣습니다. 
+      longitude: y # longitude 파라미터에 y 값을 넣습니다. 
   - key: postcode
     label: 우편번호
   - key: latitude
     label: 위도
-  - key: longtitude
+  - key: longitude
     label: 경도
 ```
 
