@@ -307,54 +307,54 @@ export default defineConfig({
         {
           text: 'Reference',
           items: [
-            { text: 'Layout', link: '/layout' },
-            { text: 'Menus', link: '/menus' },
-            { text: 'Pages', link: '/pages' },
+            { text: 'Layout', link: '/reference#layout' },
+            { text: 'Menus', link: '/reference#menus' },
+            { text: 'Pages', link: '/reference#pages' },
             { 
               text: 'Blocks', 
-              link: '/blocks',
+              link: '/reference#blocks',
               items: [
-                { text: 'query', link: '/blocks#type-query' },
-                { text: 'http', link: '/blocks#type-http' },
-                { text: 'pagination', link: '/blocks#blocks-paginationoptions' },
-                { text: 'chart', link: '/blocks#blocks-chartoptions' },
+                { text: 'query', link: '/reference#type-query' },
+                { text: 'http', link: '/reference#type-http' },
+                { text: 'pagination', link: '/reference#blocks-paginationoptions' },
+                { text: 'chart', link: '/reference#blocks-chartoptions' },
               ]
             },
             { 
               text: 'Columns', 
-              link: '/columns',
+              link: '/reference#columns',
               items: [
-                { text: 'format', link: '/columns#columns-format' },
-                { text: 'formatFn', link: '/columns#columns-formatfn' },
-                { text: 'buttons', link: '/columns#buttons' },
-                { text: 'updateOptions', link: '/columns#columns-updateoptions' },
+                { text: 'format', link: '/reference#columns-format' },
+                { text: 'formatFn', link: '/reference#columns-formatfn' },
+                { text: 'buttons', link: '/reference#columns-buttons' },
+                { text: 'updateOptions', link: '/reference#columns-updateoptions' },
               ]              
             },
             { 
               text: 'Params', 
-              link: '/params', 
+              link: '/reference#params', 
               items: [
-                { text: 'format', link: '/params#params-format' },
-                { text: 'formatString', link: '/params#params-formatstring' },
-                { text: 'datalist', link: '/params#params.datalist' },
-                { text: 'validate', link: '/params#params-validatefn' },
+                { text: 'format', link: '/reference#params-format' },
+                { text: 'formatString', link: '/reference#params-formatstring' },
+                { text: 'datalist', link: '/reference#params-datalist' },
+                { text: 'validate', link: '/reference#params-validatefn' },
               ]                     
             },
             { 
               text: 'Modals', 
-              link: '/modals',
+              link: '/reference#modals',
               items: [
-                { text: 'valueFromRow', link: '/modals#viewmodal-params-valuefromrow' },
-                { text: 'usePage', link: '/modals#viewmodal-usepage' },
+                { text: 'valueFromRow', link: '/reference#viewmodal-params-valuefromrow' },
+                { text: 'usePage', link: '/reference#viewmodal-usepage' },
               ]
             },
             { 
               text: 'Actions', 
-              link: '/actions',
+              link: '/reference#actions',
               items: [
-                { text: 'query', link: '/actions#type-query' },
-                { text: 'http', link: '/actions#type-http' },
-                { text: 'valueFromSelectedRows', link: '/actions#actions-params-valuefromselectedrows' },
+                { text: 'query', link: '/reference#type-query' },
+                { text: 'http', link: '/reference#type-http' },
+                { text: 'valueFromSelectedRows', link: '/reference#actions-params-valuefromselectedrows' },
               ]              
             },
           ]
@@ -364,7 +364,7 @@ export default defineConfig({
           items: [
             { text: '샘플 예제', link: 'https://showroom.selectfromuser.com' },
             { text: '로그인', link: 'https://app.selectfromuser.com' },
-            { text: '(과거) YAML reference', link: '/docs/yaml-reference' },
+            // { text: '(과거) YAML reference', link: '/docs/yaml-reference' },
           ]
         },
       ]

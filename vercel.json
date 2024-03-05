@@ -65,7 +65,15 @@
     { "source": "/docs/components-library", "destination": "/guide/component-library", "permanent": true },
     { "source": "/docs/", "destination": "/guide/", "permanent": true },
     { "source": "/docs", "destination": "/guide/", "permanent": true },
-    { "source": "/start", "destination": "/guide/", "permanent": true }
+    { "source": "/start", "destination": "/guide/", "permanent": true },
+    { "source": "/layout", "destination": "/reference", "permanent": true },
+    { "source": "/menus", "destination": "/reference", "permanent": true },
+    { "source": "/pages", "destination": "/reference", "permanent": true },
+    { "source": "/blocks", "destination": "/reference", "permanent": true },
+    { "source": "/columns", "destination": "/reference", "permanent": true },
+    { "source": "/params", "destination": "/reference", "permanent": true },
+    { "source": "/modals", "destination": "/reference", "permanent": true },
+    { "source": "/actions", "destination": "/reference", "permanent": true }
   ],
   "cleanUrls": true
 }
