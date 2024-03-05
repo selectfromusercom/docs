@@ -21,4 +21,4 @@ params:
 - key: category
 ```
 
-params에 대해 더 자세한 정보는 **Reference > [params](/params)** 페이지에서 확인해보세요.
+params에 대해 더 자세한 정보는 **Reference > [params](/reference#params)** 페이지에서 확인해보세요.

@@ -75,7 +75,7 @@ paginationOptions:
 
 sqlTotal 쿼리를 쓰지않는 방식도 지원합니다.
 
-- [paginationOptions.total](/blocks#total){target="_blank"}
+- [paginationOptions.total](/reference#blocks-paginationoptions){target="_blank"}
 
 ```yaml
 menus:

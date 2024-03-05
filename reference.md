@@ -104,11 +104,11 @@ layout:
         gtag('config', 'G-XXXXXXXXXX');
 ```
 
-## [`menus`](/menus)
+<!-- ## [`menus`](/menus) -->
 
-## [`pages`](/pages)
+<!-- ## [`pages`](/pages) -->
 
-#### [`layout`](/layout#menus)
+<!-- #### [`layout`](/layout#menus) -->
 
 # `menus: []`
 
@@ -363,7 +363,7 @@ menus:
     name: 활성 사용자
 ```
 
-#### [`layout`](/layout#pages)
+<!-- #### [`layout`](/layout#pages) -->
 
 # `pages: []`
 
@@ -383,8 +383,8 @@ pages:
 - path: payment
 ```
 
-
-## [pages.blocks](/blocks)
+<!-- ## [pages.blocks](/blocks) -->
+## pages.blocks
 
 페이지 안을 블록으로 구성합니다. 
 
@@ -407,9 +407,9 @@ pages:
   autofocus: false
 ```
 
-## [pages.params](/params#pages-params)
+<!-- ## [pages.params](/params#pages-params) -->
 
-#### [`pages`](/pages#pages-blocks)
+<!-- #### [`pages`](/pages#pages-blocks) -->
 
 # `blocks: []`
 
@@ -1051,7 +1051,8 @@ columnOptions:
   label: 이름
 ```
 
-## [blocks.columns](/columns)
+<!-- ## [blocks.columns](/columns) -->
+## blocks.columns
 
 columnOptions와 동일한 기능이고 양식이 다릅니다. 
 
@@ -1068,7 +1069,8 @@ columnOptions와 동일한 기능이고 양식이 다릅니다.
     created_at:
 ```
 
-## [blocks.params](/params)
+<!-- ## [blocks.params](/params) -->
+## blocks.params
 
 블록 안에서 parameter를 쓸 수 있습니다. 데이터를 조회하거나 생성, 수정할 때 입력폼(input) 역할을 하게 됩니다. 
 
@@ -1562,7 +1564,7 @@ resetButton:
   # clear: true
 ```
 
-## [blocks.viewModal](/modals)
+## [blocks.viewModal](/reference#modals)
 
 테이블 마지막에 '조회' 버튼이 추가됩니다. 클릭시 새로운 모달 팝업이 노출됩니다.
 
@@ -1574,19 +1576,19 @@ resetButton:
     - type: query
 ```
 
-### [viewModal.useColumn](/modals#viewmodal-usecolumn)
+### [viewModal.useColumn](/reference#viewmodal-usecolumn-1)
 
 특정 컬럼을 모달 조회 링크로 지정할 수 있습니다.
 
-### [viewModal.params.valueFromRow](/modals#viewmodal-params-valuefromrow)
+### [viewModal.params.valueFromRow](/reference#viewmodal-params-valuefromrow-1)
 
 조회한 row 데이터를 모달 안에서 사용할 수 있습니다.
 
-## [blocks.modals](/modals#modals)
+## [blocks.modals](/reference#modals)
 
 ## blocks.selectOptions
 
-selectOptions는 테이블의 row를 선택할 때 쓰입니다. [actions](/actions)와 함께 사용할 때 유용합니다. 
+selectOptions는 테이블의 row를 선택할 때 쓰입니다. [actions](/reference#actions)와 함께 사용할 때 유용합니다. 
 
 ### selectOnCheckboxOnly: true
 
@@ -1614,7 +1616,7 @@ refs:
     href: https://search.naver.com/search.naver?query={{code}}
 ```
 
-## [blocks.actions](/actions)
+## [blocks.actions](/reference#actions)
 
 선택한 1개 또는 여러 항목으로 다음 화면을 진행합니다.
 
@@ -2397,7 +2399,7 @@ columns:
     style: |
       text-align: center;
 ```
-#### [`blocks`](/blocks#blocks-params)
+#### [`blocks`](/reference#blocks-params)
 
 # `params: []`
 
@@ -3234,7 +3236,8 @@ pages:
         '오래된가입순': ORDER BY created_at ASC
 ```
 
-## [pages.params](/pages#pages-params)
+<!-- ## [pages.params](/pages#pages-params) -->
+## pages.params
 
 페이지 단위로 파라미터(parameter)를 지정하여, 여러 블록의 데이터를 필터 조회할 수 있습니다. 
 
@@ -3323,7 +3326,7 @@ params:
     maxlength: 12
 ```
 
-#### [`blocks.viewModal`](/blocks#blocks-viewmodal)
+#### [`blocks.viewModal`](/reference#blocks-viewmodal)
 # `viewModal: {}`
 
 ## viewModal
@@ -3363,11 +3366,11 @@ viewModal:
   header: false
 ```
 
-### viewModal.[blocks](/blocks)
+### viewModal.[blocks](/reference#blocks)
 
 여러개 블록을 추가 가능합니다.
 
-### viewModal.[blocks.display](/blocks#blocks-display)
+### viewModal.[blocks.display](/reference#blocks-display)
 
 기본적으로 데이터를 조회하면 테이블(표) 형태로 나타납니다. 이를 특정한 형태로 바꾸고 싶을 때 display를 사용합니다.
 
@@ -3439,7 +3442,7 @@ viewModal:
 
 -------
 
-## [`blocks.modals`](/blocks#blocks-modals)
+## [`blocks.modals`](/reference#blocks-modals)
 
 # `modals: []`
 
@@ -3453,8 +3456,8 @@ viewModal:
 
 불러온 데이터를 클릭하거나 버튼을 통해 모달을 열게됩니다. 
 
-- [columns.openModal](/columns#columns-openmodal)
-- [buttons.openModal](/columns#buttons-openmodal)
+- [columns.openModal](/reference#columns-openmodal)
+- [buttons.openModal](/reference#buttons-openmodal)
 
 **modals와 viewModal 비교**
 
@@ -3541,11 +3544,11 @@ pages:
         WHERE id = :id 
 ```
 
-#### [`blocks`](/blocks#blocks-actions)
+#### [`blocks`](/reference#blocks-actions)
 
 # `actions: []`
 
-[selectOptions](/blocks#blocks-selectoptions)을 통해 선택된 테이블의 row가 필요합니다.
+[selectOptions](/reference#blocks-selectoptions)을 통해 선택된 테이블의 row가 필요합니다.
 
 만약 row 선택 없이 단일 액션이 필요한 경우 `single`을 이용합니다.
 
@@ -3707,7 +3710,7 @@ actions:
     single: true
 ```
 
-### [showDownload](/blocks#blocks-showdowload)
+### [showDownload](/reference#blocks-showdowload)
 
 ## actions.params.valueFromSelectedRows
 
