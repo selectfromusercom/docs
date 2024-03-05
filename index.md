@@ -13,7 +13,7 @@ hero:
       link: /guide/
     - theme: alt
       text: 레퍼런스
-      link: /layout
+      link: /reference
 
 features:
   - title: 튜토리얼 및 가이드

@@ -22,7 +22,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Guide', link: '/guide/' },
-      { text: 'Reference', link: '/layout' },
+      { text: 'Reference', link: '/reference' },
       { text: 'Changelog', link: '/changelog/' },
       { text: 'Community', link: 'https://ask.selectfromuser.com' },
     ],
