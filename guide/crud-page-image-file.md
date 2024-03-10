@@ -52,7 +52,7 @@ pages:
       url: https://api.selectfromuser.com/sample-api/upload-each-s3
       params: 
         'imageCode': "{{imageCode}}"
-        'madangId': "TEST"
+        'classId': "TEST"
       data:
         file_urls: "{{file_urls}}"
     params:
