@@ -1897,6 +1897,31 @@ valueAs에 URL과 파라미터를 통해 데이터 기반으로 이미지, URL �
           valueAs: https://placekitten.com/{{postfix}}?id={{id}}
 ```
 
+## columns.template
+
+template 키와 HTML로 데이터 값을 더 복잡한 구성으로 표기할 수 있어요.
+
+```yaml
+- type: query
+  resource: pgsql
+  sqlType: select
+  sql: >
+    SELECT 
+      'media/cc0-audio/t-rex-roar.mp3' as url,
+      'media/cc0-videos/flower.webm' as video_url
+  # display: form
+  columns:
+    url:
+      template: |
+        <audio controls src="https://interactive-examples.mdn.mozilla.net/{{url}}"></audio>
+    video_url:
+      template: |-
+        <video controls width="250">
+          <source src="https://interactive-examples.mdn.mozilla.net/{{video_url}}" type="video/webm" />
+        </video>
+```
+
+
 ## columns.formatFn
 
 formatFn을 통해 JavaScript 코드를 이용할 수 있어요. (column 단위로 적용)
