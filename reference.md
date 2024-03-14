@@ -2507,6 +2507,32 @@ actions:
       valueFromSheet: 수량
 ```
 
+### sheetOptions.convertDate
+
+엑셀에서는 날짜 데이터가 자체 시리얼날짜포맷으로 저장됩니다. 해당 시리얼넘버를 YYYY-MM-DD 형태로 저장하고 싶을때 별도의 코딩없이 convertDate 키를 활용하여 변환할 항목을 지정해줍니다.
+
+엑셀 파일을 통해 INSERT 또는 UPDATE 쿼리를 벌크로 실행할 때 유용해요.
+
+```yaml
+params:
+  - key: sheet
+    format: sheet
+    label: 엑셀 가져오기
+    accept: .xlsx
+    sheetOptions:
+      append: false
+      convertDate: 
+        - 시작일
+        - 종료일
+  - key: id
+    valueFromSheet: id
+  - key: start_date
+    valueFromSheet: 시작일
+  - key: end_date
+    valueFromSheet: 종료일
+```
+
+
 ## params.valueFromSearch
 
 웹 주소(URL)의 쿼리 스트링(Query string)을 파라미터로 사용할 수 있어요. updateParams와 함께 사용할 수 있습니다. 
