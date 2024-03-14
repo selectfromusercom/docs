@@ -3167,9 +3167,9 @@ pages:
       defaultValue: Y
 ```
 
-## params와 `query`
+## params.query
 
-`query`와 params를 활용해서 sql 쿼리 WHERE절에 일부를 옵션으로 넣을 수 있습니다. 
+<code v-pre>{{query}}</code>와 params를 활용해서 sql 쿼리 WHERE절에 일부를 옵션으로 넣을 수 있습니다. 
 
 ```yaml
 pages:
