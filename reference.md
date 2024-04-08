@@ -3019,9 +3019,9 @@ params:
 ```yaml
 selectOptions:
   enabled: true
-  multiple: true
-  taggable: true
-  pushTags: true
+multiple: true
+taggable: true
+pushTags: true
 ```
 
 ## params.datalist
