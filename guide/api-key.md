@@ -18,6 +18,10 @@ outline: deep
 
 API 키 관리에 입력한 이름을 yml params에서 안전하게 이용할 수 있습니다. 
 
+::: tip
+환경변수에는 하이픈(-) 입력시 에러가 발생합니다. 꼭 언더바(_)를 사용해주세요.
+:::
+
 ```yaml
 menus:
 - path: test/http-post
