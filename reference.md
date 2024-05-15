@@ -2612,9 +2612,13 @@ params:
   format: date
   placeholder: 주문생성일 기준
   shortcuts:
+  - label: 최초시점
+    date: 2024-01-01
   - label: 어제
     offset: -1
     period: day
+  - label: 오늘
+    today: true
   - label: 지난주
     offset: -1
     period: week
