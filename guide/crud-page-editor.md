@@ -70,6 +70,7 @@ pages:
         # mode: html
         # mode: wysiwyg
         width: 100%
+        height: 300px
 ```
 
 ## 결과 이미지들
