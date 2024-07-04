@@ -710,6 +710,45 @@ INSERT 쿼리 블록이나 POST API 블록 등을 실행한 다음에 입력 값
   resetAfterSubmit: true
 ```
 
+## blocks.redirectAfterSubmit
+
+블록을 실행한 다음 특정 페이지로 바로 이동하고 싶을때 사용해요.
+
+```yaml
+- type: query
+  name: 추가
+  resource: mysql.qa
+  sqlType: insert
+  sql: >
+    INSERT INTO FaqContent
+    SET name = :name,
+        type2 = :type2,
+        created_at = NOW()
+  redirectAfterSubmit: "/faq-contents"
+  # redirectAfterSubmit: |
+  #   /faq-contents#{"modal":{"id":{{insertId}},"$name":"view","p":"pages.142.blocks.0"},"tableSelectedRows":[]}
+```
+
+## blocks.closeAfterSubmit
+
+모달을 띄운 다음, 데이터 수정 등 작업 제출시 창을 닫을 수 있습니다.
+
+```yaml
+modals:
+  - path: modal1-:id
+    header: false
+    height: 400px
+    blocks:
+      - type: http
+        name: 포스트 업데이트
+        axios:
+          method: POST
+          url: https://jsonplaceholder.typicode.com/posts
+        closeAfterSubmit: true  
+        params:
+        - key: published_at
+```
+
 ## blocks.autosubmit
 
 SELECT 쿼리 블록이나 GET API 등 데이터 조회 블록에서 params와 함께 필터 검색을 할 때 사용됩니다. 
