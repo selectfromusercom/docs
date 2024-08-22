@@ -890,6 +890,24 @@ prompt: true 적용시 변경사유를 남기고 실행하는 구조입니다.
           value: HELLO
 ```
 
+## blocks.roles
+
+메뉴 단위보다 더 세부적인 접근제어가 필요한 경우 block 단위 권한지정을 사용해보세요.
+
+- 모든 block 요청시 roles.edit에 권한지정시 서버단에서 차단
+- menus roles처럼 권한그룹, email::, select::edit 사용가능
+- 차단되면 '사용자에게 수정 권한이 없습니다' 표시
+
+```yaml
+- type: http
+  axios:
+    url: https://httpbin.selectfromuser.com/anything
+    method: POST
+  roles:
+    edit: 
+      - email::testsupport@selectfromuser.com
+```
+
 
 ## blocks.paginationOptions
 
