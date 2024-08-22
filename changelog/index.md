@@ -4,6 +4,11 @@
 
 # Updates
 
+## 최근 업데이트
+
+이후 변경내역은 아래 블로그에서 확인하실 수 있습니다.
+https://blog.selectfromuser.com/tag/update/
+
 ## 2024-01-30
 
 ### Add
