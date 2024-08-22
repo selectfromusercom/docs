@@ -192,6 +192,10 @@ export default defineConfig({
               text: 'PostgreSQL 유의사항', 
               link: '/guide/tip-postgresql', 
             },
+            { 
+              text: '타임존 timezone', 
+              link: '/guide/timezone', 
+            },            
           ]
         },
         {
