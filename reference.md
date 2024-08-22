@@ -850,6 +850,47 @@ blocks:
   log: 데이터추가 name={{name}}
 ```
 
+### log.prompt
+
+데이터 수정시 사유입력 프롬프트를 제공합니다.
+
+prompt: true 적용시 변경사유를 남기고 실행하는 구조입니다.
+조회성 블록 외, 수정하는 query, http api 에서만 켜집니다.
+
+```yaml
+  - type: right
+    blocks:
+      - type: http
+        axios:
+          url: https://httpbin.selectfromuser.com/anything
+          method: POST
+        log:
+          name: 수정_와인목록_API
+          prompt: true
+          # promptComments:
+          #   - 고객요청
+          #   - 파기
+        params: 
+          - key: name
+            value: HELLO  
+  - type: left
+    blocks:
+    - type: query
+      resource: mysql.qa
+      sqlType: insert
+      sql: SELECT 1
+      log:
+        name: 수정_와인목록
+        prompt: true
+        promptComments:
+          - 고객요청
+          - 파기
+      params: 
+        - key: name
+          value: HELLO
+```
+
+
 ## blocks.paginationOptions
 
 주로 조회할 때 페이지네이션을 추가해서 필요한 정보만 빨리 볼 수 있게 도와줍니다. 
