@@ -78,13 +78,20 @@ Service Account (json)에 발급된 키를 입력하고 연결해주세요.
   sql: >
     SELECT * 
     FROM `select-sample-406105.sample.stores`
+    WHERE status = @status
     LIMIT 1000
+  params:
+  - key: status
   searchOptions:
     enabled: true
   paginationOptions:
     enabled: true
     perPage: 10
 ```
+
+::: tip
+빅쿼리의 경우 sql 쿼리에서 params 치환시 `@`를 사용해주세요.
+:::
 
 ## 추가 지원
 
