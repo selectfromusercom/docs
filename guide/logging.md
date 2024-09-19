@@ -49,7 +49,7 @@ SQL 쿼리, API(준비중), 사용자 활동을 모니터링할 수 있습니다
 
 ![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/22b4eab7-9b35-4229-8a7f-414d43800600/docs)
 
-## (준비중) 슬랙으로 로그 남기기
+## 슬랙으로 로그 남기기
 
 상세한 내용은 개별 안내 중입니다. support@selectfromuser.com 으로 문의바랍니다.
 
