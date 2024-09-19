@@ -47,7 +47,7 @@ SQL 쿼리, API(준비중), 사용자 활동을 모니터링할 수 있습니다
 - `created:2023-10-05..2023-11-05` (2023년 10월 5일~2023년 11월 5일)
 
 
-![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/d0824b26-001e-4ccb-9e09-37246adc8f00/docs)
+![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/22b4eab7-9b35-4229-8a7f-414d43800600/docs)
 
 ## (준비중) 슬랙으로 로그 남기기
 
