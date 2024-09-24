@@ -85,7 +85,7 @@ curl -X POST 'https://api.selectfromuser.com/api/siem/1004.0000000-0000-0000-000
 | user_agent | 행위당시의 사용자 에이전트 (actor_user_agent) |
 | user_ip | 행위당시의 사용자 아이피 (actor_ip) |
 | memo | 다운로드사유등 사용자 입력한 문구 |
-| mode | 환경이름(production, development, stage) |
+| mode | 환경이름 (environment) |
 | user_email | 행위자 이메일 (actor_email) |
 | user_role_email | 권한부여의 대상자 이메일 (action_target_user) |
 
