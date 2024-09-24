@@ -23,14 +23,13 @@ outline: deep
 
 | 내역    | 코드 |
 | -------- | ------- |
-| 신규 사용자 초대 (권한 추가) | Role update |
-| 사용자 권한 변경 | Role delete |
+| 신규 사용자 초대 (권한 추가) | Role create |
+| 사용자 권한 변경 | Role update |
 | 사용자 권한 삭제 | Role delete |
-| 사용자 프로퍼티 (UserProperty) 변경 | property update |
-| 사용자 권한그룹 변경 | group update |
 | 사용자 권한그룹 추가 | group grant |
 | 사용자 권한그룹 삭제 | group revoke |
 | 관리자 페이지 서비스 권한 변경 | ServiceRole update |
+| 사용자 프로퍼티 (UserProperty) 변경 | property update |
 
 
 `설정 > 보안` 에서 `다운로드 사유` 기능을 활성화 합니다.
