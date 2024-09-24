@@ -120,6 +120,12 @@ curl -X POST 'https://api.selectfromuser.com/api/siem/1004.0000000-0000-0000-000
 }
 ```
 
+### Error
+
+- `SELECT_SIEM_API_TOKEN plan disabled` 해당 플랜에서 사용할 수 없는 경우
+- `SELECT_SIEM_API_TOKEN authorization not found` 해당 키를 환경변수에서 찾을 수 없는 경우
+- `SELECT_SIEM_API_TOKEN permission denied` 해당 키가 환경변수와 일치하지 않는 경우
+
 
 ### 관련 자료
 
