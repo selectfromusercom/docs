@@ -4,10 +4,16 @@
 
 # Updates
 
-## 최근 업데이트
+## 최근 업데이트 
 
 이후 변경내역은 아래 블로그에서 확인하실 수 있습니다.
 https://blog.selectfromuser.com/tag/update/
+
+
+- [셀렉트 7월 뉴스레터](https://blog.selectfromuser.com/newsletter-2024-07/)
+- [셀렉트 5월 뉴스레터](https://blog.selectfromuser.com/newsletter-2024-05/)
+- [셀렉트 2월 뉴스레터](https://blog.selectfromuser.com/newsletter-2024-02/)
+- [얼라인, 액션 봇과 새로운 옵션들](https://blog.selectfromuser.com/align-and-action-bots/)
 
 ## 2024-01-30
 

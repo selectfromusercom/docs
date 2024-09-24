@@ -30,6 +30,15 @@ outline: deep
 | 사용자 권한그룹 변경 | group update |
 | 사용자 권한그룹 추가 | group grant |
 | 사용자 권한그룹 삭제 | group revoke |
+| 관리자 페이지 서비스 권한 변경 | ServiceRole update |
+
+
+`설정 > 보안` 에서 `다운로드 사유` 기능을 활성화 합니다.
+
+| 내역    | 코드 |
+| -------- | ------- |
+| 사용자 활동 로그 다운로드 | Activity download |
+| 감사 로그 다운로드 | Audit download |
 
 
 ## SIEM API
