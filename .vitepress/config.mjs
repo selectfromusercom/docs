@@ -265,6 +265,10 @@ export default defineConfig({
               link: '/guide/secure-api', 
             },
             { 
+              text: '감사로그', 
+              link: '/guide/audit-log', 
+            },
+            { 
               text: 'SSO, IP, 세션 설정', 
               link: 'https://blog.selectfromuser.com/network-security-policy/', 
             },
