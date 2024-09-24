@@ -2931,7 +2931,7 @@ pages:
 
 - `format: address` 파라미터 영역에 주소 검색 버튼이 생성됩니다.
 - 셀렉트에서 **roadAddress**(도로명주소)와 **zonecode**(우편번호)를 내려줍니다.
-- 셀렉트에서 **x**(위도), **y**(경도)값을 내려줍니다.
+- 셀렉트에서 **x축 좌표**(경도, longitude), **y축 좌표**(위도, latitude)값을 내려줍니다.
 
 ```yaml
 params:
@@ -2941,14 +2941,14 @@ params:
     updateParams:
       address: roadAddress # address 파라미터에 검색 결과인 roadAddress 값을 넣습니다.
       postcode: zonecode # postcode 파라미터에 zonecode 값을 넣습니다.
-      latitude: x # latitude 파라미터에 x 값을 넣습니다. 
-      longitude: y # longitude 파라미터에 y 값을 넣습니다. 
+      longitude: x # longitude 파라미터에 x축 값을 넣습니다.
+      latitude: y # latitude 파라미터에 y축 값을 넣습니다.
   - key: postcode
     label: 우편번호
-  - key: latitude
-    label: 위도
   - key: longitude
-    label: 경도
+    label: 경도  
+  - key: latitude
+    label: 위도  
 ```
 
 ### format: tiptap
