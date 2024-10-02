@@ -1631,7 +1631,7 @@ submitButton:
   type: primary
 ```
 
-## submitButton.type
+### submitButton.type
 
 버튼 색상은 아래와 같이 바꿀 수 있습니다. 
 
