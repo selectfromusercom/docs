@@ -1621,7 +1621,7 @@ blocks:
     - key: team_id
 ```
 
-# blocks.submitButton
+## blocks.submitButton
 
 params와 주로 쓰입니다. 값을 입력하고 제출할 때 버튼의 이름이나 색상을 바꿀 수 있어요. 
 
@@ -1649,7 +1649,7 @@ type: default
 # type: success-light
 ```
 
-# blocks.resetButton
+## blocks.resetButton
 
 params 필드에 입력한 값들을 일괄적으로 빈값으로 바꾸고 싶을 때 이용합니다.  
 `params.key.defaultValue`에 상관없이 항상 빈값으로 처리하고 싶은 경우 `clear: true`를 추가합니다. 
