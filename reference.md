@@ -320,6 +320,27 @@ menus:
           search-user-id?p={{category}}&cc_id={{id}}#{{hero_image_url}}
 ```
 
+## menus.type: nav
+
+`placement: top`과 함께 사용하여 메뉴를 최상단 내비게이션으로 이용할 수 있고, 하위 menus를 추가할 수도 있습니다.
+
+```yaml
+menus:
+- name: 시약관리
+  type: nav
+  placement: top
+  menus:
+  - path: pages/search
+    name: 시약검색
+    placement: top
+  - path: pages/codes
+    name: 코드관리
+    placement: top
+  - path: pages/qc
+    name: 품질관리
+    placement: top
+```
+
 ## menus.icon
 
 메뉴 이름(name) 앞에 U, NEW, TIP 같은 내용이나 약어를 텍스트로 추가하거나 mdi 아이콘을 추가할 수 있어요.
