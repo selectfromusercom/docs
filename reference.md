@@ -1664,6 +1664,53 @@ blocks:
     - key: team_id
 ```
 
+## blocks.formOptions
+
+params와 함께 쓰이며, 입력 양식 스타일을 다양하게 수정할 수 있습니다. 
+
+**display: inline**
+```yaml
+formOptions:
+  display: inline
+params:
+  - key: customer_name
+    label: 고객이름
+```
+
+**form group**
+```yaml
+formOptions:
+  labelWidth: 140px
+  firstLabelWidth: 140px
+  width: 300px      
+params:
+  - key: customer_name
+    label: 고객이름
+    group: 1
+```
+
+**display: col**
+```yaml
+formOptions:
+  display: col
+  labelWidth: 140px
+  firstLabelWidth: 140px
+params:
+  - key: customer_name
+    label: 고객이름
+    group: 1
+  - key: product_name
+    label: 상품명
+    group: 2
+```
+
+**form group class**
+```yaml
+formOptions:
+  groupClass: flex-col py-5 border-b
+  groupLabelClass: text-start
+```
+
 ## blocks.submitButton
 
 params와 주로 쓰입니다. 값을 입력하고 제출할 때 버튼의 이름이나 색상을 바꿀 수 있어요. 
