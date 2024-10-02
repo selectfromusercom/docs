@@ -363,6 +363,28 @@ menus:
     name: 활성 사용자
 ```
 
+## menus.badgeOptions
+
+메뉴에 쿼리 결과의 카운트 숫자를 배지 형태로 표기할 수 있어요. 
+
+지원 색상은 아래와 같습니다. [Customizing Colors - Tailwind CSS](https://tailwindcss.com/docs/customizing-colors)
+- slate, gray, zinc, neutral, stone, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
+
+```yaml
+menus:
+- path: orders/pending
+  name: 상품 준비중 관리
+  badgeOptions:
+    enabled: true
+    type: query
+    resource: mysql.qa
+    sql: >
+      SELECT COUNT(id) FROM ProductOrder
+    postfix: 건
+    color: green
+```
+
+
 <!-- #### [`layout`](/layout#pages) -->
 
 # `pages: []`
