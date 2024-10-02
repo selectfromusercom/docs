@@ -3942,35 +3942,35 @@ actions:
 actions를 통한 modal로 데이터를 추가할때 유용한 기능입니다. 데이터 입력시 스텝을 나눠 각 단계에 집중할 수 있게 돕습니다.
 
 ```yaml
-    actions:
-      - label: 등록
-        single: true
-        type: query
-        resource: mysql.qa
-        sqlType: insert
-        sql: >
-          INSERT INTO leads
-          SET name = :name,
-              birth = :birth,
-              region = :region,
-              job = :job,
-              created_at = NOW()
-        modal: true        
-        height: 500px
-        params:
-        - key: name
-          label: 이름
-          progressStep: 기본정보
-        - key: birth
-          label: 생년월일
-          progressStep: 상세정보
-          format: date
-        - key: region
-          label: 지역
-          progressStep: 상세정보  
-        - key: job
-          label: 직업
-          progressStep: 상세정보
+actions:
+  - label: 등록
+    single: true
+    type: query
+    resource: mysql.qa
+    sqlType: insert
+    sql: >
+      INSERT INTO leads
+      SET name = :name,
+          birth = :birth,
+          region = :region,
+          job = :job,
+          created_at = NOW()
+    modal: true        
+    height: 500px
+    params:
+    - key: name
+      label: 이름
+      progressStep: 기본정보
+    - key: birth
+      label: 생년월일
+      progressStep: 상세정보
+      format: date
+    - key: region
+      label: 지역
+      progressStep: 상세정보  
+    - key: job
+      label: 직업
+      progressStep: 상세정보
 ```
 
 ## actions.forEach
