@@ -2402,7 +2402,8 @@ actions:
 
 - 어드민 내부 페이지로 이동할 때는 `https://app.selectfromuser.com/admin/0000` 어드민 기본 URL 뒤쪽을 작성합니다.
 - 외부 사이트로 이동할 때는 URL을 그대로 입력해주세요.
-- 소속 테이블 데이터를 가져와서 URL에 파라미터로 쓸 수 있습니다. `{{field_name}}`
+- 소속 테이블 데이터를 가져와서 URL에 파라미터로 쓸 수 있습니다. <code v-pre>`{{field_name}}`</code>
+
 
 ```yaml
 sql: SELECT user_id, product_name FROM orders LIMIT 10
