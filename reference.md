@@ -868,7 +868,15 @@ pages:
 
 `showDownload: csv formatted`
 
-데이터 다운로드는 '데이터 원본'을 기본으로 합니다. 셀렉트 어드민에 보여지는대로 다운로드 받고 싶으시다면 `formatted`를 추가해주세요.
+데이터 다운로드는 '데이터 원본'을 기본으로 합니다. 셀렉트 어드민에 보여지는대로 다운로드 받고 싶으시다면 formatted를 추가해주세요.
+
+`showDownload: csv xlsx`
+
+조회한 데이터를 엑셀 파일(xlsx)로 다운로드 할 수 있습니다.
+
+`showDownload: csv formatted xlsx`
+
+엑셀 파일을 csv formatted와 동일하게 셀렉트 어드민에 보이는대로(formatted) 다운로드 받을 수 있습니다.
 
 ## blocks.log
 
