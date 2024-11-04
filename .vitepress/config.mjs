@@ -2,8 +2,8 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "selectfromuser.com",
-  description: "Select Admin",
+  title: "SelectAdmin",
+  description: "selectfromuser.com",
   cleanUrls: true,
   markdown: {
     lineNumbers: true,
@@ -18,6 +18,18 @@ export default defineConfig({
       }
     ]
   ],
+  // locales: {
+  //   root: {
+  //     label: '한국어',
+  //     lang: 'ko'
+  //   },
+  //   en: {
+  //     label: 'English',
+  //     lang: 'en', 
+  //     link: '/en'
+  //   },
+  // },
+  // appearance: 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -396,5 +408,6 @@ export default defineConfig({
     editLink: {
       pattern: 'https://github.com/selectfromusercom/docs/edit/main/:path'
     },
+    logo: '/favicon.png',
   }
 })
