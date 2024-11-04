@@ -9,6 +9,7 @@ export default defineConfig({
     lineNumbers: true,
   },
   head: [
+    ['link', { rel: 'icon', href: '/favicon.png' }],
     [
       'script',
       {
