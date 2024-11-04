@@ -320,6 +320,27 @@ menus:
           search-user-id?p={{category}}&cc_id={{id}}#{{hero_image_url}}
 ```
 
+## menus.type: nav
+
+`placement: top`과 함께 사용하여 메뉴를 최상단 내비게이션으로 이용할 수 있고, 하위 menus를 추가할 수도 있습니다.
+
+```yaml
+menus:
+- name: 시약관리
+  type: nav
+  placement: top
+  menus:
+  - path: pages/search
+    name: 시약검색
+    placement: top
+  - path: pages/codes
+    name: 코드관리
+    placement: top
+  - path: pages/qc
+    name: 품질관리
+    placement: top
+```
+
 ## menus.icon
 
 메뉴 이름(name) 앞에 U, NEW, TIP 같은 내용이나 약어를 텍스트로 추가하거나 mdi 아이콘을 추가할 수 있어요.
@@ -362,6 +383,28 @@ menus:
   - path: active-user
     name: 활성 사용자
 ```
+
+## menus.badgeOptions
+
+메뉴에 쿼리 결과의 카운트 숫자를 배지 형태로 표기할 수 있어요. 
+
+지원 색상은 아래와 같습니다. [Customizing Colors - Tailwind CSS](https://tailwindcss.com/docs/customizing-colors)
+- slate, gray, zinc, neutral, stone, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
+
+```yaml
+menus:
+- path: orders/pending
+  name: 상품 준비중 관리
+  badgeOptions:
+    enabled: true
+    type: query
+    resource: mysql.qa
+    sql: >
+      SELECT COUNT(id) FROM ProductOrder
+    postfix: 건
+    color: green
+```
+
 
 <!-- #### [`layout`](/layout#pages) -->
 
@@ -825,7 +868,15 @@ pages:
 
 `showDownload: csv formatted`
 
-데이터 다운로드는 '데이터 원본'을 기본으로 합니다. 셀렉트 어드민에 보여지는대로 다운로드 받고 싶으시다면 `formatted`를 추가해주세요.
+데이터 다운로드는 '데이터 원본'을 기본으로 합니다. 셀렉트 어드민에 보여지는대로 다운로드 받고 싶으시다면 formatted를 추가해주세요.
+
+`showDownload: csv xlsx`
+
+조회한 데이터를 엑셀 파일(xlsx)로 다운로드 할 수 있습니다.
+
+`showDownload: csv formatted xlsx`
+
+엑셀 파일을 csv formatted와 동일하게 셀렉트 어드민에 보이는대로(formatted) 다운로드 받을 수 있습니다.
 
 ## blocks.log
 
@@ -1621,7 +1672,54 @@ blocks:
     - key: team_id
 ```
 
-# blocks.submitButton
+## blocks.formOptions
+
+params와 함께 쓰이며, 입력 양식 스타일을 다양하게 수정할 수 있습니다. 
+
+**display: inline**
+```yaml
+formOptions:
+  display: inline
+params:
+  - key: customer_name
+    label: 고객이름
+```
+
+**form group**
+```yaml
+formOptions:
+  labelWidth: 140px
+  firstLabelWidth: 140px
+  width: 300px      
+params:
+  - key: customer_name
+    label: 고객이름
+    group: 1
+```
+
+**display: col**
+```yaml
+formOptions:
+  display: col
+  labelWidth: 140px
+  firstLabelWidth: 140px
+params:
+  - key: customer_name
+    label: 고객이름
+    group: 1
+  - key: product_name
+    label: 상품명
+    group: 2
+```
+
+**form group class**
+```yaml
+formOptions:
+  groupClass: flex-col py-5 border-b
+  groupLabelClass: text-start
+```
+
+## blocks.submitButton
 
 params와 주로 쓰입니다. 값을 입력하고 제출할 때 버튼의 이름이나 색상을 바꿀 수 있어요. 
 
@@ -1631,7 +1729,7 @@ submitButton:
   type: primary
 ```
 
-## submitButton.type
+### submitButton.type
 
 버튼 색상은 아래와 같이 바꿀 수 있습니다. 
 
@@ -1649,7 +1747,7 @@ type: default
 # type: success-light
 ```
 
-# blocks.resetButton
+## blocks.resetButton
 
 params 필드에 입력한 값들을 일괄적으로 빈값으로 바꾸고 싶을 때 이용합니다.  
 `params.key.defaultValue`에 상관없이 항상 빈값으로 처리하고 싶은 경우 `clear: true`를 추가합니다. 
@@ -2312,7 +2410,8 @@ actions:
 
 - 어드민 내부 페이지로 이동할 때는 `https://app.selectfromuser.com/admin/0000` 어드민 기본 URL 뒤쪽을 작성합니다.
 - 외부 사이트로 이동할 때는 URL을 그대로 입력해주세요.
-- 소속 테이블 데이터를 가져와서 URL에 파라미터로 쓸 수 있습니다. `{{field_name}}`
+- 소속 테이블 데이터를 가져와서 URL에 파라미터로 쓸 수 있습니다. <code v-pre>`{{field_name}}`</code>
+
 
 ```yaml
 sql: SELECT user_id, product_name FROM orders LIMIT 10
@@ -3248,6 +3347,42 @@ params:
           prefix: 정가
           postfix: 원
           class: text-right
+```
+
+## params.progressStep
+
+데이터 입력시 스텝을 나눠 각 단계에 집중할 수 있게 돕습니다.
+
+```yaml
+actions:
+  - label: 등록
+    single: true
+    type: query
+    resource: mysql.qa
+    sqlType: insert
+    sql: >
+      INSERT INTO leads
+      SET name = :name,
+          birth = :birth,
+          region = :region,
+          job = :job,
+          created_at = NOW()
+    modal: true        
+    height: 500px
+    params:
+    - key: name
+      label: 이름
+      progressStep: 기본정보
+    - key: birth
+      label: 생년월일
+      progressStep: 상세정보
+      format: date
+    - key: region
+      label: 지역
+      progressStep: 상세정보  
+    - key: job
+      label: 직업
+      progressStep: 상세정보
 ```
 
 ## params.disabled

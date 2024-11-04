@@ -77,7 +77,6 @@ curl -X POST 'https://api.selectfromuser.com/api/siem/1004.0000000-0000-0000-000
 | user_id | 셀렉트 클라우드의 계정번호 (actor_id) |
 | team_id | 셀렉트 클라우드의 팀번호 (team_scope) |
 | team_row_id | 미사용 |
-| user_role_id | 미사용 |
 | name | 코드 (action) |
 | json | 관련 데이터 (권한의 before/after, 영향 scope등) |
 | created_at | 기록일시 (UTC) (when) |
@@ -87,6 +86,7 @@ curl -X POST 'https://api.selectfromuser.com/api/siem/1004.0000000-0000-0000-000
 | memo | 다운로드사유등 사용자 입력한 문구 |
 | mode | 환경이름 (environment) |
 | user_email | 행위자 이메일 (actor_email) |
+| user_role_id | 권한부여의 대상자 아이디 (action_target_id) |
 | user_role_email | 권한부여의 대상자 이메일 (action_target_user) |
 
 ```json
