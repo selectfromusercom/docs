@@ -8,6 +8,10 @@ export default defineConfig({
   markdown: {
     lineNumbers: true,
   },
+  lastUpdated: true,
+  sitemap: {
+    hostname: 'https://docs.selectfromuser.com',
+  },
   head: [
     ['link', { rel: 'icon', href: '/favicon.png' }],
     [
