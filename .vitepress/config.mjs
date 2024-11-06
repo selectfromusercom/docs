@@ -418,5 +418,9 @@ export default defineConfig({
       pattern: 'https://github.com/selectfromusercom/docs/edit/main/:path'
     },
     logo: '/favicon.png',
+    footer: {
+      message: 'SelectAdmin',
+      copyright: '© 2024 Selectfromuser Inc.'
+    },    
   }
 })
