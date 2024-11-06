@@ -16,14 +16,17 @@ hero:
       link: /reference
 
 features:
-  - title: 튜토리얼 및 가이드
-    details: Guides
+  - icon: 📝
+    title: 튜토리얼 및 가이드
+    details: Guides | 지금 필요한 어드민을 바로 만들어볼 수 있어요.
     link: /guide/
-  - title: 업데이트 내역
-    details: Changelog
+  - icon: 🚀
+    title: 업데이트 내역
+    details: Changelog | 어떤 제품 업데이트가 있었는지 알려드려요.
     link: /changelog/
-  - title: 샘플 예제 화면
-    details: showroom.selectfromuser.com
+  - icon: 🏛️
+    title: 샘플 예제 화면
+    details: showroom.selectfromuser.com | 라이브 화면 예제를 살펴볼 수 있어요.
     link: https://showroom.selectfromuser.com
 ---
 
