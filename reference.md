@@ -952,36 +952,36 @@ prompt: true 적용시 변경사유를 남기고 실행하는 구조입니다.
 조회성 블록 외, 수정하는 query, http api 에서만 켜집니다.
 
 ```yaml
-  - type: right
-    blocks:
-      - type: http
-        axios:
-          url: https://httpbin.selectfromuser.com/anything
-          method: POST
-        log:
-          name: 수정_와인목록_API
-          prompt: true
-          # promptComments:
-          #   - 고객요청
-          #   - 파기
-        params: 
-          - key: name
-            value: HELLO  
-  - type: left
-    blocks:
-    - type: query
-      resource: mysql.qa
-      sqlType: insert
-      sql: SELECT 1
+- type: right
+  blocks:
+    - type: http
+      axios:
+        url: https://httpbin.selectfromuser.com/anything
+        method: POST
       log:
-        name: 수정_와인목록
+        name: 수정_와인목록_API
         prompt: true
-        promptComments:
-          - 고객요청
-          - 파기
+        # promptComments:
+        #   - 고객요청
+        #   - 파기
       params: 
         - key: name
-          value: HELLO
+          value: HELLO  
+- type: left
+  blocks:
+  - type: query
+    resource: mysql.qa
+    sqlType: insert
+    sql: SELECT 1
+    log:
+      name: 수정_와인목록
+      prompt: true
+      promptComments:
+        - 고객요청
+        - 파기
+    params: 
+      - key: name
+        value: HELLO
 ```
 
 ## blocks.roles
