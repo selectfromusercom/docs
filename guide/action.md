@@ -83,6 +83,6 @@ actions:
       valueFromSelectedRowsAS: '고객ID'
 ```
 
-## 관련 예제
+## 심화 예제
 
 - [selectOptions, actions 실행시 1개 body로 구성하여 request하는 방법](https://ask.selectfromuser.com/t/selectoptions-actions-1-body-request/149)

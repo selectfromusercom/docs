@@ -34,6 +34,6 @@ actions:
     valueFromSelectedRowsAs: id
 ```
 
-## 관련 예제
+## 심화 예제
 
 - [엑셀 업로드로 insert 쿼리 실행시, 중복 데이터 사전 검증하기](https://ask.selectfromuser.com/t/insert/303)
