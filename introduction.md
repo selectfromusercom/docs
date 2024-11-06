@@ -52,6 +52,27 @@ outline: deep
 
 [원본보기](https://files.umso.co/lib_VFMOChcABbFAfoxp/k3thyh8ju67vpoqn.png)
 
+```yaml
+pages:
+  - path: search-user-id
+  	blocks:
+  	  - type: query
+  	  	resource: mysql.qa
+        sql: >
+          SELECT * FROM customer
+          WHERE (!LENGTH(:name) OR fullname LIKE CONCAT('%', :name, '%'))
+            AND (!LENGTH(:phone) OR phone_primary LIKE CONCAT('%', REPLACE(:phone, '-', ''), '%'))
+          ORDER BY id DESC
+          LIMIT 10
+
+        params:
+          - key: name
+          - key: phone
+        columns:
+          phone_primary:
+            formatFn: maskCenter4
+```
+
 | key | 설명 |
 | :--- | :---- |
 | pages | 1개의 페이지를 포함합니다. |
