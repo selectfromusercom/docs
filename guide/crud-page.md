@@ -29,6 +29,7 @@ pages:
     - key: name
     - key: status
     - key: memo
+    # confirm: false
 ```
 
 ## 데이터 수정
