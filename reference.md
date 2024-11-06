@@ -1178,6 +1178,19 @@ searchOptions:
   ignoreWhitespace: false
 ```
 
+## blocks.filterOptions
+
+테이블의 특정 컬럼만 검색하는 창을 만듭니다.
+
+```yaml
+sql: SELECT * FROM test_10k
+columns:
+  name:
+    filterOptions:
+      enabled: true
+      placeholder: 이름 검색
+```
+
 ## blocks.tableOptions
 
 - `fixed`: 테이블의 머리행(header)을 고정할 수 있습니다. 
