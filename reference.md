@@ -1841,6 +1841,19 @@ blocks:
     selectOnCheckboxOnly: true
 ```
 
+### selectOptions.template
+
+selectOptions로 테이블 row 내역을 선택했을때 template 기능을 활용하여 해당 내역을 테이블 상단에 표기할 수 있습니다.
+
+```yaml
+selectOptions:
+  enabled: true
+  # template: |
+  #   `선택됨: ${ tableSelectedRows.map(e => e.id).join(',') }`
+  template: |
+    `선택됨: ${ tableSelectedRows.map(e => `<span class="rounded bg-slate-100 p-1">${e.name}</span>`).join(' ') }`
+```
+
 ## blocks.refs
 
 특정 컬럼의 값을 링크로 만들고 클릭하여 새창을 열 수 있습니다. 
