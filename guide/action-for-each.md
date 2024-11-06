@@ -4,9 +4,11 @@ outline: deep
 
 # 여러번 반복해서 실행
 
+여러 내역을 선택하고 일괄 처리가 필요할때 유용합니다.
+
 ## 반복해서 쿼리를 실행하는 방법
 
-forEach 키를 사용해서 sql 쿼리를 여러번 실행합니다. 
+forEach 키를 사용해서 sql 쿼리를 여러번 실행합니다.
 
 ```yaml
 actions:
@@ -31,3 +33,7 @@ actions:
     valueFromSelectedRows: true
     valueFromSelectedRowsAs: id
 ```
+
+## 관련 예제
+
+- [엑셀 업로드로 insert 쿼리 실행시, 중복 데이터 사전 검증하기](https://ask.selectfromuser.com/t/insert/303)
