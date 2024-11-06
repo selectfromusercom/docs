@@ -611,6 +611,37 @@ sqlType: insert
     duration: 3000
 ```
 
+쿼리 실행후 toast를 통해 응답 정보를 표기할 수도 있습니다. 데이터베이스 결과값에 따라 맞춰 활용 가능합니다.
+
+```yaml
+- type: query
+  resource: mysql.qa
+  sqlType: insert
+  sql: >
+    INSERT INTO stock_wine
+    SET code = :code
+  params:
+    - key: code
+  confirm: false
+  toast: |
+    완료 
+    <br />
+    <p>affectedRows: {{affectedRows}}</p>
+    <p>insertId: <a href="#{{insertId}}">{{insertId}}</a></p>
+```
+
+**MySQL 응답 예제:**
+```json
+{
+    "fieldCount": 0,
+    "affectedRows": 1,
+    "insertId": 1949,
+    "info": "",
+    "serverStatus": 2,
+    "warningStatus": 0
+}
+```
+
 ### type: http
 
 REST API와 GraphQL API 모두 사용 가능합니다. axios 용법을 그대로 따릅니다. axios에 대한 자세한 설명은 여기서 확인해보세요. 
