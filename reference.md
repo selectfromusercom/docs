@@ -450,6 +450,49 @@ pages:
   autofocus: false
 ```
 
+## pages.layout
+
+페이지 단위로 layout style을 설정하고, 블록을 어떤곳에 넣을지 지정합니다.
+
+layout `name: page1`에  blocks `layout: page1` 블록이 들어갑니다.
+
+지정된 블록(type: `top | left | center | right | bottom`)보다 레이아웃을 더 자유롭게 설정할 수 있습니다.
+
+```yaml
+pages:
+  - path: property-detail
+    layout:
+      style:
+        # max-width: 1400px
+        margin: 0px auto
+        display: flex
+        flex-wrap: wrap
+      div:
+        - name: page1
+          style:
+            width: 100%
+        - name: page2-1
+          style: 
+            width: 50%
+            padding-right: 20px
+        - name: page2-2
+          style: 
+            width: 50%
+        - name: page3
+          style:
+            width: 100%
+    blocks:
+      - layout: page1
+        type: markdown
+      - layout: page2-1
+        type: markdown
+      - layout: page2-2
+        type: markdown
+      - layout: page3
+        type: markdown
+```
+
+
 <!-- ## [pages.params](/params#pages-params) -->
 
 <!-- #### [`pages`](/pages#pages-blocks) -->
