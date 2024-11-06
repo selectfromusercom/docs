@@ -568,6 +568,20 @@ sqlType: insert
   - key: email
 ```
 
+#### confirm: false
+
+쿼리 실행시 나타나는 확인(confirm)창을 끄고 싶은 경우 이용해주세요.
+
+```yaml
+- type: query
+  resource: mysql.qa
+  sqlType: insert
+  sql: INSERT INTO properties SET created_at = NOW(), name = :name
+  params:
+    - key: name
+  confirm: false
+```
+
 #### toast, toastOptions
 
 블록 실행 시 알림창(toast)을 띄울 수 있습니다. 
