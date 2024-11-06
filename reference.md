@@ -2615,6 +2615,63 @@ blocks:
         WHERE id = :id
 ```
 
+## columns.searchOptions
+
+개별 항목을 수정할때, 데이터를 먼저 검색하고 찾은 결과값을 반영할 수 있습니다. datalistFromQuery와 유사하지만 사용자에게 더 풍부한 검색 경험을 제공할 수 있습니다.
+
+**적용 가능한 상황**
+- display: form
+- 개별 컬럼 updateOptions
+
+```yaml
+blocks:
+  - type: query
+    resource: mysql
+    sqlType: select
+    sql: >
+      SELECT * FROM bookings LIMIT 10
+    columns:
+      id:
+        openModal: bookings/:id
+    modals:
+      - path: bookings/:id
+        blocks:
+          - type: query
+            resource: mysql
+            sqlType: select
+            sql: SELECT * FROM bookings WHERE id = :id
+            display: form
+            columns:
+              id:
+              assignee_id:
+                label: 담당자
+                updateOptions:
+                  type: query
+                  resource: mysql
+                  sqlType: update
+                  sql: >
+                    UPDATE bookings
+                    SET assignee_id = :value
+                    WHERE id = :id
+                searchOptions:
+                  enabled: true
+                  # allowEmpty: false # 내역을 선택해야 적용 가능
+                  # allowEdit: true # 선택지에 없는 텍스트 입력 가능
+                  type: query
+                  resource: mysql
+                  sqlType: select
+                  sql: >
+                    SELECT 
+                      id AS value, 
+                      name AS '이름', status AS '상태'
+                    FROM assingees
+                    WHERE (name LIKE CONCAT('%', :value, '%') OR id = :value)
+                    AND deleted_at IS NULL
+                  columns:
+                    value: 
+                      hidden: true
+```
+
 ## columns.prepend, append
 
 특정 컬럼을 가장 앞(prepend)에 두거나, 가장 뒤로(append) 둘 수 있습니다.
