@@ -171,6 +171,10 @@ export default defineConfig({
               text: '레이아웃 커스텀', 
               link: '/guide/custom-layout', 
             },
+            { 
+              text: '응답/요청값 Transformation', 
+              link: '/guide/js-transformation', 
+            },
           ]
         },
         {
