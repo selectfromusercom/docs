@@ -49,12 +49,12 @@ B2B, B2C, 모바일앱, 커머스, 블록체인 등
 
 ### 데이터베이스 지원
 
-| 지원 DB                                                         |
+| 지원 DB/리소스                                                    |
 | :------------------------------------------------------------- | 
 | MySQL, PostgreSQL(pgsql), Redis, MongoDB, Google Sheet, MS-SQL, DynamoDB, BigQuery, Supabase |
 
-연동을 원하는 리소스가 있다면 [리소스 연결 제안](https://bit.ly/3C1Uhls)을 해주세요.
-지원 DB를 이용중이시라면 [데이터베이스 연결](https://docs.selectfromuser.com/docs/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%97%B0%EA%B2%B0) 방법을 확인해보세요.
+연동을 원하는 리소스가 없다면 [리소스 연결 제안](https://bit.ly/3C1Uhls)을 해주세요.
+지원 DB/리소스를 이용중이시라면 [데이터베이스 연결](https://docs.selectfromuser.com/docs/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%97%B0%EA%B2%B0) 방법을 확인해보세요.
 
 ### HTTP API 지원
 
