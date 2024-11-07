@@ -47,6 +47,7 @@ outline: deep
 - Async Function `await 사용가능`
 - block, action, updateOptions, datalistFromQuery 공통
 - [useTableSelectedRow 으로 조회 내역에서 선택값 넘겨주기](https://ask.selectfromuser.com/t/usetableselectedrows-with-selectoptions-actions-openmodal/178)
+- [useEnv 안전하게 export된 환경변수 활용](https://ask.selectfromuser.com/t/useenv-export/274)
 
 
 ##### 파라메터 바꾸기
