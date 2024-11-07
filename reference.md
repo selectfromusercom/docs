@@ -3430,6 +3430,8 @@ params:
 
 ## params.datalist.datalistFromQuery
 
+쿼리로 조회한 datalist에서 선택하여 params에 입력합니다.
+
 ```yaml
 params:
 - key: code
