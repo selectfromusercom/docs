@@ -314,6 +314,10 @@ export default defineConfig({
               text: 'Self-hosted 로컬 CLI',
               link: '/guide/self-hosted-cli',
             },
+            { 
+              text: '윈도우(Windows)에 설치',
+              link: '/guide/self-hosted-cli-windows',
+            },          
           ]
         },      
       ],
