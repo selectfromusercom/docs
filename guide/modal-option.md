@@ -81,3 +81,23 @@ viewModal:
 > 📘 
 > 
 > aside, scroll, drag, minimize/maximize 등 모달 옵션을 안정화 후 추가 예정입니다.
+
+## 모달에서 제출후 창닫기
+
+`closeAfterSubmit`를 사용하면 모달을 띄운 다음, 데이터를 수정하고 제출시 자동으로 창을 닫을 수 있습니다.
+
+```yaml
+modals:
+  - path: modal1-:id
+    header: false
+    height: 400px
+    blocks:
+      - type: http
+        name: 포스트 업데이트
+        axios:
+          method: POST
+          url: https://jsonplaceholder.typicode.com/posts
+        closeAfterSubmit: true  
+        params:
+        - key: published_at
+```
