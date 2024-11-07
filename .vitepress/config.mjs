@@ -118,6 +118,7 @@ export default defineConfig({
                 { text: '입력 필드에 기본값 넣기', link: '/guide/input-default' },
                 { text: '입력 필드 상세 옵션', link: '/guide/input-option' },
                 { text: '파일 포맷 업로드', link: '/guide/input-file-upload' },
+                { text: '입력값 검증(Validation)', link: '/guide/input-validation' },
               ],
             },
             { 
