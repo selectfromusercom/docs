@@ -26,7 +26,7 @@ features:
     link: https://github.com/eces/select/blob/main/CHANGELOG.md
   - icon: 🏛️
     title: 샘플 예제 화면
-    details: showroom.selectfromuser.com | 라이브 화면 예제를 살펴볼 수 있어요.
+    details: Showroom | 라이브 화면 예제를 살펴볼 수 있어요.
     link: https://showroom.selectfromuser.com
 ---
 
