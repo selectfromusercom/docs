@@ -46,6 +46,7 @@ outline: deep
 
 - Async Function `await 사용가능`
 - block, action, updateOptions, datalistFromQuery 공통
+- [useTableSelectedRow 으로 조회 내역에서 선택값 넘겨주기](https://ask.selectfromuser.com/t/usetableselectedrows-with-selectoptions-actions-openmodal/178)
 
 
 ##### 파라메터 바꾸기
@@ -142,6 +143,7 @@ return filtered
 
 - Async Function `await 사용가능`
 - block, action, updateOptions, datalistFromQuery 공통
+- [useModalRow 모달에서 부모 테이블 JSON 사용하기](https://ask.selectfromuser.com/t/usemodalrow-json/179)
 
 
 -----------
