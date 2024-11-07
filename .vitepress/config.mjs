@@ -40,7 +40,7 @@ export default defineConfig({
     nav: [
       { text: 'Guide', link: '/guide/' },
       { text: 'Reference', link: '/reference' },
-      { text: 'Changelog', link: '/changelog/' },
+      { text: 'Changelog', link: 'https://github.com/eces/select/blob/main/CHANGELOG.md' },
       { text: 'Community', link: 'https://ask.selectfromuser.com' },
     ],
 
