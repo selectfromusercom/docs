@@ -244,6 +244,10 @@ export default defineConfig({
                   text: 'BigQuery', 
                   link: '/guide/database-bigquery',
                 },
+                {
+                  text: 'DynamoDB', 
+                  link: '/guide/database-dynamodb',
+                },
               ] 
             },            
             { 
