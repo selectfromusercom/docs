@@ -66,9 +66,9 @@ export default defineConfig({
               link: '/guide/admin-edit', 
               collapsed: true,
               items: [
-                { text: '편집 결과 미리보기', link: '/guide/admin-edit-preview'},
-                { text: '편집기 콘솔로그', link: '/guide/admin-edit-consolelog'},
-                { text: '편집파일 global.yml', link: '/guide/admin-edit-globalyml'},
+                { text: '편집 결과 미리보기', link: '/guide/admin-edit-preview' },
+                { text: '편집기 콘솔로그', link: '/guide/admin-edit-consolelog' },
+                { text: '편집파일 global.yml', link: '/guide/admin-edit-globalyml' },
               ],
             },
             { 
@@ -76,9 +76,9 @@ export default defineConfig({
               link: '/guide/menu', 
               collapsed: true,
               items: [
-                { text: '메뉴 권한 설정', link: '/guide/menu-permission'},
-                { text: '메뉴 path 이름 규칙', link: '/guide/menu-naming-path'},
-                { text: '계층 메뉴 만들기', link: '/guide/menu-submenu-tree'},
+                { text: '메뉴 권한 설정', link: '/guide/menu-permission' },
+                { text: '메뉴 path 이름 규칙', link: '/guide/menu-naming-path' },
+                { text: '계층 메뉴 만들기', link: '/guide/menu-submenu-tree' },
               ],
             },
             { 
@@ -227,7 +227,11 @@ export default defineConfig({
           items: [
             { 
               text: '데이터베이스 연결', 
-              link: '/guide/database-connect', 
+              link: '/guide/database-connect',
+              collapsed: true,
+              items: [
+                { text: 'SSH Tunneling', link: '/guide/database-connect-ssh' },
+              ],
             },
             { 
               text: '데이터베이스 변경', 
@@ -272,9 +276,9 @@ export default defineConfig({
               link: '/guide/team-user-property',
               collapsed: true,
               items: [
-                { text: '사용자 속성 동기화', link: '/guide/team-user-property-sync'},
-                { text: '사용자 속성 수정 블록', link: '/guide/team-user-property-type'},
-              ]
+                { text: '사용자 속성 동기화', link: '/guide/team-user-property-sync' },
+                { text: '사용자 속성 수정 블록', link: '/guide/team-user-property-type' },
+              ],
             },          
             { 
               text: '팀 설정', 
