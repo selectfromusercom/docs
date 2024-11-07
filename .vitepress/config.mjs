@@ -67,6 +67,7 @@ export default defineConfig({
               collapsed: true,
               items: [
                 { text: '편집 결과 미리보기', link: '/guide/admin-edit-preview'},
+                { text: '편집기 콘솔로그', link: '/guide/admin-edit-consolelog'},
               ],
             },
             { 
