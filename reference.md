@@ -4005,6 +4005,30 @@ pages:
         WHERE id = :id 
 ```
 
+### modals.roles
+
+계정 또는 권한 그룹(roles)에 따라 모달 안 데이터를 보이지 않게 할 수 있습니다. 서버 레벨에서 막아야하는 경우 blocks.roles를 이용해주세요.
+
+```yaml
+blocks:
+  - type: query
+    resource: mysql.qa
+    sqlType: select
+    sql: >
+      SELECT id, name FROM wine_stock
+    columns:
+      name:
+        openModal: view
+    modals:
+    - path: view
+      roles:
+        message: 해당 내역 수정 권한이 없습니다.
+        view:
+          - email::test@selectfromuser.com33
+      blocks:
+```
+
+
 #### [`blocks`](/reference#blocks-actions)
 
 # `actions: []`
