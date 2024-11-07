@@ -2826,6 +2826,19 @@ params:
     sql: select date_format(now(), '%Y-%m-%d')
 ```
 
+## params.defaultValueFn
+
+[moment](https://momentjs.com/), [Luxon](https://moment.github.io/luxon/#/?id=luxon)을 지원하고 있습니다.
+
+```yaml
+params:
+- key: created_at
+  defaultValueFn: |
+    // return moment().add(3, 'days').format('YYYY-MM-DD')
+    // return DateTime.now().toFormat('yyyy-MM-dd')
+    return '2022-08-12'
+```
+
 ## params.valueFromUserProperty
 
 설정 > 계정의 사용자 이름(name)과 이메일(email), 아이디(id) 시스템 데이터를 변수로 이용할 수 있습니다.
