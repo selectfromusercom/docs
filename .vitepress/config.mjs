@@ -238,7 +238,8 @@ export default defineConfig({
               link: '/guide/database-modify', 
             },
             { 
-              text: '데이터베이스별 가이드', 
+              text: '데이터베이스별 가이드',
+              collapsed: true,
               items: [
                 { 
                   text: 'MongoDB', 
