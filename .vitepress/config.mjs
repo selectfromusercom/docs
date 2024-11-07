@@ -265,8 +265,13 @@ export default defineConfig({
             },
             { 
               text: '사용자 속성 설정', 
-              link: '/guide/team-user-property', 
-            },
+              link: '/guide/team-user-property',
+              collapsed: true,
+              items: [
+                { text: '사용자 속성 동기화', link: '/guide/team-user-property-sync'},
+                { text: '사용자 속성 수정 블록', link: '/guide/team-user-property-type'},
+              ]
+            },          
             { 
               text: '팀 설정', 
               link: '/guide/team-setting', 
