@@ -307,6 +307,15 @@ export default defineConfig({
             },
           ]
         },
+        {
+          text: 'Self-hosted',
+          items: [
+            { 
+              text: 'Self-hosted 로컬 CLI',
+              link: '/guide/self-hosted-cli',
+            },
+          ]
+        },      
       ],
       '/changelog': [
         {
