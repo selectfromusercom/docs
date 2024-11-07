@@ -11,8 +11,9 @@ Layout
   //-   //- p.text-xs.text-zinc-600.font-bold 셀렉트어드민 
   //-   p.text-xs.text-zinc-400.font-medium © 2024 Selectfromuser Inc.
   template(#home-features-after)
-    .bg-zinc-50.mt-8
-      .container.mx-auto.flex.flex-wrap
+    .bg-zinc-50
+    .mt-8
+      .container.mx-auto.flex.flex-wrap.px-4(style='max-width: 1152px;')
         div.p-5.text-neutral-600(style='width: 240px')
           //- p.text-sm.font-bold © 2024 Selectfromuser Inc.
           //- p.text-xs.text-zinc-600.font-bold SelectAdmin
@@ -21,7 +22,7 @@ Layout
           
           
         
-        .ms-auto(class='w-1/2')
+        .ms-auto
           .flex.flex-wrap.pb-5
             div.p-4(style='width: 160px;')
               div.flex.flex-col.gap-1.p-2
