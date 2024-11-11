@@ -492,6 +492,25 @@ pages:
         type: markdown
 ```
 
+## pages.layout: dashboard
+
+특정 페이지를 `layout: dashboard`로 설정하면 대시보드 레이아웃이 적용됩니다.
+
+```yaml
+pages:
+  - path: sample/layout/dashboard
+    layout: dashboard
+    blocks:
+      - type: markdown
+        content: |
+          layout dashboard 1
+      - type: markdown
+        content: |
+          layout dashboard 2
+      - type: markdown
+        content: |
+          layout dashboard 3
+```
 
 <!-- ## [pages.params](/params#pages-params) -->
 
