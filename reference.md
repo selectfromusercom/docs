@@ -3554,6 +3554,46 @@ params:
           class: text-right
 ```
 
+## params.searchOptions
+
+- params datalist 대신에 쓸 수 있습니다. 풍부한 검색 경험을 제공하고 싶은 경우 이용해보세요.
+- 검색창이 뜨고, 전체 내역에서 선택한 내용은 구분됩니다.
+- 1건 선택지의 경우 엔터시 바로 선택됩니다.
+- 검색창 안에(searchOptions) 조회되는 컬럼은 모두 표시합니다.
+
+```yaml
+params:
+  - key: vintage
+    showSearchButton: true
+    # searchButtonLabel: 선택
+    searchOptions:
+      enabled: true
+      # allowEmpty: false # 내역을 선택해야 적용 가능
+      # allowEdit: true # 선택지에 없는 텍스트 입력 가능
+      resource: mysql.qa
+      type: query
+      sql: |
+        SELECT vintage AS value
+        FROM wine_stock
+        WHERE vintage > 2000 AND vintage LIKE CONCAT(:value, '%')
+        GROUP BY vintage
+```
+
+- value를 label 처리하고 싶을때는 아래와 같이 적용하시면 됩니다.
+
+```yaml
+    searchOptions:
+      enabled: true
+      resource: mysql.qa
+      type: query
+      sql: |
+        SELECT vintage AS value, vintage AS label
+        ...
+      columns:
+        vintage:
+          hidden: true
+```
+
 ## params.filterOptions
 
 - 디비에서 가져오지만 거의 변하지않는 코드/필터검색에 가까운경우 적합합니다. (완전검색 X)
