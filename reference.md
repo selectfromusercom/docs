@@ -3582,6 +3582,9 @@ params:
 - value를 label 처리하고 싶을때는 아래와 같이 적용하시면 됩니다.
 
 ```yaml
+params:
+  - key: vintage
+    ...
     searchOptions:
       enabled: true
       resource: mysql.qa
