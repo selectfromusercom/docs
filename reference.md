@@ -3554,6 +3554,49 @@ params:
           class: text-right
 ```
 
+## params.filterOptions
+
+- 디비에서 가져오지만 거의 변하지않는 코드/필터검색에 가까운경우 적합합니다. (완전검색 X)
+- Array param의 경우 쿼리편의를 위해 mapFirstValue 추가 (첫번째 값을 항상 빼줍니다. name → name1)
+
+```yaml
+blocks:
+  - type: query
+    resource: mysql.qa
+    sqlType: select
+    sql: >
+      SELECT * FROM properties
+      WHERE (!LENGTH(:property_type1) OR `type` IN ('', :property_type))
+      LIMIT 30
+    params:
+      - key: property_type
+        label: 숙소타입
+        mapFirstValue: true        
+
+        filterOptions:
+          enabled: true
+
+          # 기본 개수 표시 (없으면 '필터'로 표시)
+          label: 해당 타입
+
+          ## 값 표시 원하는경우
+          # style:
+          #   width: 200px
+          # showValues: true
+
+          resource: mysql.qa
+          type: query
+          sql: |
+            SELECT `type` as value, COUNT(id) as count, `memo`
+            FROM properties
+            GROUP BY `type`
+          template: |
+            <p class="flex">{{value}}
+              <span class="ml-auto text-base text-sky-700">{{count}}개<span>
+            </p>
+            <p class="opacity-50 text-sm">{{memo}}</p>  
+```
+
 ## params.progressStep
 
 데이터 입력시 스텝을 나눠 각 단계에 집중할 수 있게 돕습니다.
