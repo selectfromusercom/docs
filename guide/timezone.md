@@ -14,7 +14,7 @@ MySQL 등 데이터베이스의 타임존과 옵션에 따라 셀렉트 어드�
 
 해당 YAML을 자신의 어드민에 가져가서 테스트해볼 수 있어요. (resource와 sql 쿼리를 알맞게 수정해주세요.)
 
-![](https://global.discourse-cdn.com/standard11/uploads/selectfromuser/original/1X/06cb2ab9d50acab26985ca5ec8125238a6c6dae6.png)
+![](./image/timezone.png)
 
 ```yaml
 pages:
