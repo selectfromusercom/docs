@@ -1763,7 +1763,7 @@ blocks:
 조회한 데이터를 날짜로 정렬해서 타임라인 뷰로 볼 수 있습니다. 변경내역 조회 등에 활용할 수 있어요.
 - `timelineOptions`로 정렬 기준 컬럼을 선택하고 template을 지정할 수 있습니다. 
 - template은 HTML 적용 가능합니다.
-- 조회한 값을 template 안에서 `{{value}}` 방식으로 사용해요.
+- 조회한 값을 template 안에서 <span v-pre>`{{value}}`</span> 방식으로 사용해요.
 
 ```yaml
 - type: query
