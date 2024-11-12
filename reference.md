@@ -2575,6 +2575,35 @@ columns:
       openPage: company/{{id}}
 ```
 
+### buttons.visible
+
+컬럼 필드의 값에 따라 버튼이 보이거나 보이지 않게 설정할 수 있습니다.
+
+```yaml
+menus:
+- path: pages/columns-buttons-visible
+  name: columns
+pages:
+- path: pages/columns-buttons-visible
+  blocks:
+  - type: query
+    resource: mysql
+    sqlType: select
+    sql: >
+      SELECT 1 AS field, 2 AS field2
+    columns:
+      field:
+        label: field label
+        buttons:
+          - label: button label
+            visible: "{{ row.field == '1' }}"
+      field2:
+        label: field2 label
+        buttons:
+          - label: button2 label
+            visible: "{{ row.field !== '1' }}"
+```
+
 ## columns.updateOptions
 
 한번에 여러 필드를 수정하지 않고, 낱개로 처리할 수 있습니다.
