@@ -3752,6 +3752,48 @@ params:
   hidden: true
 ```
 
+## params.`hiddenIfNotOption | disableIfNotOption`
+
+선택지(option)가 없는 경우 해당 param을 숨기거나 비활성화할 수 있습니다. 부모 카테고리/코드 기반으로 데이터를 조회할때 적용할 수 있어요.
+
+```yaml
+blocks:
+  - type: query
+    resource: mysql
+    sqlType: insert
+    sql: >
+      INSERT INTO products (name, code_group1, code_group2)
+      values (:name, :code1, :code2)
+    reloadAfterSubmit: true
+    class: p-2
+    params:
+    - key: name
+    - key: code1
+      required: true
+      datalistDropdown: true
+      dropdownSize: 10
+      datalistFromQuery:
+        type: query
+        resource: mysql
+        sql: >
+          SELECT DISTINCT level1 AS value
+          FROM category
+          ORDER BY level1 ASC
+    - key: code2
+      datalistDropdown: true
+      dropdownSize: 10
+      hiddenIfNotOption: true
+      # disableIfNotOption: true
+      datalistFromQuery:
+        type: query
+        resource: mysql
+        sql: >
+          SELECT DISTINCT level2 AS value
+          FROM category
+          WHERE level1 = :code1
+          ORDER BY level2 ASC
+```
+
 ## params.placeholder
 
 입력 필드 안에 placeholder 를 입력해 필드에 대한 가이드를 줄 수 있습니다. 
