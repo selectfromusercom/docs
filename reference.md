@@ -3159,28 +3159,55 @@ params:
 
 ### `relative: true`
 
-지난주, 다음주 등을 여러번 눌러 반복적으로 적용할 수 있습니다. 
+- shortcuts 이용시 상대적(relative)으로 값을 조절할 수 있습니다.
+- 여러번 눌러 반복적으로 적용할 수 있습니다.
+
+**예제1: format date 이용시**
 
 ```yaml
 shortcuts:
-- label: 지난주
-  relative: true
-  from:
-    offset: -7
+  - label: 어제 D-1
+    offset: -1
     period: day
-  to:
-    offset: -7
+    relative: true
+  - label: 내일 D+1
+    offset: 1
     period: day
-- label: 다음주
-  relative: true
-  from:
-    offset: 7
-    startOf: day
-  to:
-    offset: 7
-    endOf: day
-- label: 초기화
-  reset: true
+    relative: true
+  - label: 지난주
+    offset: -1
+    period: week
+  - label: 지난달
+    offset: -1
+    period: month
+  - label: 월초
+    startOf: month
+  - label: 월말
+    endOf: month
+```
+
+**예제2: date range 이용시**
+
+```yaml
+shortcuts:
+  - label: 지난주
+    relative: true
+    from:
+      offset: -7
+      period: day
+    to:
+      offset: -7
+      period: day
+  - label: 다음주
+    relative: true
+    from:
+      offset: 7
+      startOf: day
+    to:
+      offset: 7
+      endOf: day
+  - label: 초기화
+    reset: true
 ```
 
 ### `reset: true`, `clear: true`
