@@ -720,9 +720,9 @@ REST API와 GraphQL API 모두 사용 가능합니다. axios 용법을 그대로
     write something
 ```
 
-### type: top, left, center, right, bottom
+### type: `top | left | center | right | bottom`
 
-페이지 안에 영역을 구분하는 타입입니다. 해당 타입을 입력하고 아래에 쿼리, API, 마크다운 블록을 추가할 수 있습니다. 복잡한 레이아웃layout을 더 손쉽게 구성할 수 있어요.
+페이지 안에 영역을 구분하는 타입입니다. 해당 타입을 입력하고 아래에 쿼리, API, 마크다운 블록을 추가할 수 있습니다. 간단한 레이아웃(layout)을 빠르게 구성할 수 있어요.
 
 ```yaml
 blocks:
@@ -732,6 +732,59 @@ blocks:
   blocks:
   - type: markdown
   - type: query
+```
+
+**예제**
+
+```yaml
+pages:
+- path: company-layouts
+  blocks:
+  - 
+    type: top
+    title: title
+    blocks:
+      - type: markdown
+        content: >
+          > TOP
+  - 
+    type: left
+    title: title
+    subtitle: subtitle
+    blocks:
+      - type: markdown
+        content: >
+          > LEFT
+  - 
+    type: center
+    style:
+      width: 50%
+      height: 80vh
+      maxHeight: calc(100vh - 300px)
+      overflow: scroll
+    blocks:
+      - type: markdown
+        content: >
+          > CENTER
+      - type: query
+        title: 내역은 최근 30일
+        subtitle: 내역은 최근 30일
+        description: 영수증 목록
+        resource: mysql.qa
+        sql: SELECT * FROM test_10k LIMIT 300
+        sqlType: select
+  - 
+    type: right
+    blocks:
+      - type: markdown
+        content: >
+          > RIGHT
+  - 
+    type: bottom
+    blocks:
+      - type: markdown
+        content: >
+          > BOTTOM
 ```
 
 ### type: header
