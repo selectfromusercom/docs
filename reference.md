@@ -1686,6 +1686,7 @@ blocks:
     metricOptions:
       type: bar
       name: t
+      href: "#id={{id}}"
       nameLabel: 소스
       value: c      
       valueLabel: 방문자수
