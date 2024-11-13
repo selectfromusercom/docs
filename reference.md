@@ -3237,6 +3237,19 @@ pages:
     reloadAfterSubmit: true
 ```
 
+### format: range
+
+슬라이더(slider) UI로 범위 사이 값을 입력할 수 있습니다.
+
+```yaml
+params:
+  - key: range
+    format: range
+    label: 범위값
+    min: -5
+    max: 5
+```
+
 ### format: s3
 
 s3를 사용하시는 경우 `format: s3`로 쉽고 안정적으로 파일을 업로드해보세요.
