@@ -3070,7 +3070,7 @@ format: editor
 format: color
 ```
 
-### format.date (datetime, year, month, week)
+### format.`date | datetime | year | month | week`
 
 날짜 데이터의 종류별로 입력 포맷을 선택할 수 있습니다. 
 
