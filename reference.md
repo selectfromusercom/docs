@@ -3429,7 +3429,7 @@ params:
 
 ### dropdownMultiple
 
-여러개 선택 방식
+dropdown 선택지에서 여러건을 선택할 수 있습니다.
 
 ```yaml
 params:
@@ -3439,8 +3439,8 @@ params:
   - pinned: 고정
   - event: 이벤트
   - ad: 광고
+  dropdownSize: 3
   dropdownMultiple: true
-  dropdownSize: 3 # 보여지는 선택 내역 개수
 ```
 
 ### dropdown selectOptions
