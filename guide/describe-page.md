@@ -40,6 +40,23 @@ outline: deep
 
 ## FAQ
 
+### HTML로 작성해도 되나요?
+
+네 아래와 같이 입력하실 수 있습니다.
+
+![](./image/markdown-html.png)
+
+```yaml
+  - type: markdown
+    content: |
+      <p class="text-slate-600 font-bold text-2xl">영수증 확인 매장목록 페이지</p>
+
+      <ul class="text-slate-400 font-bold text-xs">
+        <li>과거 데이터는 <a href='#'>과거거래내역</a> 페이지에서 조회 가능합니다.</li>
+        <li>연락처 마스킹은 클릭을 통해 확인하실 수 있습니다.</li>
+      </ul>
+```
+
 ### 마크다운과 쿼리를 같이 표시할 수 있나요?
 
 A. 네. 블록을 두개 추가하면 됩니다.
