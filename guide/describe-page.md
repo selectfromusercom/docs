@@ -59,7 +59,7 @@ outline: deep
 
 ### 마크다운과 쿼리를 같이 표시할 수 있나요?
 
-A. 네. 블록을 두개 추가하면 됩니다.
+네 아래와 같이 type: markdown과 type: query를 이어서 사용하시면 됩니다.
 
 ![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/47f0e6b9-8bd8-4c4f-d26b-9813c2414c00/docs "markdown-query-block.png")
 
