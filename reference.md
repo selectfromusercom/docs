@@ -3412,6 +3412,21 @@ params:
   - published: 배포완료
 ```
 
+### dropdownSize
+
+dropdown 선택지에 노출되는 개수(size)를 조절합니다.
+
+```yaml
+params:
+- key: name
+- key: status
+  dropdown:
+  - pinned: 고정
+  - event: 이벤트
+  - ad: 광고
+  dropdownSize: 3 # 보여지는 선택 내역 개수
+```
+
 ### dropdownMultiple
 
 여러개 선택 방식
