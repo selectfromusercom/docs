@@ -58,7 +58,7 @@ B2B, B2C, 모바일앱, 커머스, 블록체인 등
 
 ### HTTP API 지원
 
-REST API, GraphQL, axios
+REST API, GraphQL, AXIOS, GOT
 
 ### Google Spreadsheet 구글시트
 
