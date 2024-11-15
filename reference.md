@@ -1935,6 +1935,8 @@ formOptions:
 params와 주로 쓰입니다. 값을 입력하고 제출할 때 버튼의 이름이나 색상을 바꿀 수 있어요. 
 
 ```yaml
+params:
+  - key: name
 submitButton:
   label: 검색
   type: primary
