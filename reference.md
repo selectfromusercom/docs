@@ -1615,7 +1615,7 @@ viewModal:
         memo:
 ```
 
-### display: col-1
+### display: `col-1 | col-2 | col-3`
 
 조회한 데이터를 피봇 테이블로 보여줍니다.
 
@@ -1624,12 +1624,12 @@ blocks:
 - type: query
   sqlType: select
   ...
-  display: col-1
+  display: col-1 # col-2, col-3
   # thStyle:
   #   width: 150px
 ```
 
-### display: col-2
+<!-- ### display: col-2
 
 조회한 데이터를 피봇 테이블로 2등분합니다.
 
@@ -1639,7 +1639,7 @@ blocks:
   sqlType: select
   ...
   display: col-2
-```
+``` -->
 
 ### display: col-1/2 + updateOptions
 
