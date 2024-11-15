@@ -78,8 +78,6 @@ columns:
 <img src="./image/styleGuide1.png" style="width: 300px;" />
 
 
-
-
 ```yml
 menus:
 - path: pages/l14g9x
@@ -102,7 +100,15 @@ pages:
     sql: SELECT * FROM wine_stock
 ```
 
+- page: 페이지 전체 스타일
+- blocks: 블록 단위 스타일
+- params: 입력폼 단위 스타일
+- results: 결과물 단위 스타일
+- pageParams: 페이지 입력폼 단위 스타일 (기본값: `m-2 mb-4 p-3 border border-slate-300 rounded-lg bg-slate-50 drop-shadow-sm `)
+
 <img src="./image/styleGuide2.png" style="width: 300px;" />
+
+
   
 ## 버튼 스타일 꾸미기
 
