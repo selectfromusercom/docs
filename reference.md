@@ -988,7 +988,7 @@ pages:
     sql: ...
 ```
 
-## blocks.showDowload
+## blocks.showDownload
 
 `showDownload: false`
 
