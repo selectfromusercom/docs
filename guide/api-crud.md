@@ -75,7 +75,7 @@ pages:
       - key: API_VERSION
         valueFromEnv: true
     showResult: false # 응답결과 끄기
-    showResult: table # 테이블로 표현
+    # showResult: table # 테이블로 표현
     # showResult: template # 템플릿 표현
     # showResultTemplate: |
     #   object_url: {{object_url}}
