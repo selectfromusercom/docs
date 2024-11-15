@@ -988,7 +988,7 @@ pages:
     sql: ...
 ```
 
-## blocks.showDowload
+## blocks.showDownload
 
 `showDownload: false`
 
@@ -1037,6 +1037,43 @@ pages:
 `showDownload: csv formatted xlsx`
 
 엑셀 파일을 csv formatted와 동일하게 셀렉트 어드민에 보이는대로(formatted) 다운로드 받을 수 있습니다.
+
+
+## blocks.downloadAfterSubmit
+
+- 데이터의 화면 표시가 불필요하거나 대량 데이터를 다운로드 받아야할때 `downloadAfterSubmit: true`를 추가해보세요.
+- 바로 다운로드하고 화면에 렌더링하지 않습니다. (10만건이상 처리)
+- query SELECT, http GET 일때만 작동합니다.
+- 기본적으로 `autoload: false`를 함께 추가해야합니다.
+
+```yaml
+blocks:
+  - 
+    type: query
+    resource: mysql.qa
+    sqlType: select
+    sql: >
+      SELECT * FROM test_10k
+      WHERE id BETWEEN :from AND :to 
+      LIMIT 100000
+    
+    # type: http
+    # axios:
+    #   url: https://api.selectfromuser.com/sample-api/products
+    #   method: GET
+    # rowsPath: rows
+
+    params:
+      - key: from
+        value: 1
+      - key: to
+        value: 5000
+    submitButton: 
+      label: 다운로드
+    autoload: false
+    showDownload: csv xlsx
+    downloadAfterSubmit: true
+```
 
 ## blocks.log
 
@@ -1615,7 +1652,7 @@ viewModal:
         memo:
 ```
 
-### display: col-1
+### display: `col-1 | col-2 | col-3`
 
 조회한 데이터를 피봇 테이블로 보여줍니다.
 
@@ -1624,12 +1661,12 @@ blocks:
 - type: query
   sqlType: select
   ...
-  display: col-1
+  display: col-1 # col-2, col-3
   # thStyle:
   #   width: 150px
 ```
 
-### display: col-2
+<!-- ### display: col-2
 
 조회한 데이터를 피봇 테이블로 2등분합니다.
 
@@ -1639,7 +1676,7 @@ blocks:
   sqlType: select
   ...
   display: col-2
-```
+``` -->
 
 ### display: col-1/2 + updateOptions
 
