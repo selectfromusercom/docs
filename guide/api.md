@@ -10,11 +10,15 @@ HTTP GET/POST/PUT/DELETE등 다양한 API들을 셀렉트에 연결합니다.
 - 원하는 입력폼을 구성하여 API로 호출
 - (지원예정) API 호출 시 로그/슬랙 알림
 
+셀렉트어드민 HTTP 블록은 axios와 got을 지원합니다. 다른 지원이 필요한 경우 문의해주세요.
+
 ## API 내용을 표시하기 (HTTP GET)
 
 아래의 YML로 간단한 조회를 합니다.
 
-```yaml
+::: code-group
+
+```yaml [AXIOS]
 menus:
 - path: test/http-get
   name: HTTP-GET
@@ -28,6 +32,25 @@ pages:
       url: https://gist.githubusercontent.com/eces/c267436ddeec8917b47ee666b0d5e955/raw/892877e7035c4f61e946848a3f6da7e9983cab15/test.json
     rowsPath: rows
 ```
+
+```yaml [GOT]
+menus:
+- path: http-client-got
+  name: http-client-got
+pages:
+- path: http-client-got
+  blocks:
+  - type: http
+    got:
+      url: https://nghttp2.org/httpbin/anything
+      method: GET
+      http2: true
+    columns:
+      headers:
+        format: table
+```
+
+:::
 
 ## API 블록 키(key) 개념
 
