@@ -52,6 +52,36 @@ axios 하위의 모든 부분에 원하는 파라메터를 넣을 수 있습니�
 
 ![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/174d65d3-32c0-43de-623d-ccb303b2a500/docs "parameter-axios.png")
 
+## 응답결과 처리
+
+응답결과를 보이지 않게 하거나 테이블, 지정된 템플릿으로 표현할 수 있습니다.
+
+```yaml
+pages:
+- path: test/http-post
+  blocks:  
+  - type: http
+    name: POST 샘플
+    axios:
+      method: POST
+      url: https://httpbin.org/anything?query=1
+      data:
+        '고객아이디': customer-{{id}}
+        'v': "{{API_VERSION}}"
+    params:
+      - key: id
+        label: '고객ID (수신거부 대상자 처리)'
+        format: 'number'
+      - key: API_VERSION
+        valueFromEnv: true
+    showResult: false # 응답결과 끄기
+    showResult: table # 테이블로 표현
+    # showResult: template # 템플릿 표현
+    # showResultTemplate: |
+    #   object_url: {{object_url}}
+    #   name: {{name}}
+```
+
 ## 키 관리
 
 일부 파라메터는 설정 > 키 관리에서 추가 후 이용 가능합니다.
