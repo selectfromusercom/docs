@@ -178,6 +178,10 @@ export default defineConfig({
               text: '응답/요청값 Transformation', 
               link: '/guide/js-transformation', 
             },
+            {
+              text: '스타일, 디자인 가이드',
+              link: '/guide/style-guide',
+            },
           ]
         },
         {
