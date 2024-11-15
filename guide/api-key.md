@@ -40,3 +40,7 @@ pages:
       - key: API_TOKEN_DEV
         valueFromEnv: true
 ```
+
+#### 참고
+
+- [API 보안과 환경변수 설정](/guide/secure-api)

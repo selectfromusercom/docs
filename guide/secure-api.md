@@ -32,3 +32,8 @@ YAML에 API키를 직접 입력하지 않고 환경변수 설정을 가져와 �
 ### 설치형
 
 설치형에서는 특별한 제약없이 바로 환경변수 추가 가능합니다. (`.env` 또는 `API=1 slt` 이용)
+
+
+#### 참고
+
+- [useEnv 안전하게 export된 환경변수 활용](https://ask.selectfromuser.com/t/useenv-export/274)
