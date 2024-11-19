@@ -3817,6 +3817,106 @@ blocks:
             <p class="opacity-50 text-sm">{{memo}}</p>  
 ```
 
+## params.categoryOptions
+
+지역, 카테고리, 코드등을 순차적으로 선택하고 입력해야할때 사용하실 수 있습니다.
+
+**예제 가이드**
+- params와 columns.updateOptions에서 사용할 수 있어요.
+- template: 카테고리 → 문자열로 변경 (지정 안하면 object로 기입. responseFn 쓰고싶은 경우)
+- valueFn: 문자열 → 카테고리로 변경 (디비에 저장된 값을 불러와 입력폼에 반영. 001002003 같은 코드는 자동으로 식별불가능)
+  - 조회할때 보통 카테고리정보도 같이 불러와 넘겨줄 수 있습니다.
+  - row `object`: 보고있는 내용 전체 JSON
+  - value `string`: 전달받은 값
+  - list `array`: 불러온 모든 카테고리 목록
+
+```yaml
+blocks:
+  - type: query
+    resource: mysql.qa
+    sqlType: update
+    sql: >
+      UPDATE wine_stock
+      SET name = :category
+      WHERE id = 23
+    params:
+      - key: name
+        group: 1
+      - key: category
+        label: 상품카테고리
+        format: category
+        group: 2
+        style:
+          width: 800px
+        columns:
+          - label: 대분류
+            key: code1
+            style:
+              height: 200px
+          - label: 중분류
+            key: code2
+            style:
+              height: 200px
+              # maxWidth: 300px
+          - label: 소분류
+            key: code3
+            style:
+              height: 200px
+              # width: 500px
+        categoryOptions:
+          type: query
+          resource: mysql.qa
+          sql: |
+            SELECT * FROM category
+          template: "{{basecode1}}{{basecode2}}{{basecode3}}"         
+
+  - type: query
+    resource: mysql.qa
+    sqlType: select
+    sql: >
+      SELECT * FROM wine_stock
+      WHERE id = 23
+    display: form    
+    columns:
+      name:
+        label: 상품카테고리
+        format: category
+        updateOptions:
+          type: query
+          resource: mysql.qa
+          sql: |
+            UPDATE wine_stock
+            SET name = :value
+            WHERE id = 23
+        columns:
+          - label: 대분류
+            key: code1
+            style:
+              height: 200px
+          - label: 중분류
+            key: code2
+            style:
+              height: 200px
+          - label: 소분류
+            key: code3
+            style:
+              height: 200px
+        categoryOptions:
+          type: query
+          resource: mysql.qa
+          sql: |
+            SELECT * FROM category
+          template: "{{basecode1}}{{basecode2}}{{basecode3}}"
+          valueFn: |
+            const code1 = value.slice(0, 3)
+            const code2 = value.slice(3, 6)
+            const code3 = value.slice(6, 9)
+
+            return list.find(e => {
+              return e.basecode1 == code1 && e.basecode2 == code2 && e.basecode3 == code3
+            })
+```
+
 ## params.progressStep
 
 데이터 입력시 스텝을 나눠 각 단계에 집중할 수 있게 돕습니다.
