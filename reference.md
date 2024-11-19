@@ -104,6 +104,15 @@ layout:
         gtag('config', 'G-XXXXXXXXXX');
 ```
 
+### layout.hideLeftMenu
+
+상단 메뉴만 유지하고 싶을때 해당 옵션을 적용해주세요. `menus.type: nav`와 함께 사용시 유용합니다.
+
+```yaml
+layout:
+  hideLeftMenu: true
+```
+
 <!-- ## [`menus`](/menus) -->
 
 <!-- ## [`pages`](/pages) -->
