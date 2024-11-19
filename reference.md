@@ -512,6 +512,37 @@ pages:
           layout dashboard 3
 ```
 
+## pages.roles
+
+- menus와 마찬가지로 roles를 적용할 수 있습니다.
+- menus.roles와 pages.roles가 이중 레이어로 적용됩니다. (어느 한쪽으로 우선적용되지 않습니다.)
+
+```yaml
+pages:
+- path: pages/Ze1f_b
+  roles:
+    list: 
+      - email::test@selectfromuser.com
+    view:
+      - email::test@selectfromuser.com
+```
+
+메뉴를 노출하지 않으면서 메뉴단위로 roles를 지정하고 싶다면 `placement: page-only`와 `menus.roles`를 사용할 수 있습니다.
+
+```yaml
+menus:
+- path: pages/Ze1f_b
+  placement: page-only
+  roles:
+    list: 
+      - email::test@selectfromuser.com
+    view:
+      - email::test@selectfromuser.com  
+pages:
+- path: pages/Ze1f_b
+```
+
+
 <!-- ## [pages.params](/params#pages-params) -->
 
 <!-- #### [`pages`](/pages#pages-blocks) -->
