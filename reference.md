@@ -2887,6 +2887,32 @@ actions:
     visible: "{{ row.booking_status == 'canceled' }}"      
 ```
 
+### format: toggle
+
+조회한 테이블의 특정 컬럼 값을 수정할때 toggle UI를 적용할 수 있습니다.
+
+```yaml
+columns:
+  status:
+    label: 상태
+    updateOptions:
+      type: query
+      resource: mysql.qa
+      sqlType: update
+      sql: >
+        UPDATE properties SET status = :value WHERE id = :id
+      params:
+        - key: id
+          valueFromRow: id
+      confirm: true
+    format: toggle
+    trueValue: 1
+    falseValue: 0
+    trueLabel: 활성
+    falseLabel: 비활성
+```
+
+
 ## columns.updateOptions + display: form
 
 Update 쿼리 블록을 조회/수정 모드를 껐다 켜는 방식으로 사용할 수 있습니다. 적용시 수정버튼이 추가됩니다.
