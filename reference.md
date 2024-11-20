@@ -1986,6 +1986,59 @@ blocks:
     - key: team_id
 ```
 
+### display: shadow
+
+`display: shadow`는 shadow DOM 개념과 유사한 기능입니다. 공통 상세정보를 가져와 하위 여러개 블록을 표시해보세요.
+
+::: tip
+단계별로 데이터를 조회하는게 알맞지 않거나, 모달 URL 구성시 모달 하위에 사용하기 위한 params 값에 긴 내용으로 인해 URL 최대 길이를 넘거나 인코딩이 실패*할 수 있습니다.
+> *셀렉트에서는 모달 생성시 useColumn 된 내용들을 가급적 URL에 저장하고 있습니다. (새로고침이나 뒤로가기등 지원)
+
+이때 display: shadow를 통해 tabOptions나 한번더 감싸지 않고 조회된 값을 하위 블록으로 보내는 방법을 이용하실 수 있습니다.
+:::
+
+```yaml
+- path: pages/CG6psi
+  title: Large valueFromRow modal
+  subtitle: 내용
+  blocks:
+  - type: query
+    resource: mysql.qa
+    sqlType: select
+    sql: >
+      SELECT * FROM wine_stock
+    columns:
+      name:
+        openModal: test
+    modals:
+    - path: test
+      useColumn:
+        - id
+      usePage: pages/CG6psi/modal
+- path: pages/CG6psi/modal
+  blocks:
+  - type: query
+    resource: mysql.qa
+    sqlType: select
+    sql: >
+      SELECT * FROM wine_stock WHERE id = :id
+    params:
+      - key: id
+        valueFromRow: true
+    display: shadow
+    blocks:
+    - type: http
+      axios:
+        url: https://httpbin.selectfromuser.com/anything
+        method: POST
+      params:
+        - key: name
+          defaultValueFromRow: name
+        - key: memo
+          defaultValueFromRow: memo
+          format: textarea
+```
+
 ## blocks.formOptions
 
 params와 함께 쓰이며, 입력 양식 스타일을 다양하게 수정할 수 있습니다. 
