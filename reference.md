@@ -1986,6 +1986,212 @@ blocks:
     - key: team_id
 ```
 
+### display: map
+
+위도, 경도 데이터를 바탕으로 마커(marker)를 추가하거나 불러온 데이터를 통해 폴리곤(Polygon) 설정이 가능합니다.
+마커를 클릭했을때 모달을 띄워 상세 정보를 조회할 수도 있습니다.
+
+지도 기능
+- display: map
+- displayFn 으로 네이버지도 API 그대로 추가 가능합니다.
+- 마커, 인포, 폴리곤, 폴리라인
+- 클릭시 모달 띄우기, 액션 띄우기
+
+**예제1: 지도에 마커 표시하기**
+
+```yaml
+menus:
+- path: pages/EBulXa
+  name: 지도 마커
+pages:
+- path: pages/EBulXa
+  title: 마커를 클릭하면 모달 열기
+  blocks:
+  - type: query
+    resource: mysql.qa
+    sqlType: select
+    sql: >
+      SELECT * FROM test_map
+    display: map
+    
+    displayFn: |
+
+      for (const row of rows) {
+        // 마커 추가
+        const marker = new naver.maps.Marker({
+          position: new naver.maps.LatLng(row.lat, row.long),
+          title: row.name,
+          map: map,
+        });
+
+        naver.maps.Event.addListener(marker, 'click', function(e) {
+          // console.log('>>>선택한 로우 데이터', row)
+
+          // 모달 열기
+          openModal('view', row)
+        });
+      }
+
+      // 지도를 첫번째 마커로 옮기기
+      map.setCenter(new naver.maps.LatLng(rows[0].lat, rows[0].long))
+
+    height: 600px
+    width: 100%
+
+    mapOptions:
+      zoom: 15
+      zoomControl: true
+
+    modals:
+      - path: view
+        blocks:
+          - type: query
+            resource: mysql.qa
+            sqlType: select
+            sql: >
+              SELECT * FROM test_map
+              WHERE id = :id
+            params:
+              - key: id
+                valueFromRow: true
+```
+
+**예제2: 지도에 상세보기, 폴리곤, 폴리라인 표시하기**
+
+```yaml
+menus:
+- path: pages/JGi9HR
+  name: openAction, polygon
+pages:
+- path: pages/JGi9HR
+  blocks:
+  - type: query
+    resource: mysql.qa
+    sqlType: select
+    sql: >
+      SELECT * FROM test_map
+    display: map
+    
+    displayFn: |
+
+      // 폴리곤 표시
+      var polygon = new naver.maps.Polygon({
+          map: map,
+          paths: [
+              [
+                  new naver.maps.LatLng(37.37544345085402, 127.11224555969238),
+                  new naver.maps.LatLng(37.37230584065902, 127.10791110992432),
+                  new naver.maps.LatLng(37.35975408751081, 127.10795402526855),
+                  new naver.maps.LatLng(37.359924641705476, 127.11576461791992),
+                  new naver.maps.LatLng(37.35931064479073, 127.12211608886719),
+                  new naver.maps.LatLng(37.36043630196386, 127.12293148040771),
+                  new naver.maps.LatLng(37.36354029942161, 127.12310314178465),
+                  new naver.maps.LatLng(37.365211629488016, 127.12456226348876),
+                  new naver.maps.LatLng(37.37544345085402, 127.11224555969238)
+              ]
+          ],
+          fillColor: '#ff0000',
+          fillOpacity: 0.3,
+          strokeColor: '#ff0000',
+          strokeOpacity: 0.6,
+          strokeWeight: 3
+      });
+      
+      // 폴리라인 표시
+      var polyline = new naver.maps.Polyline({
+          map: map,
+          path: [
+              new naver.maps.LatLng(37.359924641705476, 127.1148204803467),
+              new naver.maps.LatLng(37.36343797188166, 127.11486339569092),
+              new naver.maps.LatLng(37.368520071054576, 127.11473464965819),
+              new naver.maps.LatLng(37.3685882848096, 127.1088123321533),
+              new naver.maps.LatLng(37.37295383612657, 127.10876941680907),
+              new naver.maps.LatLng(37.38001321351567, 127.11851119995116),
+              new naver.maps.LatLng(37.378546827477855, 127.11984157562254),
+              new naver.maps.LatLng(37.376637072444105, 127.12052822113036),
+              new naver.maps.LatLng(37.37530703574853, 127.12190151214598),
+              new naver.maps.LatLng(37.371657839593894, 127.11645126342773),
+              new naver.maps.LatLng(37.36855417793982, 127.1207857131958)
+          ]
+      });
+
+      for (const row of rows) {
+        // 마커 추가
+        const marker = new naver.maps.Marker({
+          position: new naver.maps.LatLng(row.lat, row.long),
+          title: row.name,
+          map: map,
+        });
+
+        // 인포창 필요없으면 생략해도됨 (클릭시 바로 모달만 열기)
+        // 인포창 시작 >>>
+        const contentString = `
+          <div class="p-5">
+            <h3>${row.name}</h3>
+            <p>${row.address}</p>
+          </div>`
+
+        const infowindow = new naver.maps.InfoWindow({
+            content: contentString
+        });
+
+        naver.maps.Event.addListener(marker, 'mouseover mouseout', function(e) {
+          if (infowindow.getMap()) {
+              infowindow.close();
+          } else {
+              infowindow.open(map, marker);
+          }
+        })
+        // 인포창 끝 <<<
+
+        naver.maps.Event.addListener(marker, 'click', function(e) {
+          // console.log('>>>선택한 로우 데이터', row)
+
+          // 모달 열기
+          openModal('view', row)
+          
+          // 액션 열기
+          // openAction('UPDATE_STATUS', row)
+        });
+      }
+
+      // 지도를 첫번째 마커로 옮기기
+      map.setCenter(new naver.maps.LatLng(rows[0].lat, rows[0].long))
+
+    height: 600px
+    # width: 100%
+
+    # mapOptions:
+    #   zoom: 15
+    #   zoomControl: true
+
+    modals:
+      - path: view
+        mode: side
+        blocks:
+          - type: query
+            resource: mysql.qa
+            sqlType: select
+            sql: >
+              SELECT * FROM test_map
+              WHERE id = :id
+            params:
+              - key: id
+                valueFromRow: true
+    actions:
+      - type: query
+        resource: mysql.qa
+        sqlType: select
+        sql: SELECT 1
+        name: UPDATE_STATUS
+        modal: true
+```
+
+**참고자료**
+- [행정구역 DB데이터로 폴리곤 표기하기](https://ask.selectfromuser.com/t/db/282)
+- [네이버 지도 예제 모아보기](https://navermaps.github.io/maps.js.ncp/docs/tutorial-digest.example.html)
+- [네이버 지도 정보창](https://navermaps.github.io/maps.js.ncp/docs/tutorial-3-InfoWindow.html)
+
 ### display: shadow
 
 `display: shadow`는 shadow DOM 개념과 유사한 기능입니다. 공통 상세정보를 가져와 하위 여러개 블록을 표시해보세요.
