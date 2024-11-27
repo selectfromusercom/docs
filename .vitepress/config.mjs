@@ -21,7 +21,8 @@ export default defineConfig({
         'data-domain': 'dev.selectfromuser.com',
         src: 'https://plausible.io/js/script.js',
       }
-    ]
+    ],
+    ['meta', { name: 'naver-site-verification', content: '658480c6f616bed769cb114e6befd7d11ab0d21e' }],
   ],
   // locales: {
   //   root: {
