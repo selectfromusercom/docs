@@ -3448,6 +3448,22 @@ params:
     return '2022-08-12'
 ```
 
+**범위 날짜 사용시 (format: date, range: true)**
+
+return [] 형태로 입력해주세요.
+
+```yaml
+params:
+- key: created_at
+  format: date
+  range: true
+  defaultValueFn: |
+    return [      
+      moment().add(-1, 'month').format('YYYY-MM-DD'),      
+      moment().add(1, 'day').format('YYYY-MM-DD')    
+    ]
+```
+
 ## params.valueFromUserProperty
 
 설정 > 계정의 사용자 이름(name)과 이메일(email), 아이디(id) 시스템 데이터를 변수로 이용할 수 있습니다.
