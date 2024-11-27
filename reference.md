@@ -3171,6 +3171,86 @@ columns:
     falseLabel: 비활성
 ```
 
+### format: table
+
+params `format: table` 과 동일하게 columns updateOptions에서 JSON 형태의 데이터를 수정하는 UI 화면을 구성할 수 있어요. 
+
+```yaml
+    - type: query
+      resource: mysql.qa
+      title: id=65 wine_stock의 property_json의 일부분을 수정
+      sqlType: select
+      sql: |
+        select id, property_data from wine_stock 
+        where id = 65
+      display: form
+      responseFn: |
+        rows = rows.map(e => {
+          e.shippingRules = (e.property_data || {}).shippingRules || []
+          e.shippingRules = e.shippingRules.map(row => {
+            for (const key in row) {
+              row[key] = { value: row[key] }
+            }
+            return row
+          })
+          return e
+        })
+
+        return rows
+      columns:
+        property_data:
+          hidden: true
+        shippingRules:
+          label: 배송비 규정
+          updateOptions:
+            type: query
+            resource: mysql.qa
+            sqlType: update
+            sql: |
+              UPDATE wine_stock 
+              SET property_data = :value
+              where id = :id
+
+            requestFn: |
+              const value = params.find(e => e.key == 'value')
+              const shippingRules = params.find(e => e.key == 'shippingRules')
+
+              value.value = JSON.stringify({ 
+                shippingRules: shippingRules.value.map(row => {
+                  return {
+                    minAmount: row.minAmount.value,
+                    maxAmount: row.maxAmount.value,
+                    shippingCost: row.shippingCost.value,
+                  }
+                })
+              })
+
+          format: table
+          style:
+            width: 700px
+          class: table text-xs
+          headers:
+            minAmount:
+              label: 배송비시작
+              format: number
+              postfix: 원 이상
+              postfixStyle:
+                width: 50px
+            maxAmount:
+              label: 금액 (없으면 최대)
+              prefix: "~"
+              format: number
+              postfix: 원 미만
+              postfixStyle:
+                width: 50px
+              placeholder: 비어있으면 최대금액
+            shippingCost:
+              label: 배송비부과
+              format: number
+              postfix: 원
+
+```
+
 
 ## columns.updateOptions + display: form
 
@@ -3819,6 +3899,91 @@ params:
     - key: memo
       format: tiptap
       width: 800px
+```
+
+### format: table
+
+`format: table`을 통해 JSON 형태의 데이터를 테이블 UI로 표시 및 입력하는 UI 화면을 구성할 수 있어요.
+
+**예제 가이드**
+- `headers`: 테이블 열의 입력값 형식, 유효성, 표시방식을 설정
+- `requestFn`: 입력 데이터를 서버에 보낼 JSON 형식으로 가공
+- style `width`: 700px: 테이블 너비 설정
+- `showHeaders`: 테이블 헤더 표시여부
+- `class: table text-xs`: 테이블의 클래스 지정(작은 글자 크기)
+- headers `label, format`: 헤더 컬럼 라벨, 포맷
+- headers `prefix, postfix`: 입력 필드 전후 텍스트
+- headers `postfixStyle`: postfix 스타일
+
+```yaml
+menus:
+- path: pages/sOCGir
+  name: format table
+pages:
+- path: pages/sOCGir
+  title: id=65 wine_stock의 property_json.shippingRules[] 를 수정합니다.
+  blocks:
+    - type: query
+      resource: mysql.qa
+      sqlType: update
+      sql: |
+        UPDATE wine_stock 
+        SET property_data = :shippingRules
+        where id = 65
+      params:
+        - key: shippingRules
+          label: 배송비 규정
+          format: table
+          style:
+            width: 700px
+          showHeaders: false
+          class: table text-xs
+          headers:
+            minAmount:
+              label: 배송비시작
+              format: number
+              required: true
+              postfix: 원 이상
+              postfixStyle:
+                width: 50px
+            maxAmount:
+              prefix: "~"
+              format: number
+              postfix: 원 미만
+              postfixStyle:
+                width: 50px
+              placeholder: 비어있으면 최대금액
+            shippingCost:
+              format: number
+              postfix: 원          
+          value: # 기본값이 필요한 경우에 입력 (예제 데이터)
+            - minAmount: 
+                value: 0
+              maxAmount: 
+                value: 50000
+              shippingCost: 
+                value: 3000
+            - minAmount: 
+                value: 5000
+              maxAmount: 
+                value: ""
+                placeholder: (최대)
+              shippingCost: 
+                value: 0
+      reloadAfterSubmit: true
+      
+      requestFn: |
+        const shippingRules = params.find(e => e.key == 'shippingRules')
+
+        shippingRules.value = JSON.stringify({ 
+          shippingRules: shippingRules.value.map(row => {
+            return {
+              minAmount: row.minAmount.value,
+              maxAmount: row.maxAmount.value,
+              shippingCost: row.shippingCost.value,
+            }
+          })
+        })    
 ```
 
 ## params.formatString
