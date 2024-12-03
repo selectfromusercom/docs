@@ -3030,6 +3030,47 @@ columns:
       openPage: company/{{id}}
 ```
 
+### buttons.openPopper
+
+openPopper는 특정 버튼 클릭 시 팝업 레이어(Popper)를 열어 사용자가 추가 작업을 수행하거나 데이터를 확인할 수 있도록 하는 기능입니다. modals와 유사하지만, 더 가볍고 위치 설정이 유연합니다.
+
+- `openPopper`: button 클릭시 Popper를 엽니다.
+- `popperOptions`: Popper의 위치 및 간격 조정
+  - placement: right (Popper 우측)
+  - distance, skidding: 간격 조절가능
+- `popperStyle`: Popper의 크기와 스타일을 정의
+  - width, height: Popper의 크기
+  - overflow: 내용이 넘칠 때 스크롤 설정 (auto, scroll)
+  - padding: Popper 내부 여백
+
+```yaml
+columns:
+  vintage:
+    buttons:
+      - label: 빈티지 조회
+        openPopper: true
+        popperOptions:
+          placement: right
+        popperStyle:
+          width: 500px
+          height: 400px
+          overflow: auto
+          padding: 20px
+        blocks:
+          - type: query
+            resource: mysql.qa
+            sqlType: select
+            sql: SELECT DISTINCT vintage FROM wine_stock WHERE id = :id
+            params:
+              - key: id
+                valueFromRow: true
+            columns:
+              vintage:
+                copy: true
+            showDownload: false
+```
+
+
 ### buttons.visible
 
 컬럼 필드의 값에 따라 버튼이 보이거나 보이지 않게 설정할 수 있습니다.
@@ -5189,6 +5230,100 @@ modals:
       - type: query
         resource: mysql
 ```
+
+## actions.openPopper
+
+- `single: true`면 block.buttons.openPopper와 동일
+- selectOptions로 선택된 경우
+  - forEach true면 개별로우(row)마다 표시 (선택된 로우만큼 늘어남)
+    - single true인데 forEach false이면 아무것도 안뜸
+  - (기본) tableSelectedRows param으로 넘겨줌
+
+```yaml
+pages:
+- path: sample/actions/openpopper
+  title: Popper와 Actions 활용 예제
+  blocks:
+  - type: query
+    resource: mysql.qa
+    sqlType: select
+    sql: SELECT * FROM wine_stock WHERE id BETWEEN :id AND :id+2
+    params:
+      - key: id
+        value: 64
+
+    selectOptions: 
+      enabled: true
+    actions:
+      - label: 빈티지 확인하기
+        openPopper: true
+        forEach: true # 주의
+        popperOptions:
+          placement: right
+        popperStyle:
+          width: 600px
+          height: 600px
+          overflow: scroll
+          padding: 20px
+        blocks:
+          - type: query
+            resource: mysql.qa
+            sqlType: select
+            sql: SELECT id, name, vintage FROM wine_stock WHERE id = :id
+            params:
+              - key: id
+                valueFromRow: true
+            title: "{{name}}"
+            columns:
+              vintage: 
+                copy: true
+            showDownload: false
+
+      - label: 빈티지 확인하기 (tableSelectedRows)
+        openPopper: true
+        popperOptions:
+          placement: right
+        popperStyle:
+          width: 600px
+          height: 600px
+          overflow: scroll
+          padding: 20px
+        blocks:
+          - type: query
+            resource: mysql.qa
+            sqlType: select
+            sql: SELECT id, name, vintage FROM wine_stock WHERE id IN (0, :...ids)
+            params:
+              - key: ids
+                hidden: true
+            title: 빈티지 조회
+            showDownload: false
+            requestFn: |
+              const tableSelectedRows = params.find(e => e.key == 'tableSelectedRows')
+              const ids = tableSelectedRows.value.map(e => e.id)
+              
+              for (const param of params) {
+                if (param.key == 'ids') {
+                  param.value = ids
+                }
+              }
+```
+
+**(popperStyle 팁)**
+
+openPopper시 꽉차게 하고 스크롤 만드는 예제
+
+```yaml
+popperOptions:
+  placement: right
+popperStyle:
+  width: 500px
+  height: 90vh
+  maxHeight: 90vh
+  overflow: scroll
+  padding: 20px
+```
+
 
 ## actions.showDownload
 
