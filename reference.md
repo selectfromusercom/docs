@@ -2245,6 +2245,111 @@ pages:
           format: textarea
 ```
 
+### display: html table
+
+데이터 조회 결과를 HTML 표 형태로 출력합니다. 표는 사용자 정의 스타일을 적용해 결과를 직관적으로 시각화합니다.
+
+**테이블 구성 요소**
+- `thead`: 테이블 헤더 정의. 컬럼 그룹화 및 설명 추가 가능.
+- `tbody`: 데이터 행 반복 출력. 데이터 매핑은 <span v-pre>`{{param}}`</span>을 사용.
+- `tfoot`: 총계 또는 요약 정보 추가. 계산 결과를 포함할 수 있음.
+
+**데이터 후처리**
+- `responseFn`: 조회된 데이터를 렌더링 전에 수정하는 로직을 정의합니다.
+- `totalFn`: tfoot에 출력할 총계 데이터를 계산합니다.
+
+**중요 참고사항**
+- 데이터 바인딩: <span v-pre>`{{param}}`</span> 구문을 사용해 SQL 조회 결과와 UI를 연결합니다.
+- 스타일 적용: 각 셀 및 행에 class 속성을 추가해 UI 스타일을 커스터마이징하세요.
+- 후처리 함수: `responseFn`과 `totalFn`을 활용해 데이터 포맷팅 및 계산 로직을 작성할 수 있습니다.
+
+```yaml
+pages:
+- path: pages/3qQ2sR  
+  blocks:
+  - type: query
+    resource: mysql.qa
+    sqlType: select
+    sql: >
+      SELECT 
+        id, name, vintage, inflow, outflow, price, safeflow, deleted_at  
+      FROM wine_stock
+      WHERE inflow IS NOT NULL
+    
+    display: html table
+    # display: table html
+
+    actions:
+      - label: 확정
+    
+    responseFn: |
+      return rows.map(e => {
+        e.deleted_at = e.deleted_at ? moment(e.deleted_at).format('YY.MM.DD') : '-'
+        return e
+      })
+
+    thead:
+      rows:
+        - class: bg-neutral-100 text-neutral-800 font-medium divide-x
+          cells:
+            - th: { rowspan: 2, content: "번호" }
+            - th: { rowspan: 2, content: "상품명" }
+            - th: { colspan: 2, content: "재고량" }
+            - th: { rowspan: 2, content: "판매기간", help: "해당기간까지 게시됩니다.", width: 200px}
+        - 
+          class: "bg-neutral-100 text-neutral-800 font-medium divide-x"
+          cells:
+            - th: { class: "border", content: "입고" }
+            - th: { class: "border", content: "출고" }
+    
+    tbody: 
+      rows:
+        - class: "text-center divide-x hover:bg-neutral-100"
+          cells:
+            - td: { content: "{{id}}" }
+            - td: { content: "{{name}}", class: "text-left" }
+            - td: { content: "{{inflow}}", class: "text-right" }
+            - td: { content: "{{outflow}}", class: "text-right" }
+            - td: { content: "{{deleted_at}}" }
+
+    tfoot:
+      rows:
+        - class: "font-medium divide-x text-center"
+          cells:
+            - th: { colspan: 2, class: "bg-neutral-100 text-neutral-800", content: "수량합계" }
+            - td: 
+                class: "text-right"
+                content: <span class="text-blue-600">{{inflow}}</span> Box
+            - td:
+                class: "text-right"
+                content: <span class="text-blue-600">{{outflow}}</span> Box
+            - td: ""
+        - class: "font-base divide-x text-center"
+          cells:
+            - th: { colspan: 2, class: "bg-neutral-100 text-neutral-800", content: "금액합계" }
+            - td: { class: "text-right", content: "{{inflow_amount}} 원" }
+            - td: { class: "text-right", content: "{{outflow_amount}} 원" }
+            - td: ""
+        - class: "font-base divide-x text-center"
+          cells:
+            - th: { colspan: 2, class: "bg-neutral-100 text-neutral-800", content: "재고금액합계" }
+            - td: { colspan: 2, content: "{{amount}} 원" }
+            - td: ""
+    
+    totalFn: |
+      total.inflow = _.sumBy(rows, 'inflow')
+      total.outflow = _.sumBy(rows, 'outflow')
+      
+      total.inflow_amount = _.sum(rows.map(e => (+e.price || 0) * +e.inflow))
+      total.outflow_amount = _.sum(rows.map(e => (+e.price || 0) * +e.outflow))
+      
+      total.amount = total.inflow_amount - total.outflow_amount
+
+      total.inflow_amount = filters.number(total.inflow_amount)
+      total.outflow_amount = filters.number(total.outflow_amount)
+      total.amount = filters.number(total.amount)
+```
+
 ## blocks.formOptions
 
 params와 함께 쓰이며, 입력 양식 스타일을 다양하게 수정할 수 있습니다. 
