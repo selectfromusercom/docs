@@ -1141,6 +1141,36 @@ pages:
 
 엑셀 파일을 csv formatted와 동일하게 셀렉트 어드민에 보이는대로(formatted) 다운로드 받을 수 있습니다.
 
+## blocks.showRefresh
+
+각 block에 showRefresh를 추가할 수 있습니다. 블록 영역 마우스오버시 “새로고침” 버튼이 보이게 되고 클릭시 해당 블록을 새로고침하게 됩니다.
+
+```yaml
+blocks:
+  - type: query
+    id: query1
+    resource: mysql.qa
+    sqlType: select
+    sql: >
+      SELECT * FROM properties3 WHERE id = :id LIMIT 3
+    params:
+      - key: id
+        value: 1
+    showRefresh: true
+    responseFn: |
+      // query2.trigger() // 이 내용 새로고침시 query2도 새로고침
+
+  - type: query
+    id: query2
+    resource: mysql.qa
+    sqlType: select
+    sql: >
+      select NOW()
+    showRefresh: true
+    params:
+      - key: id2
+        value: 2
+```
 
 ## blocks.downloadAfterSubmit
 
