@@ -1141,6 +1141,14 @@ pages:
 
 엑셀 파일을 csv formatted와 동일하게 셀렉트 어드민에 보이는대로(formatted) 다운로드 받을 수 있습니다.
 
+`showDownload: csv selected`
+
+selectOptions 적용시 조회한 데이터의 일부를 선택하여 다운로드할 수 있습니다.
+
+`showDownload: csv paginated`
+
+paginationOptions 적용시 조회 데이터의 본 페이지 내역만 다운로드할 수 있습니다.
+
 ## blocks.showRefresh
 
 각 block에 showRefresh를 추가할 수 있습니다. 블록 영역 마우스오버시 “새로고침” 버튼이 보이게 되고 클릭시 해당 블록을 새로고침하게 됩니다.
