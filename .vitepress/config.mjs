@@ -258,6 +258,10 @@ export default defineConfig({
                   text: 'DynamoDB', 
                   link: '/guide/database-dynamodb',
                 },
+                {
+                  text: 'Redis',
+                  link: '/guide/database-redis',
+                },
               ] 
             },            
             { 
