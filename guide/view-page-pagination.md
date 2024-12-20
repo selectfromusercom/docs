@@ -102,6 +102,61 @@ pages:
     - key: name
 ```
 
+### type: http 블록 활용시
+
+axios 안에서 param처럼 사용
+```yaml
+- type: http 
+  axios:
+    method: GET
+    url: https://api.typeform.com/forms/******/responses
+    qs:
+      offset: "{{page_offset}}"
+  mode: remote
+  paginationOptions:
+    enabled: true
+    perPage: 10
+    total: 1000
+```
+
+JS 코드로 request 조작
+- 기본 페이지네이션에서 채워주는 값(page_offset, page_limit, page_number)를 직접 수정해야하는 경우
+
+```yaml
+requestFn: |
+  const page_offset = params.find(e => e.key == 'page_offset')
+
+  page_offset.value = 100 + page_offset.value  
+```
+
+JS 코드로 total 입력
+- API 응답에서 total을 가져오고 싶은 경우
+
+```yaml
+mode: remote
+paginationOptions:
+  enabled: true
+  perPage: 20
+responseFn: |
+  data.total = data.rows[0].totalElements
+  
+  console.log(data);
+```
+
+totalPath 지정
+```yaml
+- type: http
+  axios:
+    method: GET
+    url: http://api.selectfromuser.com/sample-api/users?offset={{page_offset}}&limit={{page_limit}}
+  rowsPath: rows
+  totalPath: total
+  mode: remote
+  paginationOptions:
+    enabled: true
+    perPage: 3
+```
+
 
 ## CSV 다운로드를 하는데 전체내역이 안나와요.
 
