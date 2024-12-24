@@ -269,7 +269,7 @@ menus:
 menus:
 
   - type: search
-  	label: 검색
+    label: 검색
     placeholder: 010-0000-0000
     redirect: search-user?phone={{value}}
     placement: top
