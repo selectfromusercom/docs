@@ -254,7 +254,7 @@ menus:
     redirect: search-user?name={{value}}
 
   - type: search
-  	label: 찾기
+    label: 찾기
     placeholder: 010-0000-0000
     redirect: search-user?phone={{value}}
     
