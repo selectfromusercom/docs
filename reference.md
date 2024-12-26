@@ -3932,7 +3932,7 @@ shortcuts:
 
 조건에 따라 선택가능한 날짜를 제한합니다. 예시는 오늘 이후의 날짜만 선택하면서, 30분 단위로 시간을 입력 받습니다.
 
-```
+```yaml
 params:
   - key: date
     format: datetime
