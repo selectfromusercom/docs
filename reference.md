@@ -3928,6 +3928,28 @@ shortcuts:
     # clear: true
 ```
 
+### `disabledDate`, `disabledTime`
+
+조건에 따라 선택가능한 날짜를 제한합니다. 예시는 오늘 이후의 날짜만 선택하면서, 30분 단위로 시간을 입력 받습니다.
+
+```
+params:
+  - key: date
+    format: datetime
+    disabledDate: |
+      /**
+      * 날짜를 비활성화하는 함수
+      * @param {Date} date - 사용자에게 표시된 날짜 객체
+      * @param {Date} currentValue - 선택된 날짜 (범위선택시 사용)
+      * @returns {boolean} - true면 해당 날짜는 비활성화됨
+      */
+      
+      // 현재 날짜(new Date) 이전의 날짜를 비활성화
+      return date < new Date
+    minuteStep: 30
+    showSecond: false
+```
+
 ### format.time
 
 `format: time`을 추가하여 시간값을 선택 입력할 수 있습니다. 
