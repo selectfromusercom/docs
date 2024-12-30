@@ -38,6 +38,9 @@ params:
 - key: number
   label: 숫자
   format: number
+  min: 0          # 최소 허용값
+  max: 100        # 최대 허용값
+  step: 10        # 증감 폭
 ```
 
 ### Date
