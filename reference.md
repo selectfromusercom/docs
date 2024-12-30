@@ -4234,6 +4234,54 @@ params:
       <span class="text-xs font-bold bg-slate-400 text-white px-1 rounded">{{price}}원</span>      
 ```
 
+- `showOptions`: 선택가능한 옵션을 감추고, 정렬 기능만 이용합니다. 
+- `buttons`: 추가, 삭제등 버튼을 추가합니다.
+
+```yaml
+params:
+  - key: display_json
+    format: listbox
+    multiple: true
+    listStyle:
+      minWidth: 300px
+      height: 300px
+      overflow: scroll
+    showOptions: false
+    buttons:
+      - label: 상품추가
+        openModal: 
+          width: 600px
+          height: 500px
+          blocks:
+          - type: query
+            resource: mysql.qa
+            title: 전시상품검색
+            id: query1
+            sqlType: select
+            sql: |
+              SELECT name AS value, name AS label, vintage, price FROM wine_stock
+            selectOptions: 
+              enabled: true
+            showDownload: false
+            params:
+              - key: t1
+            footers:
+              - type: cancel
+                label: 취소
+                placement: center
+              - type: ok 
+                label: 선택
+                button:
+                  type: primary
+                placement: center
+      - label: 상품제거
+        deleteItem: true
+    template: |
+      {{value}} 
+      <span class="text-xs font-bold bg-slate-400 text-white px-1 rounded">{{price}}원</span>
+      
+```
+
 ## params.formatString
 
 입력 포맷을 특정 방식으로 설정할 수 있습니다. 
