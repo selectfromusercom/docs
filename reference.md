@@ -4208,6 +4208,32 @@ pages:
         })    
 ```
 
+### format: listbox
+
+`format: listbox`는 선택 옵션을 제공하는 UI 컴포넌트입니다. 드롭다운과 유사하지만 여러 항목을 한번에 볼 수 있고, 다중 선택이 가능한 특징이 있습니다.
+
+- `listStyle`: 리스트박스의 UI 크기와 스크롤을 정의하는 스타일 속성입니다.
+- `datalistFromQuery`: 리스트박스에 표시될 데이터를 DB에서 조회하는 쿼리를 정의합니다.
+- `template`: 리스트박스의 각 항목이 어떻게 표시될지 정의하는 HTML 템플릿입니다. 쿼리에서 조회한 필드들을 <span v-pre>`{{필드명}}`</span> 형태로 사용할 수 있습니다.
+
+```yaml
+params:
+  - key: display_json
+    format: listbox
+    multiple: true
+    listStyle:
+      minWidth: 300px
+      height: 300px
+      overflow: scroll
+    datalistFromQuery: 
+      type: query
+      resource: mysql.qa
+      sql: SELECT DISTINCT name AS value, name AS label, price FROM wine_stock
+    template: |
+      {{value}} 
+      <span class="text-xs font-bold bg-slate-400 text-white px-1 rounded">{{price}}원</span>      
+```
+
 ## params.formatString
 
 입력 포맷을 특정 방식으로 설정할 수 있습니다. 
