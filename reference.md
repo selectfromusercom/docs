@@ -872,6 +872,28 @@ blocks:
       blocks:
 ```
 
+### type: toggle
+
+토글(toggle) 타입 블록을 통해 내용을 접었다 펼칠 수 있습니다.
+
+- `class`: 토글의 기본 스타일을 지정 (텍스트 크기, 여백, 그림자, 색상 등)
+- `toggledClass`: 토글이 활성화되었을 때 적용될 스타일 (글꼴 두께, 배경색 등)
+- Tailwind CSS 클래스를 활용하여 스타일링
+- `icon`: 토글 옆에 표시될 아이콘
+- `toggled`: 초기 토글 상태
+
+```yaml
+blocks:
+  - type: toggle
+    name: toggle sample
+    icon: tree
+    class: text-lg p-2 shadow rounded text-green-700
+    toggledClass: font-medium text-green-700 bg-green-600/10
+    # toggled: true
+    blocks:
+      - type: query
+```
+
 ### type: iframe
 
 어드민 페이지 안에 글이나 영상을 iframe 방식으로 임베딩embedding 할 수 있습니다. 
