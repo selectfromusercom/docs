@@ -9,15 +9,15 @@ const { Layout } = DefaultTheme
 Layout
   //- template(#sidebar-nav-after)
   //-   //- p.text-xs.text-zinc-600.font-bold 셀렉트어드민 
-  //-   p.text-xs.text-zinc-400.font-medium © 2024 Selectfromuser Inc.
+  //-   p.text-xs.text-zinc-400.font-medium © 2025 Selectfromuser Inc.
   template(#home-features-after)
     .bg-zinc-50
     .mt-8
       .container.mx-auto.flex.flex-wrap.px-4(style='max-width: 1152px;')
         div.p-5.text-neutral-600(style='width: 240px')
-          //- p.text-sm.font-bold © 2024 Selectfromuser Inc.
+          //- p.text-sm.font-bold © 2025 Selectfromuser Inc.
           //- p.text-xs.text-zinc-600.font-bold SelectAdmin
-          p.text-xs.text-zinc-400.font-medium © 2024 Selectfromuser Inc.
+          p.text-xs.text-zinc-400.font-medium © 2025 Selectfromuser Inc.
           .mb-2
           
           

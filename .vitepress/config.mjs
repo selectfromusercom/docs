@@ -459,7 +459,7 @@ export default defineConfig({
     logo: '/favicon.png',
     // footer: {
     //   message: 'SelectAdmin',
-    //   copyright: '© 2024 Selectfromuser Inc.'
+    //   copyright: '© 2025 Selectfromuser Inc.'
     // },    
   }
 })
