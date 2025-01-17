@@ -283,7 +283,7 @@ menus:
 
 - 가져온 데이터 필드들을 `format`으로 치환해서 보여줍니다.
 - `html: true`를 사용하면 format 안에 html 양식을 사용할 수 있습니다. 
-- 가져온 데이터의 테이블에 따라 redirect를 다르게 지정할 수 있습니다. 
+- redirect가 String이 아니라 Object인 경우 결과값의 category와 일치하는쪽으로 가져와서 redirect 합니다.
 
 ```yaml
 menus:
@@ -323,6 +323,8 @@ menus:
       #   {{name}}{{   name2   }}
       #   ({{category}})
 
+      # redirect: search-user-id?p={{category}}&user_id={{id}}
+      
       redirect:
         properties: search-user-id?p={{category}}&user_id={{id}}
         properties2: >
