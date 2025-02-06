@@ -38,6 +38,11 @@ https://www.npmjs.com/package/selectfromuser
 
 `slt login`
 
+::: tip
+- `cd my-project` 등으로 현재 위치를 원하는 디렉토리로 옮긴 후 로그인하세요
+- 프로젝트 로그인 정보는 .select 디렉토리 안에 저장됩니다. .gitignore 등 버전 관리에서 제외해주세요.
+:::
+
 ![](./image/slt-cli-login.png)
 
 > 브라우저가 열리면 로그인을 합니다.
@@ -143,3 +148,6 @@ pages:
 > - DEV `subdomain-dev.selectfromuser.com` 
 > - PROD `subdomain.selectfromuser.com` (커스텀 도메인을 희망하는 경우 문의바랍니다.)
 
+### 관련 자료
+
+- https://blog.selectfromuser.com/select-admin-cli/
