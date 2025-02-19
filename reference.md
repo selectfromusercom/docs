@@ -3052,6 +3052,17 @@ columns:
       canceled: red
 ```
 
+## columns.colorFn
+
+JavaScript를 통해 데이터 값에 따라 동적으로 색상을 지정할 수 있습니다.
+
+```yaml
+columns:
+  inflow:
+    colorFn: |
+      return value > 5 ? 'green' : 'red'
+```
+
 ## columns.copy
 
 특정 컬럼에 복사 아이콘을 추가합니다. 아이콘 클릭 한번으로 데이터를 클립보드에 복사할 수 있어요. 다른곳에 붙여넣기(ctrl+v) 해보세요.
