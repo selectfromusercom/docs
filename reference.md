@@ -4550,6 +4550,46 @@ params:
   datalistFromQuery: ...
 ```
 
+## params.reloadParam
+
+reloadParam을 통해 값 입력시 다른 param의 datalist를 새로고침 할 수 있습니다.
+
+```yaml
+menus:
+- path: pages/wine-inventory
+  name: 와인 재고 관리
+pages:
+- path: pages/wine-inventory
+  params:
+    - key: vintage
+      radio:
+        - 2022
+        - 2021
+        - 2020
+        - 2019
+      radioButtonGroup: true
+      reloadParam: winelist
+    - key: winelist
+      label: 와인 선택
+      datalistFromQuery:
+        type: query
+        resource: mysql.qa
+        sql: |
+          SELECT id AS value, CONCAT(vintage, ' / ', name) AS label
+          FROM wine_stock
+          WHERE vintage = :vintage
+        cache: false
+  blocks:
+  - type: query
+    resource: mysql.qa
+    sqlType: select
+    sql: >
+      SELECT *
+      FROM wine_stock
+      WHERE id = :wineList
+      LIMIT 10
+```
+
 ## params.options
 
 여러 단계로 값을 입력하는등 복잡한 데이터 처리가 필요할 때
