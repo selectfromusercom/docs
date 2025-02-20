@@ -2674,6 +2674,26 @@ columnOptions와 동일한 기능이고 양식이 다릅니다.
           format: url
 ```
 
+URL 링크를 텍스트(text) 또는 아이콘 등으로 보여주고 싶은 경우, template 기능을 사용해보세요.
+
+```yaml
+- type: query
+  resource: mysql.qa
+  sqlType: select
+  sql: >
+    SELECT 'https://www.google.com' AS link, 'https://www.naver.com' AS link2    
+  columns:
+    link:
+      template: |
+        <a href="{{link}}" target="_blank">열기</a>
+    link2:
+      template: |
+        <a href="{{link2}}" target="_blank" class="no-underline bg-slate-500/5 rounded-lg p-1.5">
+          <span class="mdi mdi-share"></span>
+          열기
+        </a>
+```
+
 ### format: image
 
 필드 안의 값을 바탕으로 이미지(image)로 표시할 수 있습니다.
