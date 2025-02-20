@@ -157,6 +157,71 @@ totalPath 지정
     perPage: 3
 ```
 
+### 중첩된 API 응답 다루기
+
+API가 다음과 같은 중첩된 구조로 응답하는 경우:
+
+```json
+{
+  "result": {
+    "pageSize": 10,
+    "currentPage": 1,
+    "total": 45,
+    "body": [
+      {
+        "id": 1,
+        "name": "John Smith",
+        "email": "john@example.com",
+        "createdAt": "2024-02-20T09:00:00Z",
+        "status": "active"
+      },
+      {
+        "id": 2,
+        "name": "Jane Doe",
+        "email": "jane@example.com",
+        "createdAt": "2024-02-20T09:15:00Z",
+        "status": "pending"
+      }
+      // ... 더 많은 데이터
+    ]
+  }
+}
+```
+
+아래와 같이 간단하게 설정할 수 있습니다:
+
+```yaml
+- type: http
+  axios:
+    url: https://api.example.com/users
+    method: GET
+    params:
+      page_number: "{{page_number}}"
+      page_offset: "{{page_offset}}"
+      page_limit: "{{page_limit}}"
+  
+  # 중첩된 데이터 구조에서 실제 데이터 배열의 경로 지정
+  rowsPath: result.body
+  # 전체 데이터 개수가 있는 필드 경로 지정
+  totalPath: result.total
+  
+  mode: remote
+  paginationOptions:
+    enabled: true
+    perPage: 10
+```
+
+**주의사항과 팁:**
+- `rowsPath`와 `totalPath`는 응답 데이터의 실제 구조에 맞게 점(.)으로 구분하여 경로를 지정합니다
+- `responseFn`을 사용할 경우, `data`, `row`, `rows` 변수를 활용할 수 있습니다:
+
+```yaml
+responseFn: |
+  console.log({data, row, rows}) // 데이터 구조 확인
+```
+
+- 페이지네이션 파라미터로 `page_number`, `page_offset`, `page_limit`를 사용할 수 있습니다
+- API 서버가 page_number 기반으로 동작한다면 `page_number`를 활용하고, offset 기반이라면 `page_offset`을 활용합니다
 
 ## CSV 다운로드를 하는데 전체내역이 안나와요.
 
