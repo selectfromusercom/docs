@@ -1607,6 +1607,81 @@ columnOptions와 동일한 기능이고 양식이 다릅니다.
     label: 아이디(ID)
 ```
 
+## blocks.sqlOptions
+
+sqlOptions에 여러개 쿼리를넣고 condition에 해당하는 sql 쿼리를 실행합니다. 결과시 name으로 노출 (어떤조건으로 검색되었는지 표시)
+
+```yaml
+blocks:
+  - type: query
+    resource: mysql.qa
+    sqlType: select
+    sqlOptions:
+      # name, address, type이 지정되어 있고 type이 ALL이 아닌 경우
+      - condition: name && address && type && type != 'ALL'
+        bind: |
+          {
+            name: '%' + name + '%',
+            address: '%' + address + '%',
+            type: type,
+          }
+        sql: >
+          SELECT * FROM properties
+          WHERE name LIKE :name
+            AND address LIKE :address
+            AND `type` = :type
+          ORDER BY name
+        name: 특정 숙소 검색 (이름, 주소, 타입)
+
+      # type이 입력되어 있고 type이 ALL이 아닌 경우
+      - condition: type && type != 'ALL'
+        sql: >
+          SELECT * FROM properties
+          WHERE `type` = :type
+          ORDER BY `type`, id DESC
+        name: 전체 숙소 검색 (타입별) 이름순 정렬
+
+      # name, address만 입력된 경우
+      - condition: name && address
+        bind: |
+          {
+            name: '%' + name + '%',
+            address: '%' + address + '%',
+          }
+        sql: >
+          SELECT * FROM properties
+          WHERE name LIKE :name
+             AND address LIKE :address
+          ORDER BY name
+        name: 전체 숙소 검색 (이름, 주소 포함)
+
+      # 기본 쿼리: 위의 모든 조건이 아닌 경우 (else)
+      - condition: true
+        sql: >
+          SELECT * FROM properties
+          ORDER BY updated_at DESC
+          LIMIT 10
+        name: 최근 업데이트순 정렬
+    params:
+      - key: type
+        label: 타입 전체조회
+        group: a
+        radioButtonGroup: true
+        radio:
+          - HOTEL
+          - RESORT
+          - ALL
+      - key: name
+        label: "포함검색 (숙소이름)"
+        group: b
+        help: "'호텔' 입력"
+      - key: address
+        label: 주소
+        group: b
+        help: "'서초' 입력"
+    resetButton: true
+```
+
 ## blocks.tabOptions
 
 블록 안에 세부 탭을 여러개 추가할 수 있습니다. 
