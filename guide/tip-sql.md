@@ -139,6 +139,47 @@ pages:
             '오래된가입순': ORDER BY id ASC
 ```
 
+## 검색조건에 따른 여러개 쿼리 사용
+
+```yaml
+blocks:
+  - type: query 
+    resource: mysql.qa
+    sqlType: select
+    sqlOptions:
+      # name, address로 검색
+      - condition: name && address
+        bind: |
+          {
+            name: '%' + name + '%',
+            address: '%' + address + '%',
+          }
+        sql: >
+          SELECT * FROM properties 
+          WHERE name LIKE :name
+            AND address LIKE :address
+          ORDER BY name
+        name: 숙소 검색 (이름, 주소)
+
+      # 기본 쿼리
+      - condition: true
+        sql: >
+          SELECT * FROM properties
+          ORDER BY updated_at DESC 
+          LIMIT 10
+        name: 최근 업데이트순 정렬
+    params:
+      - key: name
+        label: "포함검색 (숙소이름)"
+        group: b
+        help: "'호텔' 입력"
+      - key: address
+        label: 주소 
+        group: b
+        help: "'서초' 입력"
+    resetButton: true
+```
+
 ## 날짜 검색조건 기본값
 
 CASE-WHEN 활용
