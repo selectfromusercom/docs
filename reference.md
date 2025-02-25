@@ -2954,8 +2954,10 @@ template 키와 HTML로 데이터 값을 더 복잡한 구성으로 표기할 �
   sqlType: select
   sql: >
     SELECT 
-      'media/cc0-audio/t-rex-roar.mp3' as url,
-      'media/cc0-videos/flower.webm' as video_url
+      'media/cc0-audio/t-rex-roar.mp3' AS url,
+      'media/cc0-videos/flower.webm' AS video_url,
+      'https://www.google.com' AS link,
+      'https://www.selectfromuser.com' AS link2
   # display: form
   columns:
     url:
@@ -2966,6 +2968,20 @@ template 키와 HTML로 데이터 값을 더 복잡한 구성으로 표기할 �
         <video controls width="250">
           <source src="https://interactive-examples.mdn.mozilla.net/{{video_url}}" type="video/webm" />
         </video>
+    link:
+      template: |
+        <a href="{{link}}" target="_blank">열기</a>
+    link2:
+      template: |
+        <a href="{{link2}}" target="_blank" class="no-underline bg-slate-500/5 rounded-lg p-1.5">
+          <span class="mdi mdi-share"></span>
+          열기
+        </a>
+      # template: |
+      #   <a href="{{link2}}" target="_blank" class="no-underline bg-slate-500/5 rounded-lg p-1.5 flex items-center">
+      #     <span class="mdi mdi-share mr-1"></span>
+      #     <span>열기</span>
+      #   </a>
 ```
 
 
