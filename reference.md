@@ -1477,6 +1477,7 @@ columns:
 - `hidden: true`: 테이블의 전체 항목을 가릴 수 있습니다. 각 column에 값이 있으면 무시합니다. 원하는 항목만 표시할 때 사용해요. (`columns.hidden: false`)
 - `sortable: false`: 테이블 전체 컬럼의 정렬 기능을 끌 수 있습니다. 원하는 컬럼만 정렬을 켜보세요.
 - `thClass: text-center`, `tdClass: text-center`: 테이블 전체에 부트스트랩 클래스를 적용할 수 있어요. 
+- `cellWidth`: 테이블의 모든 컬럼 폭을 조절합니다.
 
 ```yaml
 - type: query 
@@ -1493,6 +1494,7 @@ columns:
     # hidden: true
     thClass: text-center
     tdClass: text-center
+    # cellWidth: 100px
 ```
 
 ### tableOptions.cell
