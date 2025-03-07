@@ -2551,7 +2551,7 @@ submitButton:
 
 ### submitButton.type
 
-버튼 색상은 아래와 같이 바꿀 수 있습니다. 
+버튼 색상은 아래와 같이 바꿀 수 있습니다. (buttons type 에도 동일하게 적용됩니다.)
 
 ![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/5486ec98-e82e-48a8-8d8a-22947e328800/docs "a7cec87-Screen_Shot_2022-11-04_at_6.03.19_PM.png")
 
@@ -2565,6 +2565,7 @@ type: default
 # type: warning-light
 # type: success
 # type: success-light
+# type: plain
 ```
 
 ## blocks.resetButton
