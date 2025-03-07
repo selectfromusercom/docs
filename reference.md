@@ -3735,6 +3735,25 @@ columns:
     style: |
       text-align: center;
 ```
+
+## columns.class
+
+특정 컬럼에 Tailwind class를 적용할 수 있습니다. 컬럼내 버튼을 세로 정렬하거나, 가운데 정렬할 수 있습니다.
+
+```yaml
+columns:
+  field:
+    class: flex flex-col gap-0.5
+    # class: flex justify-center gap-1
+    buttons:
+      - openModal: view
+        label: 조회
+        type: primary-light
+      - openAction: notify
+        label: 알림
+        type: plain
+```
+
 #### [`blocks`](/reference#blocks-params)
 
 # `params: []`
