@@ -5401,7 +5401,9 @@ filters.sanitizeHtml(value)                        // '<script>alert("XSS")</scr
 filters.getByteCount(value)                        // '안녕하세요'                       → '10'
 ```
 
-#### [`blocks.viewModal`](/reference#blocks-viewmodal)
+-------
+
+## [`blocks.viewModal`](/reference#blocks-viewmodal)
 # `viewModal: {}`
 
 ## viewModal
