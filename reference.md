@@ -5335,6 +5335,72 @@ params:
     maxlength: 12
 ```
 
+## params.helpFn
+
+파라미터에 입력한 값을 help 영역에 filters 기능으로 변환하여 표기합니다.
+
+```yaml
+pages:
+- path: helpfn
+  blocks:
+  - type: query
+    resource: mysql.qa
+    sqlType: select
+    sql: SELECT 1
+    params:
+    - key: date_example
+      helpFn: |        
+        return filters.datetime(value)
+        // return filters.datetime9(value)
+        // return filters.date(value)
+        // return filters.dateFormat(value, 'YYYY-MM-DD')
+        // return filters.dateTextFormat(value, 'YYYY년 MM월 DD일', 'YYYY-MM-DD')
+    - key: lines3_example
+      format: textarea
+      value: |
+        첫 번째 줄
+        두 번째 줄
+        세 번째 줄
+        네 번째 줄
+        다섯 번째 줄
+      helpFn: |
+        return filters.lines3(value)        
+```
+
+**사용가능한 필터들**
+
+```
+filters.datetime(value)                            // '2025-01-01 13:45:30'           → '2025-01-01 13:45'
+filters.datetime9(value)                           // '2025-01-01 04:45:30'           → '2025-01-01 13:45'
+filters.date(value)                                // '2025-01-01 13:45:30'           → '2025-01-01'
+filters.time(value)                                // '2025-01-01 13:45:30'           → '1:45 오후'
+filters.dateFormat(value, format)                  // ('2025-01-01', 'YYYY/MM/DD')    → '2025/01/01'
+filters.dateTextFormat(value, format, formatParse) // ('2025-01-01', 'YYYY년 MM월 DD일', 'YYYY-MM-DD') → '2025년 01월 01일'
+filters.dateTextFromNow(value, formatParse)        // ('2025-01-01', 'YYYY-MM-DD')    → '2달 전'
+filters.ts_datetime(value)                         // 1735689600000                   → '2025-01-01 09:00'
+filters.datetimeA(value)                           // '2025-01-01 13:45:30'           → '2025-01-01 1:45 오후'
+filters.fromDays(value, postfix)                   // ('2025-01-01', '일')            → '70일'
+filters.fromNow(value)                             // '2025-01-01'                    → '2달 전'
+filters.fromNowDate(value)                         // '2025-01-01'                    → '2025년 1월 1일 수요일 오전 12:00'
+filters.dday(value, formatParse)                   // ('2025-01-01', 'YYYY-MM-DD')    → 'D+70'
+filters.maskCenter4(value)                         // '1234567890'                    → '123****890'
+filters.phone(value)                               // '01012345678'                   → '010-1234-5678'
+filters.maskEnd4(value)                            // '1234567890'                    → '123456****'
+filters.splitComma(value)                          // '1000000'                       → '[ "1000000" ]'
+filters.decodeURIComponent(value)                  // '%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94' → '안녕하세요'
+filters.marked(value)                              // '# 제목\n- 항목 1\n- 항목 2'      → HTML 태그로 변환된 내용
+filters.lines3(value)                              // '첫 번째 줄\n두 번째 줄\n세 번째 줄\n네 번째 줄\n다섯 번째 줄' → 세번째 줄까지 표시
+filters.sql(value.toUpperCase())                   // 'select * from users where id = 1' → 'SELECT * FROM users WHERE id = 1'
+filters.json2(value)                               // '{"name":"John","age":30}'     → '"{\"name\":\"John\",\"age\":30}"'
+filters.jsonArray(value)                           // '[{"id":1,"name":"John"},{"id":2,"name":"Jane"}]' → '[ { "id": 1, "name": "John" }, { "id": 2, "name": "Jane" } ]'
+filters.number(value, prefix, suffix)              // (1000000, '₩', '')               → '₩1,000,000'
+filters.number0(value, prefix, suffix, format)     // (1000000, '₩', '', '0,0.00')     → '₩1,000,000.00'
+filters.numberFormat(value, prefix, suffix, format)// (1000000, '₩', '/월', '0,0')      → '₩1,000,000/월'
+filters.numberPart(value, format)                  // (1000000.5678, '0,0.00')         → '1,000,000.57'
+filters.sanitizeHtml(value)                        // '<script>alert("XSS")</script><p>안전한 HTML</p>' → '<p>안전한 HTML</p>'
+filters.getByteCount(value)                        // '안녕하세요'                       → '10'
+```
+
 #### [`blocks.viewModal`](/reference#blocks-viewmodal)
 # `viewModal: {}`
 
