@@ -2568,6 +2568,57 @@ type: default
 # type: plain
 ```
 
+### submitButton.disabledFn
+
+특정 조건에 따라 제출 버튼을 비활성화, 활성화할 수 있습니다.
+
+- `return true`: 비활성화
+- `return '메시지'`: 비활성화 (버튼에 tooltip 표시)
+- `return false`: 활성화
+
+```yaml
+menus:
+- path: product-form
+pages:
+- path: product-form
+  # params:
+  #   - key: category
+  # submitButton: 
+  #   disabledFn: |
+  #     const category = params.find(e => e.key == 'category')
+  #     if (!category.value) {
+  #       return '카테고리를 선택해주세요.'
+  #     }
+  #     return false
+  blocks:
+  - type: query
+    resource: mysql.qa
+    sqlType: insert
+    sql: >
+      INSERT INTO products (name, price) VALUES (:name, :price)
+    params:
+      - key: name
+      - key: price
+    resetButton: 
+      label: 초기화
+    submitButton: 
+      disabledFn: |
+        const name = params.find(e => e.key == 'name')
+        const price = params.find(e => e.key == 'price')
+        
+        if (!name.value) {
+          // return '상품명을 입력해주세요.'
+          return true
+        }
+        
+        if (!price.value || isNaN(price.value) || price.value <= 0) {
+          // return '유효한 가격을 입력해주세요.'
+          return true
+        }
+        
+        return false
+```
+
 ## blocks.resetButton
 
 params 필드에 입력한 값들을 일괄적으로 빈값으로 바꾸고 싶을 때 이용합니다.  
