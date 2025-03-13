@@ -3997,6 +3997,19 @@ format: editor
 format: color
 ```
 
+### format: number
+
+input 타입을 number로 지정합니다.
+
+```yaml
+params:
+- key: number
+  format: number
+  min: 5 # 최소값
+  max: 100 # 최대값
+  step: 10 # 증감 단위
+```
+
 ### format.`date | datetime | year | month | week`
 
 날짜 데이터의 종류별로 입력 포맷을 선택할 수 있습니다. 
