@@ -2003,6 +2003,48 @@ blocks:
 
 지표 데이터를 보여줄 때 유용합니다.
 
+#### metricOptions.containerClass
+
+containerClass 등으로 컨테이너 여백과 스타일을 조절할 수 있습니다. tailwindcss 사용법에 따라 `grid-cols-0 gap-0` 사용 가능합니다.
+
+```yaml
+menus:
+- path: metric-example
+pages:
+- path: metric-example
+  title: 웹사이트 성능 대시보드
+  blocks:
+  # 첫 번째 블록
+  - type: query
+    resource: mysql.qa
+    sqlType: select
+    sql: |
+      SELECT 
+        25463 as '일 방문자 수',
+        187592 as '월 방문자 수',
+        3.2 as '평균 체류 시간(분)',
+        42.8 as '전환율(%)'
+    display: metric    
+    metricOptions:
+      containerClass: grid grid-cols-4 gap-3 # 결과값 열 나누기
+    
+  # 두 번째 블록 - 세부 스타일 적용
+  - type: query
+    resource: mysql.qa
+    sqlType: select
+    sql: |
+      SELECT 
+        8745 as '이메일 구독자',
+        12389 as '소셜 미디어 팔로워',
+        5432 as '유료 회원',
+        28.5 as 'ROI(%)'
+    display: metric    
+    metricOptions:
+      containerClass: grid grid-cols-4 gap-3 # 첫번째 블록과 동일하게 구성
+      labelClass: text-amber-600 text-xs font-medium    # 레이블 스타일 적용 - 따뜻한 주황색
+      valueClass: text-amber-700 text-4xl font-semibold   # 값 스타일 적용 - 진한 주황색
+```
+
 #### metricOptions.type: bar
 
 ```yaml
