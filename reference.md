@@ -5999,6 +5999,48 @@ actions:
   confirmText: 정말 삭제하시겠습니까? 삭제 후 복구가 어려울 수 있습니다.
 ```
 
+**confirmText 치환자 예제**
+
+```yaml
+- type: query
+  resource: mysql.qa
+  sqlType: select
+  sql: >
+    SELECT id, name, address FROM properties LIMIT 3
+  selectOptions:
+    enabled: true
+  actions:
+    - label: 테스트
+      type: query
+      resource: mysql.qa
+      sqlType: update
+      sql: select 1
+      params:
+      - key: name
+        valueFromSelectedRows: name
+      confirmText: |
+        what? name = {{name}}
+
+  # columns: # openAction 이용시 예제
+  #   name:
+  #     buttons:
+  #     - label: 실행
+  #       openAction: action1
+  # actions:
+  #   - name: action1
+  #     single: true
+  #     hidden: true
+  #     type: query
+  #     resource: mysql.qa
+  #     sqlType: update
+  #     sql: select 1
+  #     params:
+  #     - key: name
+  #       valueFromRow: name
+  #     confirmText: |
+  #       what? name = {{name}}
+```
+
 ## actions.params.promptText
 
 prompt를 띄워서 parameter에 값을 입력할 수 있습니다.
