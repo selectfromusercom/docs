@@ -4514,6 +4514,22 @@ params:
   required: true
 ```
 
+## params.numberFormat
+
+입력 숫자를 포맷팅하는 기능입니다. 소수점, 통화, 접미사 등을 지원합니다.
+
+```yaml
+params:
+- key: price
+  numberFormat:
+    precision: 2          # 소수점 아래 2자리로 제한 (예: 123.456 → 123.46)
+    prefix: '$'           # 숫자 앞에 '$' 추가 (예: $123.46)
+    suffix: ''            # 숫자 뒤에 접미사 없음
+    separator: ','        # 천 단위 구분 기호로 쉼표 사용 (예: 1,234.56)
+    decimal: '.'          # 소수점 기호로 점 사용
+    reverseFill: false    # 역방향 채우기 비활성화
+```
+
 ## params.radio
 
 라디오버튼으로 값을 선택하여 입력합니다.
