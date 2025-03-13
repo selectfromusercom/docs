@@ -4581,6 +4581,23 @@ params:
     false: ''
 ```
 
+### checkboxButtonGroup
+
+여러 체크박스들을 버튼 묶음 형태로 만들어줍니다.
+
+```yaml
+params:
+- key: checkbox
+  values: []
+  checkboxButtonGroup: true
+  checkbox:
+    - label: A
+      value: a
+    - label: B
+      value: b        
+```
+
+
 ## params.dropdown
 
 드롭다운으로 값을 선택할 수 있습니다.
