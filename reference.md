@@ -3910,6 +3910,73 @@ params:
     ]
 ```
 
+**JavaScript, row 활용법**
+
+- 입력 필드의 기본값을 JavaScript로 동적으로 설정
+- 부모 영역에서 가져온 row 값 활용 가능
+
+```yaml
+menus:
+- path: defaultvaluefn
+
+pages:
+- path: defaultvaluefn
+  blocks:
+  - type: query # 모달 안에서 적용
+    resource: mysql.qa
+    sqlType: select
+    sql: >
+      SELECT * FROM wine_order
+    columns:
+      memo:
+        openModal: edit-:id
+    
+    modals: 
+      - path: edit-:id
+        blocks:
+          - type: query
+            sqlType: update
+            resource: mysql.qa
+            sql: |
+              UPDATE wine_order
+              SET postcode = :postcode
+              WHERE id = :id
+            params:
+              - key: id
+                valueFromRow: true
+              - key: postcode
+                # defaultValueFromRow: postcode
+                defaultValueFn: |
+                  if (!row.postcode) return '00000'
+                  return row.postcode
+            confirm: update?
+            reloadAfterSubmit: true  
+
+  - type: query # 모달 없이 적용
+    resource: mysql.qa
+    sqlType: select
+    sql: >
+      SELECT * FROM wine_order WHERE id = 6
+    display: shadow
+    blocks:
+      - type: query
+        title: update
+        sqlType: update
+        resource: mysql.qa
+        sql: |
+          UPDATE wine_order
+          SET postcode = :postcode
+          WHERE id = :id
+        params:
+          - key: id
+            valueFromRow: true
+          - key: postcode
+            defaultValueFn: |
+              console.log('>R', row)
+              if (!row.postcode) return '00000'
+              return row.postcode
+```
+
 ## params.valueFromUserProperty
 
 설정 > 계정의 사용자 이름(name)과 이메일(email), 아이디(id) 시스템 데이터를 변수로 이용할 수 있습니다.
