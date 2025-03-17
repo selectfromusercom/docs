@@ -2792,6 +2792,44 @@ actions:
     hidden: true
 ```
 
+## blocks.loading
+
+`loading`을 이용해 데이터를 불러올때 사용자에게 자연스러운 경험을 줄 수 있습니다.
+
+```yaml
+menus:
+- path: pages/tDvIDv
+  name: 로딩 스켈레톤
+pages:
+- path: pages/tDvIDv
+  blocks:
+  - type: http
+    axios:
+      url: http://httpbin.selectfromuser.com/delay/3
+      method: GET
+    style:
+      height: 200px
+    loading:
+      - type: circle
+      - type: line
+      - type: line
+        # width: 700
+  - type: http
+    axios:
+      url: http://httpbin.selectfromuser.com/delay/2
+      method: GET
+    style:
+      height: 200px
+    loading: true
+  - type: http
+    axios:
+      url: http://httpbin.selectfromuser.com/delay/1
+      method: GET
+    style:
+      height: 200px
+    loading: true
+```
+
 # `columns: {}`
 
 columnOptions와 동일한 기능이고 양식이 다릅니다. 
