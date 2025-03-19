@@ -5219,6 +5219,48 @@ blocks:
             })
 ```
 
+## params.fetchFn
+
+특정 블록의 결과값을 다른 블록의 params에 사용할 수 있습니다.
+
+- 데이터를 가져와 특정 엔드포인트로 노출
+- fetchFn으로 해당 엔드포인트 호출
+- template에서 호출한 결과 활용
+
+```yaml
+pages:
+- path: fetchfn-sample
+  blocks:
+  - type: query
+    resource: mysql.qa
+    sql: |
+      SELECT name, AVG(price) as low_price
+      FROM wine_stock 
+      GROUP BY name
+      LIMIT 5
+    endpoint: /stocks/labels
+    hidden: true
+
+  - type: query
+    resource: mysql.qa
+    sql: SELECT 1
+    sqlType: update
+    params:
+      - format: block
+        label: 선택
+        fetchFn: |
+          const options = await query('/stocks/labels')
+          return {
+            options,
+          }
+        template: |
+          <select class="form-select">
+            <option v-for='e in options' :value='e.name'>
+              {{ e.name }} (가격대: {{e.low_price | number}})
+            </option>
+          </select>
+```
+
 ## params.progressStep
 
 데이터 입력시 스텝을 나눠 각 단계에 집중할 수 있게 돕습니다.
