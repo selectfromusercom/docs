@@ -4900,6 +4900,8 @@ params:
     sqlType: select
     sql: >
       select id as 'value', code_name as 'label' from codes
+  # selectOptions:
+  #   enabled: true
 ```
 
 ## params.datalist.datalistPreview
