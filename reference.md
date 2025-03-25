@@ -4017,7 +4017,7 @@ pages:
 
 ## params.valueFromUserProperty
 
-설정 > 계정의 사용자 이름(name)과 이메일(email), 아이디(id) 시스템 데이터를 변수로 이용할 수 있습니다.
+설정 > 계정의 사용자 이름(name)과 이메일(email), 아이디(id) 시스템 데이터와 커스텀 속성을 변수로 이용할 수 있습니다.
 
 ```yaml
 params:
@@ -4027,6 +4027,8 @@ params:
   valueFromUserProperty: "{{email}}"
 - key: user_id
   valueFromUserProperty: "{{id}}"
+- key: custom_category
+  valueFromUserProperty: category
 ```
 
 ## params.valueFromSheet
