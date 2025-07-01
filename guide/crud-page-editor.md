@@ -98,4 +98,5 @@ editorOptions:
   mode: markdown
   # mode: md
   # mode: html
+  width: 600px
 ```
