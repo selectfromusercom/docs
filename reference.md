@@ -3641,79 +3641,78 @@ columns:
 params `format: table` 과 동일하게 columns updateOptions에서 JSON 형태의 데이터를 수정하는 UI 화면을 구성할 수 있어요. 
 
 ```yaml
-    - type: query
-      resource: mysql.qa
-      title: id=65 wine_stock의 property_json의 일부분을 수정
-      sqlType: select
-      sql: |
-        select id, property_data from wine_stock 
-        where id = 65
-      display: form
-      responseFn: |
-        rows = rows.map(e => {
-          e.shippingRules = (e.property_data || {}).shippingRules || []
-          e.shippingRules = e.shippingRules.map(row => {
-            for (const key in row) {
-              row[key] = { value: row[key] }
-            }
-            return row
+- type: query
+  resource: mysql.qa
+  title: id=65 wine_stock의 property_json의 일부분을 수정
+  sqlType: select
+  sql: |
+    select id, property_data from wine_stock 
+    where id = 65
+  display: form
+  responseFn: |
+    rows = rows.map(e => {
+      e.shippingRules = (e.property_data || {}).shippingRules || []
+      e.shippingRules = e.shippingRules.map(row => {
+        for (const key in row) {
+          row[key] = { value: row[key] }
+        }
+        return row
+      })
+      return e
+    })
+
+    return rows
+  columns:
+    property_data:
+      hidden: true
+    shippingRules:
+      label: 배송비 규정
+      updateOptions:
+        type: query
+        resource: mysql.qa
+        sqlType: update
+        sql: |
+          UPDATE wine_stock 
+          SET property_data = :value
+          where id = :id
+
+        requestFn: |
+          const value = params.find(e => e.key == 'value')
+          const shippingRules = params.find(e => e.key == 'shippingRules')
+
+          value.value = JSON.stringify({ 
+            shippingRules: shippingRules.value.map(row => {
+              return {
+                minAmount: row.minAmount.value,
+                maxAmount: row.maxAmount.value,
+                shippingCost: row.shippingCost.value,
+              }
+            })
           })
-          return e
-        })
 
-        return rows
-      columns:
-        property_data:
-          hidden: true
-        shippingRules:
-          label: 배송비 규정
-          updateOptions:
-            type: query
-            resource: mysql.qa
-            sqlType: update
-            sql: |
-              UPDATE wine_stock 
-              SET property_data = :value
-              where id = :id
-
-            requestFn: |
-              const value = params.find(e => e.key == 'value')
-              const shippingRules = params.find(e => e.key == 'shippingRules')
-
-              value.value = JSON.stringify({ 
-                shippingRules: shippingRules.value.map(row => {
-                  return {
-                    minAmount: row.minAmount.value,
-                    maxAmount: row.maxAmount.value,
-                    shippingCost: row.shippingCost.value,
-                  }
-                })
-              })
-
-          format: table
-          style:
-            width: 700px
-          class: table text-xs
-          headers:
-            minAmount:
-              label: 배송비시작
-              format: number
-              postfix: 원 이상
-              postfixStyle:
-                width: 50px
-            maxAmount:
-              label: 금액 (없으면 최대)
-              prefix: "~"
-              format: number
-              postfix: 원 미만
-              postfixStyle:
-                width: 50px
-              placeholder: 비어있으면 최대금액
-            shippingCost:
-              label: 배송비부과
-              format: number
-              postfix: 원
-
+      format: table
+      style:
+        width: 700px
+      class: table text-xs
+      headers:
+        minAmount:
+          label: 배송비시작
+          format: number
+          postfix: 원 이상
+          postfixStyle:
+            width: 50px
+        maxAmount:
+          label: 금액 (없으면 최대)
+          prefix: "~"
+          format: number
+          postfix: 원 미만
+          postfixStyle:
+            width: 50px
+          placeholder: 비어있으면 최대금액
+        shippingCost:
+          label: 배송비부과
+          format: number
+          postfix: 원
 ```
 
 
