@@ -21,7 +21,9 @@ global.yml 파일을 사용해보세요.
 
 2. global.yml 파일에 재사용하고 싶은 params 정보를 아래와 같이 추가하세요.
 
-```yaml
+::: code-group
+
+```yaml [query]
 params_account_id: &params_account_id
   key: account_id
   label: 계정
@@ -38,11 +40,35 @@ params_account_id: &params_account_id
     params:
     - key: email
       valueFromUserProperty: "{{email}}"
+````
+
+```yaml [http]
+params_account_id: &params_account_id
+  key: account_id
+  label: 계정
+  multiple: true
+  datalist: true
+  datalistLength: 20
+  datalistPreview: true
+  datalistDropdown: true
+  datalistFromQuery:
+    type: http
+    axios:
+      method: GET
+      url: https://api.example.com/v1/test_email?email={{email}}
+    rowsPath: rows
+    params:
+    - key: email
+      valueFromUserProperty: "{{email}}"
 ```
+
+:::
 
 3. 기존 파일의 params에 `*params_account_id` 위치로 global.yml 파일 `&params_account_id` 아래의 내용이 들어갑니다.
 
-```yaml
+::: code-group
+
+```yaml [query]
 pages:
 - path: pages/VLEUvD
   title: 계정 정보조회
@@ -60,3 +86,25 @@ pages:
       - *params_account_id
       - key: name
 ```
+
+```yaml [http]
+pages:
+- path: pages/VLEUvD
+  title: 계정 정보조회
+  blocks:
+  - type: http
+    axios:
+      method: GET
+      url: https://api.example.com/v1/properties?account_id={{account_id}}&name={{name}}
+    rowsPath: rows
+    searchOptions:
+      enabled: true
+    paginationOptions:
+      enabled: true
+      perPage: 10      
+    params: 
+      - *params_account_id
+      - key: name
+```
+
+:::
