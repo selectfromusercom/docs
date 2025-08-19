@@ -13,6 +13,7 @@ outline: deep
 - 메뉴 구조를 정의하여 사용자가 쉽게 원하는 기능으로 이동할 수 있도록 합니다.
 
 path가 products인 메뉴 추가
+
 ```yaml
 menus:
   - path: products
@@ -41,7 +42,9 @@ pages:
 
 페이지 안에 조회 쿼리 블록을 추가합니다.
 
-```yaml
+::: code-group
+
+```yaml [query]
 menus:
   - path: products
 pages:
@@ -56,6 +59,21 @@ pages:
           LIMIT 100
 ```
 
+```yaml [http]
+menus:
+  - path: products
+pages:
+  - path: products
+    blocks:
+      - type: http
+        axios:
+          method: GET
+          url: https://api.example.com/v1/products?limit=100
+        rowsPath: rows
+```
+
+:::
+
 ## columns
 
 - 블록 내에서 표시되는 데이터를 컬럼(columns)으로 정의합니다.
@@ -63,7 +81,9 @@ pages:
 
 id, name, created_at 데이터의 표기 이름(label)을 설정합니다.
 
-```yaml
+::: code-group
+
+```yaml [query]
 menus:
   - path: products
 pages:
@@ -85,6 +105,28 @@ pages:
             label: 생성일
 ```
 
+```yaml [http]
+menus:
+  - path: products
+pages:
+  - path: products
+    blocks:
+      - type: http
+        axios:
+          method: GET
+          url: https://api.example.com/v1/products?limit=100
+        rowsPath: rows
+        columns:
+          id:
+            label: ID
+          name:
+            label: 이름
+          created_at:
+            label: 생성일
+```
+
+:::
+
 ## params
 
 - 어드민 페이지에서 사용자 입력을 받아 쿼리나 HTTP 요청에 전달할 파라미터를 정의합니다.
@@ -92,7 +134,9 @@ pages:
 
 name이라는 key를 추가하고 조회 쿼리에 활용합니다. 입력 필드의 label을 '이름'으로 설정합니다.
 
-```yaml
+::: code-group
+
+```yaml [query]
 menus:
   - path: products
 pages:
@@ -118,6 +162,31 @@ pages:
             label: 이름
 ```
 
+```yaml [http]
+menus:
+  - path: products
+pages:
+  - path: products
+    blocks:
+      - type: http
+        axios:
+          method: GET
+          url: https://api.example.com/v1/products?name={{name}}&limit=100
+        rowsPath: rows
+        columns:
+          id:
+            label: ID
+          name:
+            label: 이름
+          created_at:
+            label: 생성일
+        params:
+          - key: name
+            label: 이름
+```
+
+:::
+
 ## modals
 
 - 모달은 페이지 내에서 팝업 창 형태로 표시되는 작은 창입니다.
@@ -126,7 +195,9 @@ pages:
 
 columns.id를 클릭했을 때 `products-:id` 라는 path의 모달을 오픈(openModal)합니다. `:id` 파라미터를 모달 안 쿼리 블록에서 사용합니다. 
 
-```yaml
+::: code-group
+
+```yaml [query]
 menus:
   - path: products
 pages:
@@ -168,6 +239,45 @@ pages:
                     valueFromRow: id
 ```
 
+```yaml [http]
+menus:
+  - path: products
+pages:
+  - path: products
+    blocks:
+      - type: http
+        axios:
+          method: GET
+          url: https://api.example.com/v1/products?name={{name}}&limit=100
+        rowsPath: rows
+        columns:
+          id:
+            label: ID
+            openModal: products-:id
+          name:
+            label: 이름
+          created_at:
+            label: 생성일
+          memo:
+            label: 메모
+        params:
+          - key: name
+            label: 이름
+        modals:
+          - path: products-:id
+            blocks:
+              - type: http
+                axios:
+                  method: GET
+                  url: https://api.example.com/v1/products/{{id}}
+                rowsPath: rows
+                params:
+                  - key: id
+                    valueFromRow: id
+```
+
+:::
+
 ## actions
 
 - 액션은 사용자가 페이지에서 수행할 수 있는 작업을 정의합니다.
@@ -175,7 +285,9 @@ pages:
 
 products 조회 내역의 여러개를 선택(selectOptions)하고 반복실행(forEach)하여 상태를 수정하는 옵션을 추가합니다.
 
-```yaml
+::: code-group
+
+```yaml [query]
 menus:
   - path: products
 pages:
@@ -233,10 +345,69 @@ pages:
                 dropdown:
                   - draft: 준비중
                   - for_sale: 판매중
-                  - soldout: 품절             
+                  - soldout: 품절
 ```
 
-이외에도 다양한 스키마의 옵션, 기능을 제공하고 있습니다. 
+```yaml [http]
+menus:
+  - path: products
+pages:
+  - path: products
+    blocks:
+      - type: http
+        axios:
+          method: GET
+          url: https://api.example.com/v1/products?name={{name}}&limit=100
+        rowsPath: rows
+        columns:
+          id:
+            label: ID
+            openModal: products-:id
+          name:
+            label: 이름
+          created_at:
+            label: 생성일
+          memo:
+            label: 메모
+        params:
+          - key: name
+            label: 이름
+        modals:
+          - path: products-:id
+            blocks:
+              - type: http
+                axios:
+                  method: GET
+                  url: https://api.example.com/v1/products/{{id}}
+                rowsPath: rows
+                params:
+                  - key: id
+                    valueFromRow: id
+        selectOptions:
+          enabled: true
+        forEach: true
+        actions:
+          - label: 상태변경
+            type: http
+            axios:
+              method: PATCH
+              url: https://api.example.com/v1/products/{{id}}/status
+              data:
+                status: "{{status}}"
+            params:
+              - key: id
+                valueFromSelectedRows: id
+              - key: status
+                label: 상태
+                dropdown:
+                  - draft: 준비중
+                  - for_sale: 판매중
+                  - soldout: 품절
+```
+
+:::
+
+이외에도 다양한 스키마의 옵션, 기능을 제공하고 있습니다.
 
 자세한 사항은 [Reference](https://docs.selectfromuser.com/layout) 페이지에서 확인할 수 있어요.
 
