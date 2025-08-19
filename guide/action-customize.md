@@ -23,7 +23,9 @@ actions:
 
 ![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/d6426aa6-84a9-4950-de39-97e7fad2a700/docs "action-confirmtext.png")
 
-```yaml
+::: code-group
+
+```yaml [query]
 - label: 삭제
   type: query
   resource: mysql
@@ -37,11 +39,31 @@ actions:
       valueFromSelectedRowsAs: id
 ```
 
+```yaml [http]
+- label: 삭제
+  type: http
+  axios:
+    method: PATCH
+    url: https://api.example.com/v1/properties/delete
+    data:
+      ids: "{{ids}}"
+  confirmText: 삭제하시겠습니까?
+  class: text-danger
+  params:
+    - key: ids
+      valueFromSelectedRows: true
+      valueFromSelectedRowsAs: id
+```
+
+:::
+
 ## promptText로 데이터 받아서 처리
 
 ![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/cee3106e-091e-4be0-328f-ac46f9bf7400/docs "action-prompttext.png")
 
-```yaml
+::: code-group
+
+```yaml [query]
 actions:
 - label: 메모 변경
   type: query
@@ -60,11 +82,35 @@ actions:
       valueFromSelectedRowsAs: id
 ```
 
+```yaml [http]
+actions:
+- label: 메모 변경
+  type: http
+  class: text-primary
+  axios:
+    method: PATCH
+    url: https://api.example.com/v1/properties/memo
+    data:
+      ids: "{{ids}}"
+      memo: "{{memo}}"
+  params:
+    - key: memo
+      valueFromPrompt: true
+      promptText: 메모를 입력해주세요. (덮어씌우기)
+    - key: ids
+      valueFromSelectedRows: true
+      valueFromSelectedRowsAs: id
+```
+
+:::
+
 ## 액션 실행 전 확인하기
 
 confirm 키를 이용하면 실행 전에 확인 문구를 보여줄 수 있습니다. 
 
-```yaml
+::: code-group
+
+```yaml [query]
 - placement: right top
   name: 메모 전체 삭제
   label: 대상자 초기화
@@ -74,6 +120,21 @@ confirm 키를 이용하면 실행 전에 확인 문구를 보여줄 수 있습�
   sql: UPDATE customer SET memo = '' WHERE memo = 'A'
   confirm: 메모 A 대상자를 초기화 합니다.
 ```
+
+```yaml [http]
+- placement: right top
+  name: 메모 전체 삭제
+  label: 대상자 초기화
+  type: http
+  axios:
+    method: PATCH
+    url: https://api.example.com/v1/customers?memo=A
+    data:
+      memo: ""
+  confirm: 메모 A 대상자를 초기화 합니다.
+```
+
+:::
 
 ## 체크 없이 버튼 실행하기
 
