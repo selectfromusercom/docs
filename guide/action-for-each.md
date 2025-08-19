@@ -10,7 +10,9 @@ outline: deep
 
 forEach 키를 사용해서 sql 쿼리를 여러번 실행합니다.
 
-```yaml
+::: code-group
+
+```yaml [query]
 actions:
 - label: 티켓 추가
   placement: top left
@@ -33,6 +35,37 @@ actions:
     valueFromSelectedRows: true
     valueFromSelectedRowsAs: id
 ```
+
+```yaml [http]
+actions:
+- label: 티켓 추가
+  placement: top left
+  modal: true
+  type: http
+  axios:
+    method: POST
+    url: https://api.example.com/v1/tickets
+    data:
+      written_by: "{{written_by}}"
+      title: "{{title}}"
+      description: "{{description}}"
+      status: "{{status}}"
+      type: "order"
+      type_id: "{{type_id}}"
+  forEach: true
+  params:
+  - key: written_by
+  - key: title
+    help: >
+      필드에 대한 도움말
+  - key: description
+  - key: status
+  - key: type_id
+    valueFromSelectedRows: true
+    valueFromSelectedRowsAs: id
+```
+
+:::
 
 ## 심화 예제
 
