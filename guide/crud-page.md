@@ -12,7 +12,8 @@ insert 쿼리를 활용해서 아래와 같은 데이터 추가 페이지를 빠
 
 ![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/3d4aa152-7f56-485f-3a43-f48cc1db1b00/docs "insert-ui-basic.png")
 
-```yaml
+::: code-group
+```yaml [query]
 pages:
 - path: add-customer-log
   blocks:
@@ -30,7 +31,31 @@ pages:
     - key: status
     - key: memo
     # confirm: false
+````
+
+```yaml [http]
+pages:
+- path: add-customer-log
+  blocks:
+  - type: http
+    axios:
+      method: POST
+      url: https://api.example.com/v1/customer_log
+      data:
+        name: "{{name}}"
+        location: "{{location}}"
+        status: "{{status}}"
+        memo: "{{memo}}"
+    rowsPath: rows
+    params:
+    - key: name
+    - key: location
+    - key: status
+    - key: memo
+    # confirm: false
 ```
+
+:::
 
 ## 데이터 수정
 
@@ -38,7 +63,9 @@ update 쿼리를 사용해 아래와 같은 수정 페이지를 만들어보세�
 
 ![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/e7d167bc-f41e-4bfd-d66f-e2967f409200/docs "update-ui-basic.png")
 
-```yaml
+::: code-group
+
+```yaml [query]
 - type: query
   resource: mysql
   sqlType: update
@@ -53,13 +80,32 @@ update 쿼리를 사용해 아래와 같은 수정 페이지를 만들어보세�
     label: ID
 ```
 
+```yaml [http]
+- type: http
+  axios:
+    method: PATCH
+    url: https://api.example.com/v1/products/{{id}}
+    data:
+      name: "{{name}}"
+  rowsPath: rows
+  params:
+  - key: name
+    label: 상품명
+  - key: id
+    label: ID
+```
+
+:::
+
 ## 기타 옵션
 
 ### 제출 후 자동 새로고침
 
-`reloadAfterSubmit` insert 또는 update 쿼리 등을 이용해 데이터를 제출한 다음 새로고침 설정을 할 수 있습니다. 
+`reloadAfterSubmit` insert 또는 update 쿼리 등을 이용해 데이터를 제출한 다음 새로고침 설정을 할 수 있습니다.
 
-```yaml
+::: code-group
+
+```yaml [query]
 - type: query
   resource: mysql.qa
   sqlType: insert
@@ -72,12 +118,32 @@ update 쿼리를 사용해 아래와 같은 수정 페이지를 만들어보세�
   reloadAfterSubmit: true
 ```
 
+```yaml [http]
+- type: http
+  axios:
+    method: POST
+    url: https://api.example.com/v1/properties
+    data:
+      name: "{{new_name}}"
+  rowsPath: rows
+  name: 숙소 추가
+  params:
+  - key: new_name
+    label: 이름
+  # 제출 후 자동 새로고침
+  reloadAfterSubmit: true
+```
+
+:::
+
 ### 제출 버튼 이름, 색상 변경
 
-기본적으로 sqlType이 update일 때 제출 버튼이 '수정'으로, insert일 때는 '저장'으로 표기됩니다.  
-버튼의 이름이나 색상을 변경하고 싶으실 때는 `submitButton` 키를 이용해주세요.  
+기본적으로 sqlType이 update일 때 제출 버튼이 '수정'으로, insert일 때는 '저장'으로 표기됩니다.
+버튼의 이름이나 색상을 변경하고 싶으실 때는 `submitButton` 키를 이용해주세요.
 
-```yaml
+::: code-group
+
+```yaml [query]
 - type: query
   resource: mysql.qa
   sqlType: insert
@@ -91,6 +157,26 @@ update 쿼리를 사용해 아래와 같은 수정 페이지를 만들어보세�
   - key: new_name
     label: 이름
 ```
+
+```yaml [http]
+- type: http
+  axios:
+    method: POST
+    url: https://api.example.com/v1/properties
+    data:
+      name: "{{new_name}}"
+  rowsPath: rows
+  name: 숙소 추가
+  # 버튼 이름, 색상 변경
+  submitButton:
+    label: 내용 저장
+    type: primary  
+  params:
+  - key: new_name
+    label: 이름
+```
+
+:::
 
 지원되는 버튼 색상 타입은 아래와 같습니다.
 
