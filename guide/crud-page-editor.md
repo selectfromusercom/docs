@@ -10,7 +10,8 @@ outline: deep
 
 포스트 목록을 보고 수정하거나, 새 포스트를 추가하는 페이지를 만들 수 있습니다. 
 
-```yaml
+::: code-group
+```yaml [query]
 menus:
 - path: posts
   name: 포스트 목록
@@ -73,6 +74,79 @@ pages:
         height: 300px
 ```
 
+```yaml [http]
+menus:
+- path: posts
+  name: 포스트 목록
+  group: post
+- path: add-post
+  name: 포스트 추가
+  group: post
+  placement: tab-only
+
+pages:
+- path: posts
+  blocks:
+  - type: http
+    axios:
+      method: GET
+      url: https://api.example.com/v1/posts?order=desc
+    rowsPath: rows
+    paginationOptions:
+      enabled: true 
+      perPage: 10    
+    viewModal:
+      blocks:
+      - type: http
+        axios:
+          method: GET
+          url: https://api.example.com/v1/posts/{{id}}
+        rowsPath: rows
+        params:
+        - key: id
+          valueFromRow: id
+        display: form
+        columns:
+          title:
+          content:
+            format: editor
+            editorOptions:
+              mode: markdown
+            updateOptions:
+              type: http
+              axios:
+                method: PATCH
+                url: https://api.example.com/v1/posts/{{id}}
+                data:
+                  content: "{{value}}"
+
+- path: add-post
+  containerStyle: >
+    padding-left: 70px;
+    padding-right: 70px;
+  blocks:
+  - type: http
+    axios:
+      method: POST
+      url: https://api.example.com/v1/posts
+    rowsPath: rows
+    params:
+    - key: title
+      class: w-100
+    - key: content
+      format: editor
+      class: w-100
+      editorOptions:
+        mode: markdown
+        # mode: md
+        # mode: html
+        # mode: wysiwyg
+        width: 100%
+        height: 300px
+```
+
+:::
+
 ## 결과 이미지들
 
 포스트 목록 화면
@@ -91,7 +165,7 @@ pages:
 
 ### editorOptions.mode
 
-에디터의 모드를 바꿀 수 있습니다. markdown과 md는 마크다운 용법을 따르는 에디터이며, html을 입력해도 그대로 반영됩니다. html 모드는 html만 적용됩니다. 
+에디터의 모드를 바꿀 수 있습니다. markdown과 md는 마크다운 용법을 따르는 에디터이며, html을 입력해도 그대로 반영됩니다. html 모드는 html만 적용됩니다.
 
 ```yaml
 editorOptions:
