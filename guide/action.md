@@ -12,7 +12,9 @@ outline: deep
 
 ![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/9b93be3e-69d0-49f6-5e0a-667224340f00/docs "check-rows.png")
 
-```yaml
+::: code-group
+
+```yaml [query]
 pages:
 - path: customer
   blocks: 
@@ -27,11 +29,28 @@ pages:
       enabled: true
 ```
 
+```yaml [http]
+pages:
+- path: customer
+  blocks: 
+  - type: http
+    axios:
+      method: GET
+      url: https://api.example.com/v1/customers?limit=50
+    rowsPath: rows
+    selectOptions:
+      enabled: true
+```
+
+:::
+
 ## 체크하여 선택한 데이터로 액션
 
 ![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/8b18817e-c4f1-41aa-6aea-efe1dd037600/docs "check-actions.png")
 
-```yaml
+::: code-group
+
+```yaml [query]
 - type: query
   resource: mysql.qa
   sqlType: select
@@ -61,9 +80,38 @@ pages:
       valueFromPrompt: true
 ```
 
+```yaml [http]
+- type: http
+  axios:
+    method: GET
+    url: https://api.example.com/v1/customers?workspace_id=12&limit=10
+  rowsPath: rows
+  selectOptions:
+    enabled: true
+  actions:
+  - type: http
+    label: 메모
+    axios:
+      method: PATCH
+      url: https://api.example.com/v1/customers/memo
+      data:
+        ids: "{{ids}}"
+        memo: "{{memo}}"
+    params:
+    - key: ids
+      valueFromSelectedRows: true
+      valueFromSelectedRowsAs: id
+    - key: memo
+      valueFromPrompt: true
+```
+
+:::
+
 ### actions로 update 하는 경우
 
-```yaml
+::: code-group
+
+```yaml [query]
 actions:
 - type: query
   resource: mysql
@@ -82,6 +130,31 @@ actions:
       valueFromSelectedRows: true
       valueFromSelectedRowsAS: '고객ID'
 ```
+
+```yaml [http]
+actions:
+- type: http
+  label: 변경
+  axios:
+    method: PATCH
+    url: https://api.example.com/v1/orders/{{user_id}}/status
+    data:
+      status: "{{status}}"
+  forEach: true
+  params:
+    - key: status
+      label: 상태
+      dropdown:
+        - placed
+        - received
+        - returned
+      required: true
+    - key: user_id
+      valueFromSelectedRows: true
+      valueFromSelectedRowsAs: "고객ID"
+```
+
+:::
 
 ## 심화 예제
 
