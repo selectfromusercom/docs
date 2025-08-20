@@ -72,7 +72,7 @@ pages:
         - key: id
           label: ID
           valueFromRow: id
-````
+```
 
 ```yaml [http]
 menus:
