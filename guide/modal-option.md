@@ -10,7 +10,8 @@ outline: deep
 
 ![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/ee5acf1d-cf34-40e1-464a-59bfc44a7800/docs "modal-width.png")
 
-```yaml
+::: code-group
+```yaml [query]
 viewModal:
   # 너비 설정
   width: 90%
@@ -27,7 +28,26 @@ viewModal:
     params:
     - key: id
       valueFromRow: true
+````
+
+```yaml [http]
+viewModal:
+  # 너비 설정
+  width: 90%
+  
+  blocks:
+  - type: http
+    axios:
+      method: GET
+      url: https://api.example.com/v1/properties_copy/{{id}}
+    rowsPath: rows
+    display: col-1
+    params:
+    - key: id
+      valueFromRow: true
 ```
+
+:::
 
 ## 모달 제목
 
@@ -35,7 +55,9 @@ viewModal:
 
 ![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/51edd20c-8acb-41bd-369d-e698ca918f00/docs "modal-title.png")
 
-```yaml
+::: code-group
+
+```yaml [query]
 viewModal:
   # 모달 제목
   name: 제휴사 상세조회
@@ -54,12 +76,33 @@ viewModal:
       valueFromRow: true
 ```
 
+```yaml [http]
+viewModal:
+  # 모달 제목
+  name: 제휴사 상세조회
+  
+  blocks:
+  - type: http
+    axios:
+      method: GET
+      url: https://api.example.com/v1/properties_copy/{{id}}
+    rowsPath: rows
+    display: col-1
+    params:
+    - key: id
+      valueFromRow: true
+```
+
+:::
+
 ## 안전하게 창닫기
 
-기본 설정으로는 Esc 또는 backdrop(검은 배경)을 클릭하면 모달팝업이 닫힙니다.  
+기본 설정으로는 Esc 또는 backdrop(검은 배경)을 클릭하면 모달팝업이 닫힙니다.
 아래의 옵션을 통해 반드시 ‘닫기' 를 클릭해야 닫히도록 설정 가능합니다.
 
-```yaml
+::: code-group
+
+```yaml [query]
 viewModal:
   # 안전하게 창닫기
   dismissible: false
@@ -78,8 +121,27 @@ viewModal:
       valueFromRow: true
 ```
 
-> 📘 
-> 
+```yaml [http]
+viewModal:
+  # 안전하게 창닫기
+  dismissible: false
+  
+  blocks:
+  - type: http
+    axios:
+      method: GET
+      url: https://api.example.com/v1/properties_copy/{{id}}
+    rowsPath: rows
+    display: col-1
+    params:
+    - key: id
+      valueFromRow: true
+```
+
+:::
+
+> 📘
+>
 > aside, scroll, drag, minimize/maximize 등 모달 옵션을 안정화 후 추가 예정입니다.
 
 ## 모달에서 제출후 창닫기
