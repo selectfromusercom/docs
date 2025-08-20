@@ -28,7 +28,9 @@ kanbanOptions:
   useColumn: review_status
 ```
 
-```yaml
+::: code-group
+
+```yaml [query]
 - path: inspect-product
   blocks:
     - type: query
@@ -81,6 +83,56 @@ kanbanOptions:
             defaultValueFromRow: review_status
 ```
 
+```yaml [http]
+- path: inspect-product
+  blocks:
+    - type: http
+      axios:
+        method: GET
+        url: https://api.example.com/v1/product_reviews
+      rowsPath: rows
+      columns:
+        id:
+          hidden: true 
+        description:
+          hidden: true
+        review_status:
+          hidden: true
+      kanbanOptions:
+        enabled: true
+        useColumn: review_status
+      viewModal:
+        useColumn: id
+        blocks:          
+        - type: http
+          axios:
+            method: GET
+            url: https://api.example.com/v1/product_reviews/{{id}}
+          rowsPath: rows
+          params:
+          - key: id
+            valueFromRow: id
+          display: form
+
+        - type: http
+          axios:
+            method: PUT
+            url: https://api.example.com/v1/product_reviews/{{id}}
+          body:
+            review_status: "{{review_status}}"
+          params:
+          - key: id
+            valueFromRow: id    
+          - key: review_status
+            dropdown:
+            - in_review
+            - rejected
+            - reviewed
+            defaultValueFromRow: review_status
+```
+
+:::
+
 ## 칸반 세부옵션
 
 ### 드래그 & 드롭
@@ -88,7 +140,9 @@ kanbanOptions:
 - 카드 이동시 useColumn에 해당하는 컬럼의 updateOptions를 그대로 실행
 - `confirm: true` 추가시 확정전에 변경 전/후 표기
 
-```yaml
+::: code-group
+
+```yaml [query]
 kabanOptions:
   enabled: true
   useColumn: review_status
@@ -106,6 +160,26 @@ columns:
         WHERE id = :id
       confirm: true
 ```
+
+```yaml [http]
+kabanOptions:
+  enabled: true
+  useColumn: review_status
+  drag: true
+columns:
+  id:
+  review_status:
+    updateOptions:
+      type: http
+      axios:
+        method: PUT
+        url: https://api.example.com/v1/product_reviews/{{id}}
+      body:
+        status: "{{value}}"
+      confirm: true
+```
+
+:::
 
 ### 리스트 직접 정의하고 정렬하기
 
