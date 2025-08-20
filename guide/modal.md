@@ -20,7 +20,8 @@ outline: deep
 
 모달을 추가하고 싶은 블록을 확인합니다.
 
-```yaml
+::: code-group
+```yaml [query]
 - path: users/all
   blocks:
   - type: query
@@ -33,9 +34,23 @@ outline: deep
       LIMIT 100
 ```
 
-`viewModal` 과 알맞는 블록 내용을 추가합니다. 
+```yaml [http]
+- path: users/all
+  blocks:
+  - type: http
+    axios:
+      method: GET
+      url: https://api.example.com/v1/properties?order=asc&limit=100
+    rowsPath: rows
+```
 
-```yaml
+:::
+
+`viewModal` 과 알맞는 블록 내용을 추가합니다.
+
+::: code-group
+
+```yaml [query]
 - path: users/all
   blocks:
   - type: query
@@ -61,6 +76,28 @@ outline: deep
           valueFromRow: id
 ```
 
+```yaml [http]
+- path: users/all
+  blocks:
+  - type: http
+    axios:
+      method: GET
+      url: https://api.example.com/v1/properties?order=asc&limit=100
+    rowsPath: rows
+    viewModal:
+      blocks:
+      - type: http
+        axios:
+          method: GET
+          url: https://api.example.com/v1/properties/{{id}}
+        rowsPath: rows
+        params:
+        - key: id
+          valueFromRow: id
+```
+
+:::
+
 id나 name 등 다른 컬럼에 모달 링크를 걸 수도 있습니다.
 
 ![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/956f4f62-4086-4df5-2450-46f8694bd900/docs "modal-column-link.png")
@@ -74,9 +111,11 @@ viewModal:
 
 ![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/84b6ab49-b45b-4b64-b74f-bd7b3a343200/docs "pivot-table-modal.png")
 
-`display: col-2` 를 추가해서 테이블을 피봇하고 2열로 편하게 조회할 수 있게 됩니다. 
+`display: col-2` 를 추가해서 테이블을 피봇하고 2열로 편하게 조회할 수 있게 됩니다.
 
-```yaml
+::: code-group
+
+```yaml [query]
 - path: users/all
   blocks:
   - type: query
@@ -104,14 +143,40 @@ viewModal:
           valueFromRow: id
 ```
 
+```yaml [http]
+- path: users/all
+  blocks:
+  - type: http
+    axios:
+      method: GET
+      url: https://api.example.com/v1/properties?order=asc&limit=100
+    rowsPath: rows
+    viewModal:
+      blocks:
+      - type: http
+        axios:
+          method: GET
+          url: https://api.example.com/v1/properties/{{id}}
+        rowsPath: rows
+        # 2등분
+        display: col-2
+        params:
+        - key: id
+          valueFromRow: id
+```
+
+:::
+
 ## 모달에 내용을 추가하기
 
-모달 아래에 blocks가 있기 때문에 blocks 하위의 설정들은 모두 동일하게 적용 가능합니다.  
-하위 탭을 추가한 샘플을 살펴보세요. 
+모달 아래에 blocks가 있기 때문에 blocks 하위의 설정들은 모두 동일하게 적용 가능합니다.
+하위 탭을 추가한 샘플을 살펴보세요.
 
 ![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/8a7b82e2-5cf2-4799-7387-1fd34b1fb200/docs "tabs-in-modal.png")
 
-```yaml
+::: code-group
+
+```yaml [query]
 - path: users/all
   blocks:
   - type: query
@@ -153,3 +218,38 @@ viewModal:
                 WHERE workspace_id = 12 LIMIT 10
           - name: 정산내역
 ```
+
+```yaml [http]
+- path: users/all
+  blocks:
+  - type: http
+    axios:
+      method: GET
+      url: https://api.example.com/v1/properties?order=asc&limit=100
+    rowsPath: rows
+    viewModal:
+      blocks:
+      - type: http
+        axios:
+          method: GET
+          url: https://api.example.com/v1/properties/{{id}}
+        rowsPath: rows
+        display: col-2
+        params:
+        - key: id
+          valueFromRow: id
+        # 세부 탭 설정
+        tabOptions:
+          autoload: 1
+          tabs:
+          - name: 예약내역
+            blocks:
+            - type: http
+              axios:
+                method: GET
+                url: https://api.example.com/v1/customers?workspace_id=12&limit=10
+              rowsPath: rows
+          - name: 정산내역
+```
+
+:::
