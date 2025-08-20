@@ -18,49 +18,89 @@ outline: deep
 
 ## 링크 설정 샘플 yaml
 
-```yaml
+::: code-group
+```yaml [query]
 - path: manage-animal
-    blocks:
-    - type: query
-      resource: acme
-      sqlType: select
-      sql: >
-        SELECT id, name, image_url
-        FROM animals limit 10
-      columns:
-        image_url:
-          format: url
+  blocks:
+  - type: query
+    resource: acme
+    sqlType: select
+    sql: >
+      SELECT id, name, image_url
+      FROM animals limit 10
+    columns:
+      image_url:
+        format: url
 ```
+
+```yaml [http]
+- path: manage-animal
+  blocks:
+  - type: http
+    axios:
+      method: GET
+      url: https://api.example.com/v1/animals
+    rowsPath: rows
+    columns:
+      image_url:
+        format: url
+```
+
+:::
 
 ## 이미지로 표시
 
-필드 안의 값을 바탕으로 이미지(image)로 표시할 수 있습니다. 
+필드 안의 값을 바탕으로 이미지(image)로 표시할 수 있습니다.
 
 ![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/c03389f1-0a6f-4d11-3c44-9b57f475e600/docs "image-format.png")
 
 ### 이미지 표기 샘플 yaml
 
-```yaml
+::: code-group
+
+```yaml [query]
 - path: manage-animal
-    blocks:
-    - type: query
-      resource: acme
-      sqlType: select
-      sql: >
-        SELECT id, name, image_url, image_url as thumbnail, full_address, created_at, registered_at 
-        FROM animals 
-        LIMIT 10
-      columns:
-        image_url:
-          format: url
-        thumbnail:
-          format: image
-          width: 160px
-          height: 120px
-          thumbnail: true
-          style: > 
-            border-radius: 10px
+  blocks:
+  - type: query
+    resource: acme
+    sqlType: select
+    sql: >
+      SELECT id, name, image_url, image_url as thumbnail, full_address, created_at, registered_at 
+      FROM animals 
+      LIMIT 10
+    columns:
+      image_url:
+        format: url
+      thumbnail:
+        format: image
+        width: 160px
+        height: 120px
+        thumbnail: true
+        style: > 
+          border-radius: 10px
 ```
+
+```yaml [http]
+- path: manage-animal
+  blocks:
+  - type: http
+    axios:
+      method: GET
+      url: https://api.example.com/v1/animals
+    rowsPath: rows
+    columns:
+      image_url:
+        format: url
+      thumbnail:
+        format: image
+        width: 160px
+        height: 120px
+        thumbnail: true
+        style: > 
+          border-radius: 10px
+```
+
+:::
 
 ### 키와 값 작동 방식
 
@@ -92,13 +132,13 @@ style: >
 
 ## 날짜 표시 설정
 
-> 👍 
-> 
+> 👍
+>
 > 추가 옵션 없이 날짜 데이터를 조회하는 경우, 로컬 시간대로 표기합니다.
 
 ### 날짜
 
-DATE_FORMAT 등으로 쿼리해서 날짜를 포맷팅하거나 옵션으로 표기 가능합니다.  
+DATE_FORMAT 등으로 쿼리해서 날짜를 포맷팅하거나 옵션으로 표기 가능합니다.
 구글시트 내보내기 시에는 원본값으로 내보내기 됩니다.
 
 ```yaml
@@ -129,23 +169,25 @@ formatFn: datetimeA-local
 
 ## 테이블 JSON 필드 표시
 
-운영상의 이슈를 처리하기 위해 JSON 데이터를 직접 살펴봐야할 때가 있습니다. 이 때 테이블 행(row) 한 줄로는 데이터를 살펴보기가 어렵습니다. `format: json`을 사용하면 이런 상황을 해결할 수 있습니다. 
+운영상의 이슈를 처리하기 위해 JSON 데이터를 직접 살펴봐야할 때가 있습니다. 이 때 테이블 행(row) 한 줄로는 데이터를 살펴보기가 어렵습니다. `format: json`을 사용하면 이런 상황을 해결할 수 있습니다.
 
 ### 테이블 행 결과
 
-10줄 미만으로 여러줄이 표시됩니다. 
+10줄 미만으로 여러줄이 표시됩니다.
 
 ![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/683f5ae0-2a84-4781-76e4-262cee99c500/docs "json-display.png")
 
 ### 필드 클릭 시
 
-JSON 필드 클릭 시 아래와 같이 모달창이 떠서 큰 영역으로 표시됩니다. 
+JSON 필드 클릭 시 아래와 같이 모달창이 떠서 큰 영역으로 표시됩니다.
 
 ![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/9cbdcf1a-f816-4abf-7612-413a053f9700/docs "json-display-clicked.png")
 
 ### 설정 방법
 
-```yaml
+::: code-group
+
+```yaml [query]
 - type: query
   resource: mysql.qa
   sqlType: select
@@ -155,6 +197,20 @@ JSON 필드 클릭 시 아래와 같이 모달창이 떠서 큰 영역으로 표
   - field: result_json
     format: json
 ```
+
+```yaml [http]
+- type: http
+  axios:
+    method: GET
+    url: https://api.example.com/v1/sms_log
+  rowsPath: rows
+  columnOptions:
+  - field: id
+  - field: result_json
+    format: json
+```
+
+:::
 
 ## 여러줄 또는 HTML 표시
 
@@ -273,6 +329,6 @@ format: html
 format: textarea
 ```
 
-> 📘 
-> 
+> 📘
+>
 > 위의 내용은 viewModal (modalOptions) 모달 안에서도 동일하게 작동합니다.
