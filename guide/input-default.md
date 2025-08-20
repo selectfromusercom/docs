@@ -26,7 +26,7 @@ outline: deep
     - key: category
       # 기본값 설정
       defaultValue: uncategorized
-````
+```
 
 ```yaml [http]
 - path: products

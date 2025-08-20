@@ -28,7 +28,7 @@ viewModal:
     params:
     - key: id
       valueFromRow: true
-````
+```
 
 ```yaml [http]
 viewModal:

@@ -40,7 +40,7 @@ params_account_id: &params_account_id
     params:
     - key: email
       valueFromUserProperty: "{{email}}"
-````
+```
 
 ```yaml [http]
 params_account_id: &params_account_id

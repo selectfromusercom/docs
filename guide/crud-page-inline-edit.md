@@ -56,7 +56,7 @@ viewModal:
           sql: UPDATE properties SET memo = :value WHERE id = :id
           log: true
           confirm: false
-````
+```
 
 ```yaml [http]
 viewModal:

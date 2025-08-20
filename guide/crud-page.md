@@ -31,7 +31,7 @@ pages:
     - key: status
     - key: memo
     # confirm: false
-````
+```
 
 ```yaml [http]
 pages:
