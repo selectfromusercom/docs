@@ -63,11 +63,11 @@ SELECT * FROM users LIMIT 100
 
 편집 파일을 추가하고, 이미지와 같이 아래 YAML 코드를 복사 붙여넣기 해보세요.
 
-데이터를 연결하지않고 느낌을 보고 싶다면 `resource: json+sql` 방식을 이용해보세요. 
+데이터를 연결하지않고 느낌을 보고 싶다면 `resource: json+sql` 방식을 이용해보세요.
 
 ::: code-group
 
-```yaml [MySQL]
+```yaml [query]
 menus:
   - path: quickstart-read-data
     name: 데이터 조회
@@ -82,7 +82,22 @@ pages:
           SELECT * FROM users LIMIT 100
 ```
 
-```yaml [JSON + SQL]
+```yaml [http]
+menus:
+  - path: quickstart-read-data
+    name: 데이터 조회
+
+pages:
+  - path: quickstart-read-data
+    blocks:
+      - type: http
+        axios:
+          method: GET
+          url: https://api.example.com/v1/users?limit=100
+        rowsPath: rows
+```
+
+```yaml [json+sql]
 menus:
   - path: quickstart-read-data
     name: 데이터 조회
@@ -141,13 +156,15 @@ pages:
 
 사용자 ID나 이메일 등으로 데이터를 조회해야할 때가 있습니다. 셀렉트의 params 키로 조건검색을 위한 입력필드를 추가할 수 있어요.
 
-params 키의 값은 sql 쿼리나 http api(axios) 등에서 매개변수(parameter)로 쓸 수 있습니다. 
+params 키의 값은 sql 쿼리나 http api(axios) 등에서 매개변수(parameter)로 쓸 수 있습니다.
 
 ![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/9c2e1c18-58c0-4122-ad15-ceb202973800/docs)
 
 `pages:` 부분을 아래와 같이 바꿔보세요. sql 쿼리를 조건검색에 알맞게 바꾸고 입력필드를 params로 지정하였습니다.
 
-```yaml
+::: code-group
+
+```yaml [query]
 pages:
   - path: quickstart-read-data
     blocks:
@@ -167,9 +184,27 @@ pages:
             label: 이메일
 ```
 
+```yaml [http]
+pages:
+  - path: quickstart-read-data
+    blocks:
+      - type: http
+        axios:
+          method: GET
+          url: https://api.example.com/v1/users?id={{id}}&email={{email}}&limit=100
+        rowsPath: rows
+        params:
+          - key: id
+            label: ID
+          - key: email
+            label: 이메일
+```
+
+:::
+
 ## 5. 데이터 컬럼 설정하기
 
-조회한 데이터의 컬럼들을 숨기거나 머릿말에 이름을 붙이는 등 옵션을 설정할 수 있습니다. 
+조회한 데이터의 컬럼들을 숨기거나 머릿말에 이름을 붙이는 등 옵션을 설정할 수 있습니다.
 
 - `label`: 컬럼 머릿말 이름
 - `hidden`: 컬럼 숨기기
@@ -178,7 +213,7 @@ pages:
 params와 동일한 들여쓰기 위치에 columns를 추가해주세요. 복사해서 추가할 때 params키가 2개 이상 중복되지 않게 유념해주세요.
 
 ::: tip
-YAML 코드를 복사해서 추가할 때는 들여쓰기를 잘 확인해주세요. 
+YAML 코드를 복사해서 추가할 때는 들여쓰기를 잘 확인해주세요.
 
 - 들여쓰기는 가능한 키보드 스페이스(space)키로 2칸 단위로 유지해주세요.
 - 들여쓰기가 잘못된 상태로 저장하는 경우 YAML 오류 메시지와 함께 문제가 있는 영역을 표기합니다.
@@ -215,13 +250,15 @@ columns:
 
 특정 내역의 더 자세한 정보를 살펴보거나 데이터를 수정하고 싶을 때 모달(팝업)을 사용해보세요.
 
-조회 블록에서 `viewModal`을 추가하여 데이터를 불러오고 수정할 수 있습니다. 
+조회 블록에서 `viewModal`을 추가하여 데이터를 불러오고 수정할 수 있습니다.
 
 ![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/f09d198f-4815-4095-f320-22a1f3f3ae00/docs)
 
 viewModal을 params, columns와 동일한 위치에 추가해주세요.
 
-```yaml
+::: code-group
+
+```yaml [query]
 viewModal:
   useColumn: id
   mode: side
@@ -252,17 +289,50 @@ viewModal:
       display: form
 ```
 
+```yaml [http]
+viewModal:
+  useColumn: id
+  mode: side
+  blocks:
+    - type: http
+      axios:
+        method: PATCH
+        url: https://api.example.com/v1/users/{{id}}
+        data:
+          status: "{{status}}"
+      rowsPath: rows
+      params:
+        - key: id
+          valueFromRow: id
+        - key: status
+      reloadAfterSubmit: true
+
+    - type: http
+      axios:
+        method: GET
+        url: https://api.example.com/v1/users/{{id}}
+      rowsPath: rows
+      params:
+        - key: id
+          valueFromRow: id
+      display: form
+```
+
+:::
+
 ## 7. 데이터 추가 페이지 만들기
 
-INSERT 쿼리를 이용하면 데이터 추가 페이지도 바로 만들 수 있어요. 
+INSERT 쿼리를 이용하면 데이터 추가 페이지도 바로 만들 수 있어요.
 
-편집 파일을 추가하고 아래 YAML을 복사해서 붙여넣기 해보세요. 
+편집 파일을 추가하고 아래 YAML을 복사해서 붙여넣기 해보세요.
 
 기존 파일에 추가하시면 menus와 pages가 2개가 되기때문에 설정이 충돌하게 됩니다. 꼭 새로운 파일에 입력해주세요.
 
 ![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/6b4680d0-18e5-4496-b9d2-8e97378dce00/docs)
 
-```yaml
+::: code-group
+
+```yaml [query]
 menus:
   - path: quickstart-create-record
     name: 데이터 추가
@@ -298,13 +368,53 @@ pages:
           type: success
 ```
 
+```yaml [http]
+menus:
+  - path: quickstart-create-record
+    name: 데이터 추가
+    
+pages:
+  - path: quickstart-create-record
+    blocks:
+      - type: header
+        items:
+          - path: quickstart-read-data
+            label: 전체내역
+          - label: 추가
+
+      - type: http
+        axios:
+          method: POST
+          url: https://api.example.com/v1/users
+          data:
+            name: "{{name}}"
+            email: "{{email}}"
+        rowsPath: rows
+        params:
+          - key: name
+            label: 이름
+          - key: email
+            label: 이메일
+        display: form
+        formOptions:
+          firstLabelWidth: 80px
+          width: 400px
+        toast: 데이터가 추가되었어요.
+        toastOptions:
+          type: success
+```
+
+:::
+
 ## 정리
 
 전체 YAML코드를 차근차근 읽어보세요. 키key에 대한 설명을 함께 담았습니다. 위 과정이 헷갈릴 때는 전체코드를 살펴보셔도 좋습니다.
 
 ::: details 데이터 조회, 수정 페이지 전체코드
 
-```yaml
+::: code-group
+
+```yaml [query]
 menus:
   - path: quickstart-read-data
     name: 데이터 조회
@@ -378,14 +488,86 @@ pages:
               params:
                 - key: id
                   valueFromRow: id
-              display: form # 폼 형태로 보여주기       
+              display: form # 폼 형태로 보여주기
+```
+
+```yaml [http]
+menus:
+  - path: quickstart-read-data
+    name: 데이터 조회
+
+pages:
+  - path: quickstart-read-data
+    blocks:
+      - type: http # HTTP 블록
+        axios:
+          method: GET
+          url: https://api.example.com/v1/users?id={{id}}&email={{email}}&limit=100
+        rowsPath: rows
+        params: # 파라미터
+          - key: id
+            label: ID
+          - key: email
+            label: 이메일
+        columns: # 컬럼 설정
+          name:
+            label: 이름
+          email:
+            label: 이메일
+          phone:
+            label: 전화번호
+          created_at:
+            label: 생성일
+          updated_at:
+            hidden: true
+          deleted_at:
+            hidden: true
+          status:
+            label: 상태
+            color:
+              enabled: blue
+              disabled: red
+
+        viewModal: # 모달(팝업) 띄우기
+          useColumn: id
+          mode: side
+          blocks:
+            - type: http
+              axios:
+                method: PATCH
+                url: https://api.example.com/v1/users/{{id}}
+                data:
+                  status: "{{status}}"
+              rowsPath: rows
+              params:
+                - key: id
+                  valueFromRow: id
+                - key: status
+                  radioButtonGroup: true
+                  radio:
+                    - '': 상태없음
+                    - enabled: 활성
+                    - disabled: 비활성
+              reloadAfterSubmit: true
+
+            - type: http
+              axios:
+                method: GET
+                url: https://api.example.com/v1/users/{{id}}
+              rowsPath: rows
+              params:
+                - key: id
+                  valueFromRow: id
+              display: form
 ```
 
 :::
 
 ::: details 데이터 추가 페이지 전체코드
 
-```yaml
+::: code-group
+
+```yaml [query]
 menus:
   - path: quickstart-create-record
     name: 데이터 추가
@@ -421,6 +603,44 @@ pages:
         toastOptions: # 저장시 알림 테마
           type: success
 ```
+
+```yaml [http]
+menus:
+  - path: quickstart-create-record
+    name: 데이터 추가
+    
+pages:
+  - path: quickstart-create-record
+    blocks:
+      - type: header
+        items:
+          - path: quickstart-read-data
+            label: 전체내역
+          - label: 추가
+
+      - type: http
+        axios:
+          method: POST
+          url: https://api.example.com/v1/users
+          data:
+            name: "{{name}}"
+            email: "{{email}}"
+        rowsPath: rows
+        params:
+          - key: name
+            label: 이름
+            required: true
+          - key: email
+            label: 이메일
+        display: form
+        formOptions:
+          firstLabelWidth: 80px
+          width: 400px
+        toast: 데이터가 추가되었어요.
+        toastOptions:
+          type: success
+```
+
 :::
 
 **배울수 있는 것들**
