@@ -91,5 +91,3 @@ sql: >
 5. 저장전에 Cmd+Enter로 맞는지 테스트해봅니다. (저장할 때도 테스트하고 저장)
 
 ![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/1d3d28ed-db54-45c0-1240-8f834d7f4e00/docs "test-and-save-yaml.png")
-
-에러 메시지를 이해하기 어렵다면, [support@selectfromuser.com](mailto:support@selectfromuser.com) 또는 서비스 내 우측 하단의 채팅으로 문의해주세요.
