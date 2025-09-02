@@ -95,4 +95,4 @@ Service Account (json)에 발급된 키를 입력하고 연결해주세요.
 
 ## 추가 지원
 
-빅쿼리 예제나 기능 등 추가 지원이 필요하시면 서비스 우측 하단의 채팅이나 [이메일](mailto:support@selectfromuser.com)로 문의해주세요.
+빅쿼리 예제나 기능 등 추가 지원이 필요하시면 [이메일](mailto:support@selectfromuser.com)로 문의해주세요.

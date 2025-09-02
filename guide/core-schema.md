@@ -411,4 +411,4 @@ pages:
 
 자세한 사항은 [Reference](https://docs.selectfromuser.com/layout) 페이지에서 확인할 수 있어요.
 
-궁금하신점은 서비스 내 채팅이나 [이메일](mailto:support@selectfromuser.com)등으로 편하게 문의주세요.
+궁금하신점은 [이메일](mailto:support@selectfromuser.com)등으로 편하게 문의주세요.

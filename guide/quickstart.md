@@ -680,5 +680,4 @@ pages:
 이해가 어렵거나 궁금한점, 기능에 대한 의견은 아래 방법들로 자유롭게 문의주세요.
 
 - [이메일](mailto:support@selectfromuser.com)
-- 서비스안 채팅
 - [커뮤니티](https://ask.selectfromuser.com)
