@@ -84,12 +84,7 @@ REST API, GraphQL, AXIOS, GOT
 
 ## 고객 지원
 
-초기 셋팅 안내받기 (무료)
-
-- 문의를 주시면 언제든지 셀렉트 엔지니어와 이야기 가능합니다.
-- 30분 이내의 [짧은 채팅](https://join.slack.com/t/selectcommunity/shared_invite/zt-161fvp0bn-SjJykcvL9ply0CQzUXrL9A) 또는 [화상미팅](https://whattime.co.kr/hbkim/30min?date=2022-10-15&time_zone=Asia%2FSeoul)을 통해 안내를 받으면서 필요한 UI와 어드민 구성요소를 정확하고 신속하게 설정해볼 수 있습니다. 
-
 이용하다가 궁금한 점이 있는 경우 이메일, 커뮤니티 등으로 질문 주시면 답변드립니다.
 
 - 이메일 : [support@selectfromuser.com](mailto:support@selectfromuser.com)
-- 커뮤니티 : [ask.selectfromuser.com]](https://ask.selectfromuser.com)
+- 커뮤니티 : [ask.selectfromuser.com](https://ask.selectfromuser.com)
