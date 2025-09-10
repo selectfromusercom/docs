@@ -27,11 +27,7 @@ layout:
 
 ### layout.login
 
-`Beta` 셀렉트로 파트너센터나 고객 포털 등을 제작하실 때 로그인 화면을 일부 커스텀, 화이트라벨링을 할 수 있습니다.
-
-::: info
-베타(Beta) 기간 후에 이용 요금제에 따라 관련 기능 지원 정책이 달라집니다. 궁금하신 사항은 [이메일](mailto:support@selectfromuser.com) 등으로 문의해주세요. 
-:::
+셀렉트로 파트너센터나 고객 포털 등을 제작하실 때 로그인 화면을 일부 커스텀, 화이트라벨링을 할 수 있습니다.
 
 ```yaml
 layout:
@@ -67,10 +63,6 @@ layout:
 ### layout.head
 
 셀렉트 어드민 `<head>` 태그에 필요한 스크립트(script)를 임베드할 수 있습니다. 구글 애널리틱스(Google Analytics)나 앰플리튜드(Amplitude) 등 분석 서비스의 스크립트를 활용해보세요.
-
-::: info
-베타(Beta) 기간 후에 이용 요금제에 따라 관련 기능 지원 정책이 달라집니다. 궁금하신 사항은 [이메일](mailto:support@selectfromuser.com) 등으로 문의해주세요. 
-:::
 
 **구글 애널리틱스(Google Analytics, GA) 예제**
 
