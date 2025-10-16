@@ -5091,8 +5091,6 @@ blocks:
         mapFirstValue: true        
 
         filterOptions:
-          enabled: true
-
           # 기본 개수 표시 (없으면 '필터'로 표시)
           label: 해당 타입
 
