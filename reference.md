@@ -43,7 +43,7 @@ layout:
     header: Selectfromuser.com
     # header: |
     #   <img src="https://align.selectfromuser.com/lib_DmHvtrBlUMtUhGvc/sh11bex09q31frsy.png" style="height: 50px; margin: 0 auto;" />
-    favicon: https://files.umso.co/lib_DmHvtrBlUMtUhGvc/emvdae7wl2lyppo0.png
+    favicon: https://umsousercontent.com/lib_DmHvtrBlUMtUhGvc/37nmgy0j64hj4pov.png
     title: 파트너센터 로그인
     subtitle: 입점한 셀러분들만 이용할 수 있어요.
     width: 600
