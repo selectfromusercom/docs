@@ -458,7 +458,7 @@ export default defineConfig({
     },
     logo: '/favicon.png',
     footer: {
-      message: 'SelectAdmin',
+      message: 'Select Admin Enterprise',
       copyright: '© 2025 Selectfromuser Inc.'
     },    
   }
