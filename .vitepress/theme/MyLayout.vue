@@ -16,7 +16,7 @@ Layout
       .container.mx-auto.flex.flex-wrap.px-4(style='max-width: 1152px;')
         div.p-5.text-neutral-600(style='width: 240px')
           //- p.text-sm.font-bold © 2025 Selectfromuser Inc.
-          //- p.text-xs.text-zinc-600.font-bold SelectAdmin
+          //- p.text-xs.text-zinc-600.font-bold Select Admin Enterprise
           p.text-xs.text-zinc-400.font-medium © 2025 Selectfromuser Inc.
           .mb-2
           

@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "SelectAdmin",
+  title: "Select Admin Enterprise",
   description: "selectfromuser.com",
   cleanUrls: true,
   markdown: {
