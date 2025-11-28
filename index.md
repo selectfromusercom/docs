@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "Select Admin Enterprise"
+  name: "Select Admin"
   text: "셀렉트 어드민"
   tagline: 운영 툴을 채우는 새로운 방법
   

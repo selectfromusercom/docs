@@ -2,11 +2,15 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Select Admin Enterprise",
+  title: "Select Admin",
   description: "selectfromuser.com",
   cleanUrls: true,
   markdown: {
     lineNumbers: true,
+    theme: {
+      light: 'github-light',
+      dark: 'github-dark'
+    },    
   },
   lastUpdated: true,
   sitemap: {
@@ -458,7 +462,7 @@ export default defineConfig({
     },
     logo: '/favicon.png',
     footer: {
-      message: 'Select Admin Enterprise',
+      message: 'Select Admin',
       copyright: '© 2025 Selectfromuser Inc.'
     },    
   }
