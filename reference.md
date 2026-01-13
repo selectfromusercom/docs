@@ -5995,6 +5995,20 @@ actions:
   single: true
 ```
 
+## actions.buttonDisabledFn
+
+JavaScript로 액션 버튼을 조건에 따라 비활성화(disabled) 할 수 있습니다.
+
+```yaml
+actions:
+  - type: query
+    label: 품절처리
+    single: true
+    buttonDisabledFn: |
+      // console.log({row, rows})
+      return Number(row.vintage) >= 2024
+```
+
 ## actions.openUrl
 
 액션 버튼을 눌러 특정 URL의 페이지로 이동합니다.
