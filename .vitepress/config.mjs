@@ -42,10 +42,11 @@ export default defineConfig({
   // appearance: 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    nav: [
+    nav: [      
       { text: 'Guide', link: '/guide/' },
       { text: 'Reference', link: '/reference' },
       // { text: 'Changelog', link: 'https://github.com/eces/select/blob/main/CHANGELOG.md' },
+      { text: 'llms.txt', link: 'https://raw.githubusercontent.com/selectfromusercom/docs/refs/heads/main/reference.md' },
       { text: 'Community', link: 'https://ask.selectfromuser.com' },
     ],
 
