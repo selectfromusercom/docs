@@ -522,7 +522,7 @@ pages:
     sql: ...
 ```
 
-## blocks.type.showDowload
+## blocks.type.showDownload
 
 `showDownload: false`
 

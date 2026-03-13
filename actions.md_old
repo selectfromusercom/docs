@@ -168,7 +168,7 @@ actions:
     single: true
 ```
 
-### [showDownload](/blocks#blocks-showdowload)
+### [showDownload](/blocks#blocks-showdownload)
 
 ## actions.params.valueFromSelectedRows
 

@@ -6147,7 +6147,7 @@ actions:
     single: true
 ```
 
-### [showDownload](/reference#blocks-showdowload)
+### [showDownload](/reference#blocks-showdownload)
 
 ## actions.params.valueFromSelectedRows
 
