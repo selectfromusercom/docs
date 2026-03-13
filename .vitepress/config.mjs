@@ -299,6 +299,10 @@ export default defineConfig({
               text: '팀 설정', 
               link: '/guide/team-setting', 
             },
+            { 
+              text: '커스텀 도메인',
+              link: '/guide/custom-domain', 
+            },            
           ]
         },
         {
