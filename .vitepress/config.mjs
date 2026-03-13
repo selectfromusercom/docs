@@ -283,7 +283,7 @@ export default defineConfig({
               link: '/guide/team-new', 
             },
             { 
-              text: '팀에 멤버 초대하기', 
+              text: '사용자 초대 및 관리',
               link: '/guide/team-invitation', 
             },
             { 
