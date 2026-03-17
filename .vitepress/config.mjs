@@ -18,14 +18,15 @@ export default defineConfig({
   },
   head: [
     ['link', { rel: 'icon', href: '/favicon.png' }],
-    // [
-    //   'script',
-    //   {
-    //     defer: '',
-    //     data-domain: 'dev.selectfromuser.com',
-    //     src: 'https://plausible.io/js/script.js',
-    //   }
-    // ],
+    [
+      'script',
+      {
+        defer: true,
+        'data-website-id': 'dfid_LraiFbRw5QjLrofURq6Pr',
+        'data-domain': 'selectfromuser.com',
+        src: 'https://datafa.st/js/script.js',
+      },
+    ],    
     [
       'script',
       {},
@@ -45,32 +46,6 @@ export default defineConfig({
           t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
           y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       })(window, document, "clarity", "script", "vga3wqjmsc");
-      `
-    ],
-    [
-      'script',
-      {
-        defer: '',
-        'data-website-id': "dfid_cs2vFdlPtkPcTJISGN9e8",
-        'data-domain': 'docs.selectfromuser.com',
-        src: 'https://datafa.st/js/script.js',
-      }
-    ],
-    [
-      'script',
-      {
-        async: '',
-        src: 'https://www.googletagmanager.com/gtag/js?id=G-0YJWE1EYG2'
-      }
-    ],
-    [
-      'script',
-      {},
-      `
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-0YJWE1EYG2');
       `
     ],
     ['meta', { name: 'naver-site-verification', content: '658480c6f616bed769cb114e6befd7d11ab0d21e' }],
