@@ -30,8 +30,8 @@ export default defineConfig({
       'script',
       {
         defer: '',
-        data-website-id="dfid_cs2vFdlPtkPcTJISGN9e8",
-        data-domain: 'docs.selectfromuser.com',
+        'data-website-id': "dfid_cs2vFdlPtkPcTJISGN9e8",
+        'data-domain': 'docs.selectfromuser.com',
         src: 'https://datafa.st/js/script.js',
       }
     ],
