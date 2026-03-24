@@ -490,7 +490,7 @@ export default defineConfig({
     logo: '/favicon.png',
     footer: {
       message: 'Select Admin',
-      copyright: '© 2025 Selectfromuser Inc.'
+      copyright: '© 2026 Selectfromuser Inc.'
     },    
   }
 })
