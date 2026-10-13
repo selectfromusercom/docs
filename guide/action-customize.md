@@ -19,6 +19,12 @@ actions:
 #  placement: left bottom
 ```
 
+## 조건에 따라 액션 버튼 숨기기 또는 비활성화하기
+
+데이터 상태에 따라 필요한 액션만 표시하려면 `buttonHiddenFn`을 사용하세요. 예를 들어 이미 품절인 상품의 ‘품절처리’ 버튼을 숨길 수 있습니다. [설정 예제](/reference#actions-buttonhiddenfn)를 참고하세요.
+
+버튼을 계속 보여주면서 클릭만 막으려면 [`buttonDisabledFn`](/reference#actions-buttondisabledfn)을 사용하세요.
+
 ## confirmText로 안전하게 액션
 
 ![](https://imagedelivery.net/MHVC-FGTDyxApYeHyF29Tw/d6426aa6-84a9-4950-de39-97e7fad2a700/docs "action-confirmtext.png")

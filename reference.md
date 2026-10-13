@@ -6009,6 +6009,20 @@ actions:
       return Number(row.vintage) >= 2024
 ```
 
+## actions.buttonHiddenFn
+
+JavaScript로 액션 버튼을 조건에 따라 숨길 수 있습니다. `true`를 반환하면 숨기고, `false`를 반환하면 표시합니다.
+
+```yaml
+actions:
+  - type: query
+    label: 품절처리
+    single: true
+    buttonHiddenFn: |
+      // 이미 품절인 상품은 버튼을 숨깁니다.
+      return row.status === 'sold_out';
+```
+
 ## actions.openUrl
 
 액션 버튼을 눌러 특정 URL의 페이지로 이동합니다.
