@@ -6225,13 +6225,17 @@ actions:
 
 ## actions.confirmText
 
+실행 전에 표시하는 확인 문구입니다. 정적 문자열뿐 아니라 치환자를 사용해 파라미터나 행의 값을 동적으로 표시할 수 있습니다.
+
 ```yaml
 actions:
 - label: 삭제
   confirmText: 정말 삭제하시겠습니까? 삭제 후 복구가 어려울 수 있습니다.
 ```
 
-**confirmText 치환자 예제**
+### 파라미터 값 표시
+
+`params`에 정의한 파라미터는 <code v-pre>{{name}}</code>처럼 키 이름으로 참조합니다. 아래 예제는 선택한 행의 `name`을 파라미터로 전달해 확인 문구에 표시합니다.
 
 ```yaml
 - type: query
@@ -6272,6 +6276,95 @@ actions:
   #     confirmText: |
   #       what? name = {{name}}
 ```
+
+### 행 값 표시: actions, modals, updateOptions
+
+행의 값을 직접 참조할 때는 <code v-pre>{{row.id}}</code>, <code v-pre>{{row.name}}</code>처럼 `row.`를 붙입니다. 다음 위치의 `confirmText`에서 행 값 치환을 사용할 수 있습니다.
+
+- 쿼리 블록의 `actions[].confirmText`
+- 모달 내부 쿼리 블록의 `modals[].blocks[].confirmText`
+- `display: form` 쿼리 블록의 `updateOptions.confirmText`
+
+아래 예제는 세 위치에서 모두 `구독 1001 / 테스트 공급처`를 표시합니다. 모달에서는 `params.valueFromRow`로 모달을 연 행의 값을 전달합니다. 폼 저장 예제는 **편집 → 값 변경 없이 저장**하는 흐름으로 확인할 수 있습니다.
+
+```yaml
+menus:
+  - path: pages/confirm-text
+    name: confirmText 예제
+pages:
+  - path: pages/confirm-text
+    title: confirmText 행 값 표시
+    blocks:
+      - type: query
+        resource: mysql.qa
+        sqlType: select
+        title: 액션과 모달 confirmText
+        sql: >
+          SELECT 1001 AS id, '테스트 공급처' AS name, '' AS 조회
+        display: form
+        columns:
+          id:
+            label: 구독 ID
+          name:
+            label: 공급처
+          조회:
+            buttons:
+              - label: 모달 열기
+                openModal: confirm-:id
+                type: primary
+
+        # 1. 액션 버튼 클릭
+        actions:
+          - label: 액션 실행
+            single: true
+            type: query
+            resource: mysql.qa
+            sqlType: insert
+            sql: >
+              SELECT 1
+            confirmText: "구독 {{row.id}} / {{row.name}}"
+
+        # 2. 모달 열기 → 실행
+        modals:
+          - path: confirm-:id
+            blocks:
+              - type: query
+                resource: mysql.qa
+                sqlType: insert
+                title: 모달 쿼리 실행
+                sql: >
+                  SELECT 1
+                params:
+                  - key: id
+                    valueFromRow: id
+                  - key: name
+                    valueFromRow: name
+                confirmText: "구독 {{row.id}} / {{row.name}}"
+
+      # 3. 편집 → 값 변경 없이 저장
+      - type: query
+        resource: mysql.qa
+        sqlType: select
+        title: 폼 저장 confirmText
+        sql: >
+          SELECT 1001 AS id, '테스트 공급처' AS name
+        display: form
+        columns:
+          id:
+            label: 구독 ID
+          name:
+            label: 공급처
+            editable: true
+        updateOptions:
+          type: query
+          resource: mysql.qa
+          sqlType: insert
+          sql: >
+            SELECT 1
+          confirmText: "구독 {{row.id}} / {{row.name}}"
+```
+
+`mysql.qa`는 사용하는 리소스 이름으로 바꿔주세요. 실행 쿼리의 `SELECT 1`은 확인 문구를 테스트하기 위한 예제입니다.
 
 ## actions.params.promptText
 
