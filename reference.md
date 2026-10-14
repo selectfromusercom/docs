@@ -6364,8 +6364,6 @@ pages:
           confirmText: "구독 {{row.id}} / {{row.name}}"
 ```
 
-`mysql.qa`는 사용하는 리소스 이름으로 바꿔주세요. 실행 쿼리의 `SELECT 1`은 확인 문구를 테스트하기 위한 예제입니다.
-
 ## actions.params.promptText
 
 prompt를 띄워서 parameter에 값을 입력할 수 있습니다.
