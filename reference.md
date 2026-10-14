@@ -4729,6 +4729,28 @@ radio:
 - customer
 ```
 
+### radioVertical
+
+`radioVertical: true`를 설정하면 라디오 목록을 세로로 배치합니다. `radio`와 같은 입력 필드에 설정하며, `radioButtonGroup: true`를 사용하는 라디오 버튼 그룹에도 적용할 수 있습니다.
+
+```yaml
+params:
+- key: text
+  label: 라디오
+  radioVertical: true
+  radio:
+  - radio1: 라디오1
+  - radio2: 라디오2
+
+- key: text_group
+  label: 라디오버튼그룹
+  radioButtonGroup: true
+  radioVertical: true
+  radio:
+  - radio1: 라디오1
+  - radio2: 라디오2
+```
+
 ## params.checkbox
 
 체크박스로 값을 선택하여 입력합니다.
