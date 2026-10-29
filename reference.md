@@ -3328,11 +3328,60 @@ columns:
 
 JavaScript를 통해 데이터 값에 따라 동적으로 색상을 지정할 수 있습니다.
 
+- `value`: 현재 컬럼의 값
+- `row`: 현재 행의 전체 데이터. `display: form`, `display: form inline`에서도 다른 컬럼의 값을 참조할 수 있습니다.
+- 반환값: `columns.color`에서 지원하는 색상 이름
+
+`colorFn`이 색상 이름을 반환하면 해당 색상을 적용합니다. `''`, `null`, `undefined`처럼 색상을 반환하지 않으면 `color`에 설정한 값 매핑을 적용합니다.
+
 ```yaml
 columns:
   inflow:
     colorFn: |
       return value > 5 ? 'green' : 'red'
+```
+
+### display: form에서 다른 컬럼 값 참조하기
+
+`row.컬럼명`을 사용하면 조회 결과의 다른 컬럼 값에 따라 현재 컬럼의 색상을 지정할 수 있습니다.
+
+```yaml
+blocks:
+  - type: query
+    resource: mysql.qa
+    sqlType: select
+    display: form # display: form inline에서도 사용할 수 있습니다.
+    sql: |
+      SELECT
+        'approved' AS status,
+        85 AS score,
+        'rejected' AS mapped_status,
+        'approved' AS fallback_status
+    columns:
+      status:
+        label: value 기준 → 초록
+        colorFn: |
+          return value === 'approved' ? 'green' : 'red'
+
+      score:
+        label: row 기준 → 초록
+        colorFn: |
+          return row.status === 'approved' && value >= 80
+            ? 'green'
+            : 'red'
+
+      mapped_status:
+        label: color 매핑 → 빨강
+        color:
+          approved: green
+          rejected: red
+
+      fallback_status:
+        label: colorFn이 비어 있으면 color 매핑 → 초록
+        color:
+          approved: green
+        colorFn: |
+          return ''
 ```
 
 ## columns.copy
