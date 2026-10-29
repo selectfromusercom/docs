@@ -3241,6 +3241,41 @@ columns:
     hidden: true
 ```
 
+## columns.hiddenFn
+
+`display: form`에서 조회한 데이터에 따라 특정 출력 컬럼을 조건부로 숨길 수 있습니다. `row`에는 현재 조회 결과가 들어오며, `hiddenFn`이 `true`를 반환하면 컬럼을 숨기고 `false`를 반환하면 표시합니다.
+
+다음 예제에서는 `status`가 `rejected`일 때만 `reason` 컬럼을 표시합니다. 조건과 관계없이 항상 숨길 컬럼은 `hidden: true`를 사용하세요.
+
+```yaml
+- type: query
+  name: SELECT 출력 컬럼 테스트
+  resource: mysql.qa
+  sqlType: select
+  display: form
+  sql: |
+    SELECT
+      :status AS status,
+      '거절 상태에서만 표시됩니다' AS reason,
+      '항상 숨김' AS internal_note
+  params:
+    - key: status
+      label: 상태 선택 후 조회
+      defaultValue: approved
+      dropdown:
+        - approved
+        - rejected
+  columns:
+    status:
+      label: 상태
+    reason:
+      label: 거절 사유
+      hiddenFn: |
+        return row.status !== 'rejected'
+    internal_note:
+      hidden: true
+```
+
 ## columns.sortable
 
 테이블 특정 컬럼의 정렬 기능을 끌 수 있습니다. 
@@ -5341,6 +5376,41 @@ params:
 params:
 - key: hidden_field
   hidden: true
+```
+
+## params.hiddenFn
+
+`display: form`에서 다른 입력값에 따라 특정 입력 필드를 조건부로 숨길 수 있습니다. `row`에는 현재 폼의 입력값이 들어오며, `hiddenFn`이 `true`를 반환하면 입력 필드를 숨기고 `false`를 반환하면 표시합니다.
+
+다음 예제에서는 `status`가 `rejected`일 때만 `reason` 입력 필드를 표시합니다.
+
+```yaml
+- type: query
+  name: INSERT 입력 항목 테스트
+  resource: mysql.qa
+  sqlType: insert
+  display: form
+  sql: |
+    INSERT INTO hidden_fn_demo (status, reason)
+    VALUES (
+      :status,
+      CASE WHEN :status = 'rejected' THEN :reason ELSE NULL END
+    )
+  params:
+    - key: status
+      label: 상태
+      defaultValue: approved
+      dropdown:
+        - approved
+        - rejected
+    - key: reason
+      label: 거절 사유
+      format: textarea
+      defaultValue: ''
+      hiddenFn: |
+        return row.status !== 'rejected'
+  submitButton:
+    label: 테스트 데이터 저장
 ```
 
 ## params.`hiddenIfNotOption | disableIfNotOption`
