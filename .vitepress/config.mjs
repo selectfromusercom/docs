@@ -210,6 +210,10 @@ export default defineConfig({
               text: '스타일, 디자인 가이드',
               link: '/guide/style-guide',
             },
+            {
+              text: '문제해결 및 사용팁',
+              link: '/guide/troubleshooting',
+            },
           ]
         },
         {
